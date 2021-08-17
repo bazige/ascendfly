@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.ops.blas API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/ops/blas.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.ops.blas</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L0-L345" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+import pdb
+import acl
+import numpy as np
+
+from ..common.const import *
+from ..data.ascendarray import AscendArray
+from ..resource.context import create_stream
+
+ACL_TRANS_N = 0 
+
+def type_map(data_type):
+    type_dict = {
+        np.dtype(&#39;float32&#39;):ACL_FLOAT,
+        np.dtype(&#39;float16&#39;):ACL_FLOAT16,
+        np.dtype(&#39;int8&#39;)   :ACL_INT8
+    }
+
+    try:
+        return type_dict[data_type]
+    except KeyError:
+        raise TypeError(f&#34;Input data_type expects a fp16 or int8, but got {type(data_type)}.&#34;)
+
+
+class Matmul():
+    &#34;&#34;&#34; define a Matmul object, release the function .
+
+    Attributes::
+        context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+        mat_a  : 
+        mat_b  : 
+        mat_c  :
+
+    Methods:
+        __pre_compute : prepare input data
+        run           : do compute matmul
+        out           : return output result
+    &#34;&#34;&#34;
+    def __init__(self, mat_a, mat_b, mat_c, alpha=1.0, beta=0.0, highprec=True, context=None):
+        if context and not isinstance(context, int):
+            raise TypeError(f&#34;Input context expects an int, but got {type(context)}.&#34;)
+
+        if not isinstance(mat_a, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_a)}.&#34;)
+
+        if not isinstance(mat_b, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_b)}.&#34;)
+
+        if not isinstance(mat_c, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_c)}.&#34;)
+
+        assert mat_a.format == mat_b.format, f&#34;Input mat_a and mat_b expects same format.&#34;
+
+        # assign self value
+        self.context = context
+        self.stream = create_stream(context)
+        self.highprec = 1 if highprec else 0
+
+        pdb.set_trace()
+        # set op model dir
+        ret = acl.op.set_model_dir(&#34;./om&#34;)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;op set model dir failed, return {ret}.&#34;)
+        
+        # calculate m, n, k and trans alpha and beta to np.ndarray
+        self.__pre_compute(mat_a, mat_b, mat_c, alpha, beta)
+
+        # do blas gemm_ex and synchronize stream
+        self.run()
+
+        # free input data memory
+        self.free_ab()
+
+
+    def __pre_compute(self, mat_a, mat_b, mat_c, alpha, beta):
+        &#34;&#34;&#34; calculate m, n, k and copy alpha/beta to device.
+        Args:
+            mat_a : (AscendArray) matrix A
+            mat_b : (AscendArray) matrix B
+            mat_c : (AscendArray) matrix C
+            alpha : (float value)
+            beta  : (float value)
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420
+            ]:
+            self.m = mat_a.shape[0] * 2 // 3
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[1]
+        elif mat_a.format in [
+            PIXEL_FORMAT_RGB_888,
+            PIXEL_FORMAT_BGR_888
+            ]:
+            self.m = mat_a.shape[0]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[1]
+        elif mat_a.format == &#39;NCHW&#39;:
+            self.m = mat_a.shape[2]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[-1]
+        elif mat_a.format == &#39;NHWC&#39;:
+            self.m = mat_a.shape[1]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[2]
+        else:
+            raise ValueError(f&#34;Input data format not support.&#34;)
+
+        alpha = np.array([alpha]).astype(mat_a.dtype)
+        beta  = np.array([beta]).astype(mat_a.dtype)
+        self.alpha = AscendArray.clone(alpha)
+        self.beta = AscendArray.clone(beta)
+
+    def run(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        a_type = type_map(self.mat_a.dtype)
+        b_type = type_map(self.mat_a.dtype)
+        c_type = type_map(self.mat_a.dtype)
+        # do gemm asyncronize
+        ret = acl.blas.gemm_ex(ACL_TRANS_N, ACL_TRANS_N, ACL_TRANS_N, 
+                                self.m, self.n, self.k, 
+                                self.alpha.ascend_data,
+                                self.mat_a.ascend_data, self.k, a_type, 
+                                self.mat_b.ascend_data, self.n, b_type, 
+                                self.beta.ascend_data,
+                                self.mat_c.ascend_data, self.n, c_type, 
+                                self.high_prec, 
+                                self.stream) 
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do blas gemm_ex, return {ret}.&#34;)
+
+        # do synchronize stream 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in running blas gemm_ex, return {ret}.&#34;)
+    
+    @property
+    def out(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        return self.mat_c
+
+    def free_ab(self):
+        &#34;&#34;&#34; free alpha and beta data memory
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;alpha&#39;):
+            del self.alpha
+
+        if hasattr(self, &#39;beta&#39;):
+            del self.beta
+
+    def __del__(self):
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, f&#34;destroy stream failed, return {ret}.&#34;
+        
+        # free alpha and beta data memory
+        self.free_ab()
+
+
+
+class Vmul():
+    &#34;&#34;&#34; define a Matmul object, release the function .
+
+    Attributes::
+        context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+        mat_a  : 
+        mat_b  : 
+        mat_c  :
+
+    Methods:
+        __pre_compute : prepare input data
+        run           : do compute matmul
+        out           : return output result
+    &#34;&#34;&#34;
+    def __init__(self, context, mat_a, vec_x, vec_y, alpha=1.0, beta=0.0, highprec=True):
+        if not isinstance(context, int):
+            raise TypeError(f&#34;Input context expects an int, but got {type(context)}.&#34;)
+
+        if not isinstance(mat_a, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_a)}.&#34;)
+
+        if not isinstance(vec_x, AscendArray):
+            raise TypeError(f&#34;Input vec_x expects an AscendArray, but got {type(vec_x)}.&#34;)
+
+        if not isinstance(vec_y, AscendArray):
+            raise TypeError(f&#34;Input vec_y expects an AscendArray, but got {type(vec_y)}.&#34;)
+
+        assert mat_a.format == vec_x.format, f&#34;Input mat_a and vec_x expects same format.&#34;
+
+        # assign self value
+        self.context = context
+        self.stream = create_stream(context)
+        self.highprec = 1 if highprec else 0
+
+        # set op model dir
+        ret = acl.op.set_model_dir(&#34;op_models&#34;)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;op set model dir failed, return {ret}.&#34;)
+        
+        # calculate m, n, k and trans alpha and beta to np.ndarray
+        self.__pre_compute(mat_a, vec_x, vec_y, alpha, beta)
+
+        # do blas gemm_ex and synchronize stream
+        self.run()
+
+        # free input data memory
+        self.free_in()
+
+
+    def __pre_compute(self, mat_a, vec_x, vec_y, alpha, beta):
+        &#34;&#34;&#34; calculate m, n, k and copy alpha/beta to device.
+        Args:
+            mat_a : (AscendArray) matrix A
+            vec_x : (AscendArray) vector x
+            vec_y : (AscendArray) vector y
+            alpha : (float value)
+            beta  : (float value)
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420
+            ]:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0] * 2 // 3
+            self.k = mat_b.shape[1] * 2 // 3
+        elif mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_422,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_422
+            ]:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0] * 2 // 3
+            self.k = mat_b.shape[1] * 2 // 3
+        elif mat_a.format == &#39;NCHW&#39;:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0]
+            self.k = mat_b.shape[1]
+        elif mat_a.format == &#39;NHWC&#39;:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0]
+            self.k = mat_b.shape[1]
+        else:
+            raise ValueError(f&#34;Input data format not support.&#34;)
+
+        alpha = np.array([alpha]).astype(mat_a.dtype)
+        beta  = np.array([beta]).astype(mat_a.dtype)
+        self.alpha = AscendArray.clone(alpha)
+        self.beta = AscendArray.clone(beta)
+
+    def run(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        a_type = type_map(self.mat_a.dtype)
+        x_type = type_map(self.vec_x.dtype)
+        y_type = type_map(self.vec_y.dtype)
+        # do vmul asyncronize
+        ret = acl.blas.gemv_ex(ACL_TRANS_N, 
+                                self.m, self.n,
+                                self.alpha.ascend_data, 
+                                self.mat_a.ascend_data, self.k, a_type, 
+                                self.vec_x.ascend_data, incx, x_type, 
+                                self.beta.ascend_data, 
+                                self.vec_y.ascend_data, incy, y_type, 
+                                self.high_prec,
+                                self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do blas gemv_ex, return {ret}.&#34;)
+
+        # do synchronize stream 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in running blas gemv_ex, return {ret}.&#34;)
+    
+    @property
+    def out(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            vec_y
+        &#34;&#34;&#34;
+        return self.vec_y
+
+    def _free_ab(self):
+        &#34;&#34;&#34; free alpha and beta data memory
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;alpha&#39;):
+            del self.alpha
+
+        if hasattr(self, &#39;beta&#39;):
+            del self.beta
+
+    def __del__(self):
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, f&#34;destroy stream failed, return {ret}.&#34;
+        
+        # free alpha and beta data memory
+        self._free_ab()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.ops.blas.type_map"><code class="name flex">
+<span>def <span class="ident">type_map</span></span>(<span>data_type)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L25-L35" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def type_map(data_type):
+    type_dict = {
+        np.dtype(&#39;float32&#39;):ACL_FLOAT,
+        np.dtype(&#39;float16&#39;):ACL_FLOAT16,
+        np.dtype(&#39;int8&#39;)   :ACL_INT8
+    }
+
+    try:
+        return type_dict[data_type]
+    except KeyError:
+        raise TypeError(f&#34;Input data_type expects a fp16 or int8, but got {type(data_type)}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.ops.blas.Matmul"><code class="flex name class">
+<span>class <span class="ident">Matmul</span></span>
+<span>(</span><span>mat_a, mat_b, mat_c, alpha=1.0, beta=0.0, highprec=True, context=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>define a Matmul object, release the function .</p>
+<p>Attributes::
+context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+mat_a
+:
+mat_b
+:
+mat_c
+:</p>
+<h2 id="methods">Methods</h2>
+<p>__pre_compute : prepare input data
+run
+: do compute matmul
+out
+: return output result</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L38-L190" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Matmul():
+    &#34;&#34;&#34; define a Matmul object, release the function .
+
+    Attributes::
+        context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+        mat_a  : 
+        mat_b  : 
+        mat_c  :
+
+    Methods:
+        __pre_compute : prepare input data
+        run           : do compute matmul
+        out           : return output result
+    &#34;&#34;&#34;
+    def __init__(self, mat_a, mat_b, mat_c, alpha=1.0, beta=0.0, highprec=True, context=None):
+        if context and not isinstance(context, int):
+            raise TypeError(f&#34;Input context expects an int, but got {type(context)}.&#34;)
+
+        if not isinstance(mat_a, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_a)}.&#34;)
+
+        if not isinstance(mat_b, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_b)}.&#34;)
+
+        if not isinstance(mat_c, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_c)}.&#34;)
+
+        assert mat_a.format == mat_b.format, f&#34;Input mat_a and mat_b expects same format.&#34;
+
+        # assign self value
+        self.context = context
+        self.stream = create_stream(context)
+        self.highprec = 1 if highprec else 0
+
+        pdb.set_trace()
+        # set op model dir
+        ret = acl.op.set_model_dir(&#34;./om&#34;)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;op set model dir failed, return {ret}.&#34;)
+        
+        # calculate m, n, k and trans alpha and beta to np.ndarray
+        self.__pre_compute(mat_a, mat_b, mat_c, alpha, beta)
+
+        # do blas gemm_ex and synchronize stream
+        self.run()
+
+        # free input data memory
+        self.free_ab()
+
+
+    def __pre_compute(self, mat_a, mat_b, mat_c, alpha, beta):
+        &#34;&#34;&#34; calculate m, n, k and copy alpha/beta to device.
+        Args:
+            mat_a : (AscendArray) matrix A
+            mat_b : (AscendArray) matrix B
+            mat_c : (AscendArray) matrix C
+            alpha : (float value)
+            beta  : (float value)
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420
+            ]:
+            self.m = mat_a.shape[0] * 2 // 3
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[1]
+        elif mat_a.format in [
+            PIXEL_FORMAT_RGB_888,
+            PIXEL_FORMAT_BGR_888
+            ]:
+            self.m = mat_a.shape[0]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[1]
+        elif mat_a.format == &#39;NCHW&#39;:
+            self.m = mat_a.shape[2]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[-1]
+        elif mat_a.format == &#39;NHWC&#39;:
+            self.m = mat_a.shape[1]
+            self.n = mat_b.shape[-1]
+            self.k = mat_a.shape[2]
+        else:
+            raise ValueError(f&#34;Input data format not support.&#34;)
+
+        alpha = np.array([alpha]).astype(mat_a.dtype)
+        beta  = np.array([beta]).astype(mat_a.dtype)
+        self.alpha = AscendArray.clone(alpha)
+        self.beta = AscendArray.clone(beta)
+
+    def run(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        a_type = type_map(self.mat_a.dtype)
+        b_type = type_map(self.mat_a.dtype)
+        c_type = type_map(self.mat_a.dtype)
+        # do gemm asyncronize
+        ret = acl.blas.gemm_ex(ACL_TRANS_N, ACL_TRANS_N, ACL_TRANS_N, 
+                                self.m, self.n, self.k, 
+                                self.alpha.ascend_data,
+                                self.mat_a.ascend_data, self.k, a_type, 
+                                self.mat_b.ascend_data, self.n, b_type, 
+                                self.beta.ascend_data,
+                                self.mat_c.ascend_data, self.n, c_type, 
+                                self.high_prec, 
+                                self.stream) 
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do blas gemm_ex, return {ret}.&#34;)
+
+        # do synchronize stream 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in running blas gemm_ex, return {ret}.&#34;)
+    
+    @property
+    def out(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        return self.mat_c
+
+    def free_ab(self):
+        &#34;&#34;&#34; free alpha and beta data memory
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;alpha&#39;):
+            del self.alpha
+
+        if hasattr(self, &#39;beta&#39;):
+            del self.beta
+
+    def __del__(self):
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, f&#34;destroy stream failed, return {ret}.&#34;
+        
+        # free alpha and beta data memory
+        self.free_ab()</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.ops.blas.Matmul.out"><code class="name">var <span class="ident">out</span></code></dt>
+<dd>
+<div class="desc"><p>run op.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L159-L168" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def out(self):
+    &#34;&#34;&#34; run op.
+    Args:
+        None
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    return self.mat_c</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.ops.blas.Matmul.free_ab"><code class="name flex">
+<span>def <span class="ident">free_ab</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>free alpha and beta data memory</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L170-L182" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def free_ab(self):
+    &#34;&#34;&#34; free alpha and beta data memory
+    Args:
+        None
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    if hasattr(self, &#39;alpha&#39;):
+        del self.alpha
+
+    if hasattr(self, &#39;beta&#39;):
+        del self.beta</code></pre>
+</details>
+</dd>
+<dt id="ascend.ops.blas.Matmul.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>run op.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L130-L157" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34; run op.
+    Args:
+        None
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    a_type = type_map(self.mat_a.dtype)
+    b_type = type_map(self.mat_a.dtype)
+    c_type = type_map(self.mat_a.dtype)
+    # do gemm asyncronize
+    ret = acl.blas.gemm_ex(ACL_TRANS_N, ACL_TRANS_N, ACL_TRANS_N, 
+                            self.m, self.n, self.k, 
+                            self.alpha.ascend_data,
+                            self.mat_a.ascend_data, self.k, a_type, 
+                            self.mat_b.ascend_data, self.n, b_type, 
+                            self.beta.ascend_data,
+                            self.mat_c.ascend_data, self.n, c_type, 
+                            self.high_prec, 
+                            self.stream) 
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do blas gemm_ex, return {ret}.&#34;)
+
+    # do synchronize stream 
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to synchronize stream in running blas gemm_ex, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.ops.blas.Vmul"><code class="flex name class">
+<span>class <span class="ident">Vmul</span></span>
+<span>(</span><span>context, mat_a, vec_x, vec_y, alpha=1.0, beta=0.0, highprec=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>define a Matmul object, release the function .</p>
+<p>Attributes::
+context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+mat_a
+:
+mat_b
+:
+mat_c
+:</p>
+<h2 id="methods">Methods</h2>
+<p>__pre_compute : prepare input data
+run
+: do compute matmul
+out
+: return output result</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L194-L345" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Vmul():
+    &#34;&#34;&#34; define a Matmul object, release the function .
+
+    Attributes::
+        context: the output image bind with an AscendArray object, image.shape(tupe(h, w, c))
+        mat_a  : 
+        mat_b  : 
+        mat_c  :
+
+    Methods:
+        __pre_compute : prepare input data
+        run           : do compute matmul
+        out           : return output result
+    &#34;&#34;&#34;
+    def __init__(self, context, mat_a, vec_x, vec_y, alpha=1.0, beta=0.0, highprec=True):
+        if not isinstance(context, int):
+            raise TypeError(f&#34;Input context expects an int, but got {type(context)}.&#34;)
+
+        if not isinstance(mat_a, AscendArray):
+            raise TypeError(f&#34;Input mat_a expects an AscendArray, but got {type(mat_a)}.&#34;)
+
+        if not isinstance(vec_x, AscendArray):
+            raise TypeError(f&#34;Input vec_x expects an AscendArray, but got {type(vec_x)}.&#34;)
+
+        if not isinstance(vec_y, AscendArray):
+            raise TypeError(f&#34;Input vec_y expects an AscendArray, but got {type(vec_y)}.&#34;)
+
+        assert mat_a.format == vec_x.format, f&#34;Input mat_a and vec_x expects same format.&#34;
+
+        # assign self value
+        self.context = context
+        self.stream = create_stream(context)
+        self.highprec = 1 if highprec else 0
+
+        # set op model dir
+        ret = acl.op.set_model_dir(&#34;op_models&#34;)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;op set model dir failed, return {ret}.&#34;)
+        
+        # calculate m, n, k and trans alpha and beta to np.ndarray
+        self.__pre_compute(mat_a, vec_x, vec_y, alpha, beta)
+
+        # do blas gemm_ex and synchronize stream
+        self.run()
+
+        # free input data memory
+        self.free_in()
+
+
+    def __pre_compute(self, mat_a, vec_x, vec_y, alpha, beta):
+        &#34;&#34;&#34; calculate m, n, k and copy alpha/beta to device.
+        Args:
+            mat_a : (AscendArray) matrix A
+            vec_x : (AscendArray) vector x
+            vec_y : (AscendArray) vector y
+            alpha : (float value)
+            beta  : (float value)
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420
+            ]:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0] * 2 // 3
+            self.k = mat_b.shape[1] * 2 // 3
+        elif mat_a.format in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_422,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_422
+            ]:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0] * 2 // 3
+            self.k = mat_b.shape[1] * 2 // 3
+        elif mat_a.format == &#39;NCHW&#39;:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0]
+            self.k = mat_b.shape[1]
+        elif mat_a.format == &#39;NHWC&#39;:
+            self.m = mat_a.shape[-1]
+            self.n = mat_a.shape[0]
+            self.k = mat_b.shape[1]
+        else:
+            raise ValueError(f&#34;Input data format not support.&#34;)
+
+        alpha = np.array([alpha]).astype(mat_a.dtype)
+        beta  = np.array([beta]).astype(mat_a.dtype)
+        self.alpha = AscendArray.clone(alpha)
+        self.beta = AscendArray.clone(beta)
+
+    def run(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        a_type = type_map(self.mat_a.dtype)
+        x_type = type_map(self.vec_x.dtype)
+        y_type = type_map(self.vec_y.dtype)
+        # do vmul asyncronize
+        ret = acl.blas.gemv_ex(ACL_TRANS_N, 
+                                self.m, self.n,
+                                self.alpha.ascend_data, 
+                                self.mat_a.ascend_data, self.k, a_type, 
+                                self.vec_x.ascend_data, incx, x_type, 
+                                self.beta.ascend_data, 
+                                self.vec_y.ascend_data, incy, y_type, 
+                                self.high_prec,
+                                self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do blas gemv_ex, return {ret}.&#34;)
+
+        # do synchronize stream 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in running blas gemv_ex, return {ret}.&#34;)
+    
+    @property
+    def out(self):
+        &#34;&#34;&#34; run op.
+        Args:
+            None
+
+        Returns:
+            vec_y
+        &#34;&#34;&#34;
+        return self.vec_y
+
+    def _free_ab(self):
+        &#34;&#34;&#34; free alpha and beta data memory
+        Args:
+            None
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;alpha&#39;):
+            del self.alpha
+
+        if hasattr(self, &#39;beta&#39;):
+            del self.beta
+
+    def __del__(self):
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, f&#34;destroy stream failed, return {ret}.&#34;
+        
+        # free alpha and beta data memory
+        self._free_ab()</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.ops.blas.Vmul.out"><code class="name">var <span class="ident">out</span></code></dt>
+<dd>
+<div class="desc"><p>run op.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>vec_y</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L314-L323" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def out(self):
+    &#34;&#34;&#34; run op.
+    Args:
+        None
+
+    Returns:
+        vec_y
+    &#34;&#34;&#34;
+    return self.vec_y</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.ops.blas.Vmul.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>run op.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/ops/blas.py#L285-L312" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34; run op.
+    Args:
+        None
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    a_type = type_map(self.mat_a.dtype)
+    x_type = type_map(self.vec_x.dtype)
+    y_type = type_map(self.vec_y.dtype)
+    # do vmul asyncronize
+    ret = acl.blas.gemv_ex(ACL_TRANS_N, 
+                            self.m, self.n,
+                            self.alpha.ascend_data, 
+                            self.mat_a.ascend_data, self.k, a_type, 
+                            self.vec_x.ascend_data, incx, x_type, 
+                            self.beta.ascend_data, 
+                            self.vec_y.ascend_data, incy, y_type, 
+                            self.high_prec,
+                            self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do blas gemv_ex, return {ret}.&#34;)
+
+    # do synchronize stream 
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to synchronize stream in running blas gemv_ex, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.ops.blas">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.ops" href="index.html">ascend.ops</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ascend.ops.blas.type_map" href="#ascend.ops.blas.type_map">type_map</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.ops.blas.Matmul" href="#ascend.ops.blas.Matmul">Matmul</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.ops.blas.Matmul.free_ab" href="#ascend.ops.blas.Matmul.free_ab">free_ab</a></code></li>
+<li><code><a title="ascend.ops.blas.Matmul.out" href="#ascend.ops.blas.Matmul.out">out</a></code></li>
+<li><code><a title="ascend.ops.blas.Matmul.run" href="#ascend.ops.blas.Matmul.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.ops.blas.Vmul" href="#ascend.ops.blas.Vmul">Vmul</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.ops.blas.Vmul.out" href="#ascend.ops.blas.Vmul.out">out</a></code></li>
+<li><code><a title="ascend.ops.blas.Vmul.run" href="#ascend.ops.blas.Vmul.run">run</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

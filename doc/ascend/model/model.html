@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.model.model API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/model/model.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.model.model</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L0-L487" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+import acl
+import numpy as np
+import weakref
+
+from collections import OrderedDict
+from ..common.const import *
+from ..common.log import Log
+from ..resource.mem import memcpy_d2d
+from ..resource.context import create_stream
+from ..data.ascendarray import AscendArray
+
+class DataSet():
+    &#34;&#34;&#34;Define a DataSet class to manage input/output buffer of model.
+
+    Attributes:
+        dataset (dataset): The created dataset
+
+    &#34;&#34;&#34;    
+    def __init__(self):
+        self._class_name = self.__class__.__name__
+        self._dataset = acl.mdl.create_dataset()
+
+    @property
+    def dataset(self):
+        return self._dataset
+
+    def add_buffer(self, ascendarray):
+        &#34;&#34;&#34;Bind an AscendArray to the data buffer, and then add 
+            the data buffer to the created dataset.
+
+        Args:
+            ascendarray (AascendArray): Input data to be added in the model buffer.
+
+        Raises:
+            ValueError: add failed with acl.mdl.add_dataset_buffer api.
+        &#34;&#34;&#34;        
+        array = weakref.ref(ascendarray)
+        assert isinstance(array(), AscendArray), \
+                f&#34;Input args of func &#39;add_buffer&#39; expects a class of AscendArray, but got {type(array())}.&#34;
+
+        # add data buffer to the dataset
+        buffer = acl.create_data_buffer(array().ascend_data, array().nbytes)
+        _, ret = acl.mdl.add_dataset_buffer(self._dataset, buffer)
+        if ret != ACL_SUCCESS:
+            acl.destroy_data_buffer(buffer)
+            del array
+            raise ValueError(&#39;Return value of add_buffer should be ACL_SUCCESS(0). &#39;
+                f&#39;But received {ret}&#39;)
+
+    def __del__(self):
+        if hasattr(self, &#39;_dataset&#39;):
+            num_buffers = acl.mdl.get_dataset_num_buffers(self._dataset)
+            for idx in range(num_buffers):
+                data_buf = acl.mdl.get_dataset_buffer(self._dataset, idx)
+                if data_buf:
+                    ret = acl.destroy_data_buffer(data_buf)
+                    assert (ret == ACL_SUCCESS), f&#34;Fail to destroy data buffer, return {ret}.&#34;
+
+            ret = acl.mdl.destroy_dataset(self._dataset)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Failed to destroy output dataset, return {ret}.&#34;)
+
+class ModelDesc():
+    &#34;&#34;&#34;Define a ModelDesc class to manage loaded model.
+
+    Attributes:
+        desc (int): Created model desc
+    &#34;&#34;&#34;  
+    def __init__(self, model_id):
+        self._class_name = self.__class__.__name__
+        self._model_desc = acl.mdl.create_desc()
+
+        ret = acl.mdl.get_desc(self._model_desc, model_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to init model desc in class ModelDesc \
+                    because of get_desc return {ret}.&#34;)
+        
+    @property
+    def desc(self):
+        return self._model_desc
+
+    def __del__(self):
+        ret = acl.mdl.destroy_desc(self._model_desc)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Fail to destroy model desc, return {ret}.&#34;)
+
+
+class AscendModel():
+    &#34;&#34;&#34;Define a AscendModel class like to manage model and inferring.
+
+    Attributes:
+        context (int): Context resource of this model working on.
+        stream (int): Stream resource of this model working on.
+        model_id (int): This model&#39;s id
+        tensor (dict): A ordered-dict to save all input and output tensors
+        net_in_n (int): Model&#39;s input numbers
+        net_out_n (int): Model&#39;s output numbers
+        dataset_in (DataSet obj): Input dataset object of model
+        dataset_out (DataSet obj): Output dataset object of model
+        tensor_names (str): Model&#39;s input and output tensors&#39; name.
+
+    .. hint:: 
+        - run                : do model inference
+        - feed_data          : feed AscendArray data to model&#39;s input port
+        - get_tensor_by_name : get the output result of inference according to output tensor name
+        - set_batch          : Set model input dynamic batch size.
+        - set_shape          : Set model input dynamic shape.
+
+    Typical usage example:
+    ```python
+    model = ascend.AscendModel(context, model_path=&#39;./yolov3.om&#39;)
+    print(model.tensor_names)
+    ```
+    &#34;&#34;&#34;
+    def __init__(self,
+                context,
+                model_path):
+        self.class_name = self.__class__.__name__
+        self.context = context
+        self.stream = create_stream(context)
+
+        self.tensor = OrderedDict()
+        self.net_in_n = 0
+        self.net_out_n = 0
+        self.dataset_in = None
+        self.dataset_out = None
+        self._tensor_names = {&#39;input&#39;:[], &#39;output&#39;:[]}
+
+        # load model and initial
+        self.__load_model(model_path)
+
+    def __load_model(self, model_path:str):
+        &#34;&#34;&#34;load model and create input and output tensor.
+        Args:
+            model_path.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(model_path, str):
+            raise TypeError(&#39;model_path must be a string. &#39;
+                        f&#39;But received {type(model_path)}&#39;)
+
+        self.model_id, ret = acl.mdl.load_from_file(model_path)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#39;Failed to load model from file {model_path}, return {ret}.&#39;)
+
+        # creating the model instance, which only be created once.
+        self.__model_desc = ModelDesc(self.model_id)
+
+        self.net_in_n = acl.mdl.get_num_inputs(self.__model_desc.desc)
+        if self.net_in_n &lt;= 0:
+            raise ValueError(&#39;input num of model should larger than 0. &#39;
+                        f&#39;But received {self.net_in_n}&#39;)
+
+        self.net_out_n = acl.mdl.get_num_outputs(self.__model_desc.desc)
+        if self.net_out_n &lt;= 0:
+            raise ValueError(&#39;output num of model should larger than 0. &#39;
+                        f&#39;But received {self.net_out_n}&#39;)
+
+        self.__create_input_tensor(self.__model_desc.desc, self.net_in_n)
+        Log(INFO, &#39;create input tensor success.&#39;)
+
+        self.__create_output_tensor(self.__model_desc.desc, self.net_out_n)
+        Log(INFO, &#39;create output tensor success.&#39;)
+
+    def __create_input_tensor(self, model_desc, net_input_num:int):
+        &#34;&#34;&#34;create input tensor and band memory pointer.
+        Args:
+            model_desc: model&#39;s information and description.
+            net_input_num: input node number of the net.
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if model_desc is None:
+            raise ValueError(&#39;Input param model_desc should not be None.&#39;)
+        if not isinstance(net_input_num, int):
+            raise TypeError(&#39;Input param net_input_num must be an int. &#39;
+                    f&#39;But received {type(net_input_num)}&#39;)
+        if net_input_num &lt;= 0:
+            raise ValueError(&#39;Input param net_input_num should larger than 0. &#39;
+                    f&#39;But received {net_input_num}&#39;)
+
+        self.dataset_in = DataSet()
+        Log(INFO, &#39; create input dataset success.&#39;)
+
+        for idx in range(net_input_num):
+            dims, ret = acl.mdl.get_input_dims_v2(model_desc, idx)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#39;Failed to get input dims at {idx} in func \
+                        __create_input_tensor. Return value {ret}.&#39;)
+
+            # get input acl tensor name and data type.
+            tensor_name = dims[&#34;name&#34;]
+            tensor_dtype = acl.mdl.get_input_data_type(model_desc, idx)
+            tensor_format = acl.mdl.get_input_format(model_desc, idx)
+            tensor_format = tensor_fmt_map[tensor_format]
+
+            # create a tensor of class AscendArray and assign attributes to it.
+            self.tensor[tensor_name] = AscendArray(shape=tuple(dims[&#34;dims&#34;]), dtype=dtype_dict[tensor_dtype], \
+                                                    format=tensor_format)
+
+            # banding the dataset with data buffer
+            self.dataset_in.add_buffer(self.tensor[tensor_name])
+
+            # save tensor name to input
+            self._tensor_names[&#39;input&#39;].append(tensor_name)
+
+        Log(INFO, &#39;create input tensor success.&#39;)
+
+    def __create_output_tensor(self, model_desc, net_output_num):
+        &#34;&#34;&#34;create output tensor and band memory pointer.
+        Args:
+            model_desc: model&#39;s information and description.
+            net_output_num: output tensor number of the net.
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if model_desc is None:
+            raise ValueError(&#39;Input param model_desc should not be None.&#39;)
+        if not isinstance(net_output_num, int):
+            raise TypeError(&#39;Input param net_output_num must be an int. &#39;
+                    f&#39;But received {type(net_output_num)}&#39;)
+        if net_output_num &lt;= 0:
+            raise ValueError(&#39;Input param net_output_num should larger than 0. &#39;
+                    f&#39;But received {net_output_num}&#39;)
+
+        self.dataset_out = DataSet()
+        Log(INFO, &#39; create output dataset success.&#39;)
+
+        for idx in range(net_output_num):
+            dims, ret = acl.mdl.get_output_dims(model_desc, idx)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#39;Failed to get output dims at {idx} in func \
+                        __create_output_tensor. Return value {ret}.&#39;)
+
+            # get the acl tensor name and data type.
+            tensor_name = dims[&#34;name&#34;]
+            tensor_dtype = acl.mdl.get_output_data_type(model_desc, idx)
+            tensor_format = acl.mdl.get_output_format(model_desc, idx)
+            tensor_format = tensor_fmt_map[tensor_format]
+            
+            # create a tensor of class AscendArray and assign attributes to it.
+            self.tensor[tensor_name] = AscendArray(shape=tuple(dims[&#34;dims&#34;]), dtype=dtype_dict[tensor_dtype], \
+                                                    format=tensor_format)
+
+            # banding the dataset with data buffer
+            self.dataset_out.add_buffer(self.tensor[tensor_name])
+
+            # save tensor name to output
+            self._tensor_names[&#39;output&#39;].append(tensor_name)
+
+        Log(INFO, &#39;create output tensor success.&#39;)
+
+    def __check_input(self, data, net_in):
+        &#34;&#34;&#34; check input data is matched with model input
+        Args:
+            data   : input image or data.
+            net_in : model input tensor
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(data, AscendArray):
+            raise TypeError(f&#34;feed data expects an AscendArray, but got {type(data)}.&#34;)
+            
+        Log(INFO, f&#34;data format: {data.format}, net_in format: {net_in.format}.&#34;)
+
+        # case 1: input yuv420_nv12 or yuv420_nv21 or yuv400 image
+        if data.ndim == 2:
+            # only judge channel is same to model input
+            if (net_in.format == &#39;NCHW&#39; and net_in.shape[1] != 1) or \
+                (net_in.format == &#34;NHWC&#34; and net_in.shape[3] != 1):
+                raise ValueError(f&#34;Input tensor&#39;s expects a single channel, but got {net_in.shape}.&#34;)
+
+        # case 2: input RGB/BGR or 3-dims tensor
+        if data.ndim == 3:
+            # only judge channel is same to model input
+            if (net_in.format == &#39;NCHW&#39; and net_in.shape[1] != 3) or \
+                (net_in.format == &#34;NHWC&#34; and net_in.shape[3] != 3):
+                raise ValueError(f&#34;Input tensor&#39;s expects a single channel, but got {net_in.shape}.&#34;)
+
+        # case 3: input 4-dims tensor
+        if data.ndim == 4:
+            assert data.shape == net_in.shape, \
+                f&#34;Feed data expects same shape to model input {net_in.shape}, but got {data.shape}.&#34;
+
+        # if elements of input data not equal to model input, print warnning log.
+        if data.size != net_in.size:
+            Log(WARNING, f&#34;feed data size {data.shape} not suit to model input {net_in.shape}.&#34;)
+
+    def run(self):
+        &#34;&#34;&#34;Run model offline inference.
+
+        ```python
+        # model is the instantiated AscendModel obj
+        model.run()
+        ```
+        &#34;&#34;&#34;
+        ret = acl.mdl.execute_async(
+                        self.model_id,
+                        self.dataset_in.dataset,
+                        self.dataset_out.dataset,
+                        self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to excute async in model inference, return {ret}.&#34;)
+        
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in model inference, return {ret}.&#34;)
+
+        Log(INFO, &#39;model inference success.&#39;)
+
+
+    def feed_data(self, args:dict):
+        &#34;&#34;&#34;Feed data to model.
+
+        Args:
+            args (dict): Feed specific tensor&#39;s data to the model.
+
+        Typical usage example: 
+        ```python
+        # &#39;input_tensor*&#39; is the node of model input, and input_data* is the preprocessed data(image).
+        model.feed_data({&#39;input_tensor1&#39;:input_data1, &#39;input_tensor2&#39;:input_data2})
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(args, dict):
+            raise TypeError(f&#39;Input feed_data expects a dict, but received {type(args)}.&#39;)
+
+        if len(args) &lt;= 0:
+            raise TypeError(&#39;Input args of feed_data is null.&#39;)
+
+        if len(args) != self.net_in_n:
+            raise ValueError(&#39;Input tensor number to model should be equal to the net(&#39;
+                f&#39;{self.net_in_n}). But the actual input is: {len(args)}&#39;)
+
+        for key, in_tensor in args.items():
+            assert (key in self.tensor), \
+                f&#39;Tensor name {key} is not the input or this tensor name is not correct,&#39; \
+                 + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+            # feed data process will separate to below steps:
+            # step 1: check input data is matched with model input
+            self.__check_input(in_tensor, self.tensor[key])
+
+            # step 2:
+            #   copy input tensor&#39;s data(the front module&#39;s output data) ptr to variable input_ptr, 
+            #   while input_tensor_dict.values() is a class of AscendArray
+            input_ptr = in_tensor.ascend_data
+
+            # step 3:
+            #   copy model input tensor&#39;s data ptr to variable tensor_ptr
+            tensor_ptr = self.tensor[key].ascend_data
+
+            # step 4:
+            #   get data size that will be copy to model input dataset
+            size = min(self.tensor[key].nbytes, in_tensor.nbytes)
+
+            # step 5:
+            #   do copy
+            memcpy_d2d(tensor_ptr, input_ptr, size)
+
+        Log(INFO, &#39;feed data to model success.&#39;)
+
+
+    def get_tensor_by_name(self, out_node_name:str):
+        &#34;&#34;&#34;Get tensor data from output of model inference.
+        Args:
+            out_node_name (str): Get specific tensor&#39;s data by name. 
+
+        Returns:
+            AscendArray: Output tensor of node out_node_name after model inference.
+
+        Typical usage example: 
+        ```python
+        # &#39;output_tensor_name1&#39; and &#39;output_tensor_name2&#39; is the node of model output
+        output_tensor1 = model.get_tensor_by_name(&#39;output_tensor_name1&#39;)
+        output_tensor2 = model.get_tensor_by_name(&#39;output_tensor_name2&#39;)
+        ```
+        &#34;&#34;&#34;
+        assert isinstance(out_node_name, str), \
+                f&#39;Func args of get_tensor_by_name expects str type, but got {type(out_node_name)}&#39;
+        
+        assert (out_node_name in self.tensor), \
+                f&#39;Tensor name [{out_node_name}] is not the output tensor or this tensor name is not correct,&#39; \
+                 + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+        return self.tensor[out_node_name]
+    
+    @property
+    def tensor_names(self):
+        &#34;&#34;&#34;Get input and output tensors&#39; name from model.
+
+        Returns:
+            list: Input/output node&#39;s name of model.
+
+        Typical usage example: 
+        ```python
+        #&#39;tensor_names&#39; is the node of model input and output.
+        tensor_names = model.tensor_names
+        ```
+        &#34;&#34;&#34;
+        return self._tensor_names
+
+
+    def set_batch(self, tensor_name, batch):
+        &#34;&#34;&#34;Set model input dynamic batch size.
+
+        Args:
+            tensor_name (str): Input tensor&#39;s name
+            batch (int): Configurated tensor&#39;s batch size
+        &#34;&#34;&#34;
+        if not isinstance(batch, int):
+            raise ValueError(f&#34;Input batch expects an int, but got {type(batch)}.&#34;)
+        
+        idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+        ret = acl.mdl.set_dynamic_batch_size(self.model_id, self.dataset_in, idx, batch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;set dynamic batch size failed for input {idx}, return {ret}.&#34;)
+
+    def set_shape(self, tensor_name, shape):
+        &#34;&#34;&#34;Set model input dynamic shape.
+        Args:
+            shape (tuple): a tuple (w, h) of dynamic input shape
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(shape, tuple):
+            raise ValueError(f&#34;Input shape expects an tuple, but got {type(shape)}.&#34;)
+        
+        idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+        ret = acl.mdl.set_dynamic_hw_size(self.model_id, self.dataset, idx, shape[1], shape[0])
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;set dynamic shape failed for input {idx}, return {ret}.&#34;)
+
+    def __release_model(self):
+        &#34;&#34;&#34;release data and unload model.
+        Args:
+            None
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;__model_desc&#39;):
+            del self.__model_desc
+
+        if hasattr(self, &#39;model_id&#39;) and self.model_id:
+            ret = acl.mdl.unload(self.model_id)
+            assert ret == ACL_SUCCESS, f&#39;Unload model with id: {self.model_id} failded.&#39;
+
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, \
+                f&#34;destroy stream error in func __release_model, return {ret}.&#34;
+
+        Log(INFO, &#39;release model success&#39;)
+
+    def __del__(self):
+        ctx, ret = acl.rt.get_context()
+        if ret != ACL_SUCCESS or ctx is None:
+            raise ValueError(&#34;Release AscendModel instance failed, because context is not available.&#34;)
+             
+        del self.dataset_in
+        del self.dataset_out
+        self.__release_model()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.model.model.AscendModel"><code class="flex name class">
+<span>class <span class="ident">AscendModel</span></span>
+<span>(</span><span>context, model_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a AscendModel class like to manage model and inferring.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code>int</code></dt>
+<dd>Context resource of this model working on.</dd>
+<dt><strong><code>stream</code></strong> :&ensp;<code>int</code></dt>
+<dd>Stream resource of this model working on.</dd>
+<dt><strong><code>model_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>This model's id</dd>
+<dt><strong><code>tensor</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A ordered-dict to save all input and output tensors</dd>
+<dt><strong><code>net_in_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Model's input numbers</dd>
+<dt><strong><code>net_out_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Model's output numbers</dd>
+<dt><strong><code>dataset_in</code></strong> :&ensp;<code><a title="ascend.model.model.DataSet" href="#ascend.model.model.DataSet">DataSet</a> obj</code></dt>
+<dd>Input dataset object of model</dd>
+<dt><strong><code>dataset_out</code></strong> :&ensp;<code><a title="ascend.model.model.DataSet" href="#ascend.model.model.DataSet">DataSet</a> obj</code></dt>
+<dd>Output dataset object of model</dd>
+<dt><strong><code>tensor_names</code></strong> :&ensp;<code>str</code></dt>
+<dd>Model's input and output tensors' name.</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul>
+<li>run
+: do model inference</li>
+<li>feed_data
+: feed AscendArray data to model's input port</li>
+<li>get_tensor_by_name : get the output result of inference according to output tensor name</li>
+<li>set_batch
+: Set model input dynamic batch size.</li>
+<li>set_shape
+: Set model input dynamic shape.</li>
+</ul>
+</div>
+<p>Typical usage example:</p>
+<pre><code class="language-python">model = ascend.AscendModel(context, model_path='./yolov3.om')
+print(model.tensor_names)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L102-L486" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class AscendModel():
+    &#34;&#34;&#34;Define a AscendModel class like to manage model and inferring.
+
+    Attributes:
+        context (int): Context resource of this model working on.
+        stream (int): Stream resource of this model working on.
+        model_id (int): This model&#39;s id
+        tensor (dict): A ordered-dict to save all input and output tensors
+        net_in_n (int): Model&#39;s input numbers
+        net_out_n (int): Model&#39;s output numbers
+        dataset_in (DataSet obj): Input dataset object of model
+        dataset_out (DataSet obj): Output dataset object of model
+        tensor_names (str): Model&#39;s input and output tensors&#39; name.
+
+    .. hint:: 
+        - run                : do model inference
+        - feed_data          : feed AscendArray data to model&#39;s input port
+        - get_tensor_by_name : get the output result of inference according to output tensor name
+        - set_batch          : Set model input dynamic batch size.
+        - set_shape          : Set model input dynamic shape.
+
+    Typical usage example:
+    ```python
+    model = ascend.AscendModel(context, model_path=&#39;./yolov3.om&#39;)
+    print(model.tensor_names)
+    ```
+    &#34;&#34;&#34;
+    def __init__(self,
+                context,
+                model_path):
+        self.class_name = self.__class__.__name__
+        self.context = context
+        self.stream = create_stream(context)
+
+        self.tensor = OrderedDict()
+        self.net_in_n = 0
+        self.net_out_n = 0
+        self.dataset_in = None
+        self.dataset_out = None
+        self._tensor_names = {&#39;input&#39;:[], &#39;output&#39;:[]}
+
+        # load model and initial
+        self.__load_model(model_path)
+
+    def __load_model(self, model_path:str):
+        &#34;&#34;&#34;load model and create input and output tensor.
+        Args:
+            model_path.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(model_path, str):
+            raise TypeError(&#39;model_path must be a string. &#39;
+                        f&#39;But received {type(model_path)}&#39;)
+
+        self.model_id, ret = acl.mdl.load_from_file(model_path)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#39;Failed to load model from file {model_path}, return {ret}.&#39;)
+
+        # creating the model instance, which only be created once.
+        self.__model_desc = ModelDesc(self.model_id)
+
+        self.net_in_n = acl.mdl.get_num_inputs(self.__model_desc.desc)
+        if self.net_in_n &lt;= 0:
+            raise ValueError(&#39;input num of model should larger than 0. &#39;
+                        f&#39;But received {self.net_in_n}&#39;)
+
+        self.net_out_n = acl.mdl.get_num_outputs(self.__model_desc.desc)
+        if self.net_out_n &lt;= 0:
+            raise ValueError(&#39;output num of model should larger than 0. &#39;
+                        f&#39;But received {self.net_out_n}&#39;)
+
+        self.__create_input_tensor(self.__model_desc.desc, self.net_in_n)
+        Log(INFO, &#39;create input tensor success.&#39;)
+
+        self.__create_output_tensor(self.__model_desc.desc, self.net_out_n)
+        Log(INFO, &#39;create output tensor success.&#39;)
+
+    def __create_input_tensor(self, model_desc, net_input_num:int):
+        &#34;&#34;&#34;create input tensor and band memory pointer.
+        Args:
+            model_desc: model&#39;s information and description.
+            net_input_num: input node number of the net.
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if model_desc is None:
+            raise ValueError(&#39;Input param model_desc should not be None.&#39;)
+        if not isinstance(net_input_num, int):
+            raise TypeError(&#39;Input param net_input_num must be an int. &#39;
+                    f&#39;But received {type(net_input_num)}&#39;)
+        if net_input_num &lt;= 0:
+            raise ValueError(&#39;Input param net_input_num should larger than 0. &#39;
+                    f&#39;But received {net_input_num}&#39;)
+
+        self.dataset_in = DataSet()
+        Log(INFO, &#39; create input dataset success.&#39;)
+
+        for idx in range(net_input_num):
+            dims, ret = acl.mdl.get_input_dims_v2(model_desc, idx)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#39;Failed to get input dims at {idx} in func \
+                        __create_input_tensor. Return value {ret}.&#39;)
+
+            # get input acl tensor name and data type.
+            tensor_name = dims[&#34;name&#34;]
+            tensor_dtype = acl.mdl.get_input_data_type(model_desc, idx)
+            tensor_format = acl.mdl.get_input_format(model_desc, idx)
+            tensor_format = tensor_fmt_map[tensor_format]
+
+            # create a tensor of class AscendArray and assign attributes to it.
+            self.tensor[tensor_name] = AscendArray(shape=tuple(dims[&#34;dims&#34;]), dtype=dtype_dict[tensor_dtype], \
+                                                    format=tensor_format)
+
+            # banding the dataset with data buffer
+            self.dataset_in.add_buffer(self.tensor[tensor_name])
+
+            # save tensor name to input
+            self._tensor_names[&#39;input&#39;].append(tensor_name)
+
+        Log(INFO, &#39;create input tensor success.&#39;)
+
+    def __create_output_tensor(self, model_desc, net_output_num):
+        &#34;&#34;&#34;create output tensor and band memory pointer.
+        Args:
+            model_desc: model&#39;s information and description.
+            net_output_num: output tensor number of the net.
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if model_desc is None:
+            raise ValueError(&#39;Input param model_desc should not be None.&#39;)
+        if not isinstance(net_output_num, int):
+            raise TypeError(&#39;Input param net_output_num must be an int. &#39;
+                    f&#39;But received {type(net_output_num)}&#39;)
+        if net_output_num &lt;= 0:
+            raise ValueError(&#39;Input param net_output_num should larger than 0. &#39;
+                    f&#39;But received {net_output_num}&#39;)
+
+        self.dataset_out = DataSet()
+        Log(INFO, &#39; create output dataset success.&#39;)
+
+        for idx in range(net_output_num):
+            dims, ret = acl.mdl.get_output_dims(model_desc, idx)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#39;Failed to get output dims at {idx} in func \
+                        __create_output_tensor. Return value {ret}.&#39;)
+
+            # get the acl tensor name and data type.
+            tensor_name = dims[&#34;name&#34;]
+            tensor_dtype = acl.mdl.get_output_data_type(model_desc, idx)
+            tensor_format = acl.mdl.get_output_format(model_desc, idx)
+            tensor_format = tensor_fmt_map[tensor_format]
+            
+            # create a tensor of class AscendArray and assign attributes to it.
+            self.tensor[tensor_name] = AscendArray(shape=tuple(dims[&#34;dims&#34;]), dtype=dtype_dict[tensor_dtype], \
+                                                    format=tensor_format)
+
+            # banding the dataset with data buffer
+            self.dataset_out.add_buffer(self.tensor[tensor_name])
+
+            # save tensor name to output
+            self._tensor_names[&#39;output&#39;].append(tensor_name)
+
+        Log(INFO, &#39;create output tensor success.&#39;)
+
+    def __check_input(self, data, net_in):
+        &#34;&#34;&#34; check input data is matched with model input
+        Args:
+            data   : input image or data.
+            net_in : model input tensor
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(data, AscendArray):
+            raise TypeError(f&#34;feed data expects an AscendArray, but got {type(data)}.&#34;)
+            
+        Log(INFO, f&#34;data format: {data.format}, net_in format: {net_in.format}.&#34;)
+
+        # case 1: input yuv420_nv12 or yuv420_nv21 or yuv400 image
+        if data.ndim == 2:
+            # only judge channel is same to model input
+            if (net_in.format == &#39;NCHW&#39; and net_in.shape[1] != 1) or \
+                (net_in.format == &#34;NHWC&#34; and net_in.shape[3] != 1):
+                raise ValueError(f&#34;Input tensor&#39;s expects a single channel, but got {net_in.shape}.&#34;)
+
+        # case 2: input RGB/BGR or 3-dims tensor
+        if data.ndim == 3:
+            # only judge channel is same to model input
+            if (net_in.format == &#39;NCHW&#39; and net_in.shape[1] != 3) or \
+                (net_in.format == &#34;NHWC&#34; and net_in.shape[3] != 3):
+                raise ValueError(f&#34;Input tensor&#39;s expects a single channel, but got {net_in.shape}.&#34;)
+
+        # case 3: input 4-dims tensor
+        if data.ndim == 4:
+            assert data.shape == net_in.shape, \
+                f&#34;Feed data expects same shape to model input {net_in.shape}, but got {data.shape}.&#34;
+
+        # if elements of input data not equal to model input, print warnning log.
+        if data.size != net_in.size:
+            Log(WARNING, f&#34;feed data size {data.shape} not suit to model input {net_in.shape}.&#34;)
+
+    def run(self):
+        &#34;&#34;&#34;Run model offline inference.
+
+        ```python
+        # model is the instantiated AscendModel obj
+        model.run()
+        ```
+        &#34;&#34;&#34;
+        ret = acl.mdl.execute_async(
+                        self.model_id,
+                        self.dataset_in.dataset,
+                        self.dataset_out.dataset,
+                        self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to excute async in model inference, return {ret}.&#34;)
+        
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to synchronize stream in model inference, return {ret}.&#34;)
+
+        Log(INFO, &#39;model inference success.&#39;)
+
+
+    def feed_data(self, args:dict):
+        &#34;&#34;&#34;Feed data to model.
+
+        Args:
+            args (dict): Feed specific tensor&#39;s data to the model.
+
+        Typical usage example: 
+        ```python
+        # &#39;input_tensor*&#39; is the node of model input, and input_data* is the preprocessed data(image).
+        model.feed_data({&#39;input_tensor1&#39;:input_data1, &#39;input_tensor2&#39;:input_data2})
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(args, dict):
+            raise TypeError(f&#39;Input feed_data expects a dict, but received {type(args)}.&#39;)
+
+        if len(args) &lt;= 0:
+            raise TypeError(&#39;Input args of feed_data is null.&#39;)
+
+        if len(args) != self.net_in_n:
+            raise ValueError(&#39;Input tensor number to model should be equal to the net(&#39;
+                f&#39;{self.net_in_n}). But the actual input is: {len(args)}&#39;)
+
+        for key, in_tensor in args.items():
+            assert (key in self.tensor), \
+                f&#39;Tensor name {key} is not the input or this tensor name is not correct,&#39; \
+                 + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+            # feed data process will separate to below steps:
+            # step 1: check input data is matched with model input
+            self.__check_input(in_tensor, self.tensor[key])
+
+            # step 2:
+            #   copy input tensor&#39;s data(the front module&#39;s output data) ptr to variable input_ptr, 
+            #   while input_tensor_dict.values() is a class of AscendArray
+            input_ptr = in_tensor.ascend_data
+
+            # step 3:
+            #   copy model input tensor&#39;s data ptr to variable tensor_ptr
+            tensor_ptr = self.tensor[key].ascend_data
+
+            # step 4:
+            #   get data size that will be copy to model input dataset
+            size = min(self.tensor[key].nbytes, in_tensor.nbytes)
+
+            # step 5:
+            #   do copy
+            memcpy_d2d(tensor_ptr, input_ptr, size)
+
+        Log(INFO, &#39;feed data to model success.&#39;)
+
+
+    def get_tensor_by_name(self, out_node_name:str):
+        &#34;&#34;&#34;Get tensor data from output of model inference.
+        Args:
+            out_node_name (str): Get specific tensor&#39;s data by name. 
+
+        Returns:
+            AscendArray: Output tensor of node out_node_name after model inference.
+
+        Typical usage example: 
+        ```python
+        # &#39;output_tensor_name1&#39; and &#39;output_tensor_name2&#39; is the node of model output
+        output_tensor1 = model.get_tensor_by_name(&#39;output_tensor_name1&#39;)
+        output_tensor2 = model.get_tensor_by_name(&#39;output_tensor_name2&#39;)
+        ```
+        &#34;&#34;&#34;
+        assert isinstance(out_node_name, str), \
+                f&#39;Func args of get_tensor_by_name expects str type, but got {type(out_node_name)}&#39;
+        
+        assert (out_node_name in self.tensor), \
+                f&#39;Tensor name [{out_node_name}] is not the output tensor or this tensor name is not correct,&#39; \
+                 + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+        return self.tensor[out_node_name]
+    
+    @property
+    def tensor_names(self):
+        &#34;&#34;&#34;Get input and output tensors&#39; name from model.
+
+        Returns:
+            list: Input/output node&#39;s name of model.
+
+        Typical usage example: 
+        ```python
+        #&#39;tensor_names&#39; is the node of model input and output.
+        tensor_names = model.tensor_names
+        ```
+        &#34;&#34;&#34;
+        return self._tensor_names
+
+
+    def set_batch(self, tensor_name, batch):
+        &#34;&#34;&#34;Set model input dynamic batch size.
+
+        Args:
+            tensor_name (str): Input tensor&#39;s name
+            batch (int): Configurated tensor&#39;s batch size
+        &#34;&#34;&#34;
+        if not isinstance(batch, int):
+            raise ValueError(f&#34;Input batch expects an int, but got {type(batch)}.&#34;)
+        
+        idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+        ret = acl.mdl.set_dynamic_batch_size(self.model_id, self.dataset_in, idx, batch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;set dynamic batch size failed for input {idx}, return {ret}.&#34;)
+
+    def set_shape(self, tensor_name, shape):
+        &#34;&#34;&#34;Set model input dynamic shape.
+        Args:
+            shape (tuple): a tuple (w, h) of dynamic input shape
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(shape, tuple):
+            raise ValueError(f&#34;Input shape expects an tuple, but got {type(shape)}.&#34;)
+        
+        idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+        ret = acl.mdl.set_dynamic_hw_size(self.model_id, self.dataset, idx, shape[1], shape[0])
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;set dynamic shape failed for input {idx}, return {ret}.&#34;)
+
+    def __release_model(self):
+        &#34;&#34;&#34;release data and unload model.
+        Args:
+            None
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;__model_desc&#39;):
+            del self.__model_desc
+
+        if hasattr(self, &#39;model_id&#39;) and self.model_id:
+            ret = acl.mdl.unload(self.model_id)
+            assert ret == ACL_SUCCESS, f&#39;Unload model with id: {self.model_id} failded.&#39;
+
+        if hasattr(self, &#39;stream&#39;):
+            ret = acl.rt.destroy_stream(self.stream)
+            assert ret == ACL_SUCCESS, \
+                f&#34;destroy stream error in func __release_model, return {ret}.&#34;
+
+        Log(INFO, &#39;release model success&#39;)
+
+    def __del__(self):
+        ctx, ret = acl.rt.get_context()
+        if ret != ACL_SUCCESS or ctx is None:
+            raise ValueError(&#34;Release AscendModel instance failed, because context is not available.&#34;)
+             
+        del self.dataset_in
+        del self.dataset_out
+        self.__release_model()</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.model.model.AscendModel.tensor_names"><code class="name">var <span class="ident">tensor_names</span></code></dt>
+<dd>
+<div class="desc"><p>Get input and output tensors' name from model.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Input/output node's name of model.</dd>
+</dl>
+<p>Typical usage example: </p>
+<pre><code class="language-python">#'tensor_names' is the node of model input and output.
+tensor_names = model.tensor_names
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L404-L417" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def tensor_names(self):
+    &#34;&#34;&#34;Get input and output tensors&#39; name from model.
+
+    Returns:
+        list: Input/output node&#39;s name of model.
+
+    Typical usage example: 
+    ```python
+    #&#39;tensor_names&#39; is the node of model input and output.
+    tensor_names = model.tensor_names
+    ```
+    &#34;&#34;&#34;
+    return self._tensor_names</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.model.model.AscendModel.feed_data"><code class="name flex">
+<span>def <span class="ident">feed_data</span></span>(<span>self, args: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Feed data to model.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>args</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Feed specific tensor's data to the model.</dd>
+</dl>
+<p>Typical usage example: </p>
+<pre><code class="language-python"># 'input_tensor*' is the node of model input, and input_data* is the preprocessed data(image).
+model.feed_data({'input_tensor1':input_data1, 'input_tensor2':input_data2})
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L329-L377" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def feed_data(self, args:dict):
+    &#34;&#34;&#34;Feed data to model.
+
+    Args:
+        args (dict): Feed specific tensor&#39;s data to the model.
+
+    Typical usage example: 
+    ```python
+    # &#39;input_tensor*&#39; is the node of model input, and input_data* is the preprocessed data(image).
+    model.feed_data({&#39;input_tensor1&#39;:input_data1, &#39;input_tensor2&#39;:input_data2})
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(args, dict):
+        raise TypeError(f&#39;Input feed_data expects a dict, but received {type(args)}.&#39;)
+
+    if len(args) &lt;= 0:
+        raise TypeError(&#39;Input args of feed_data is null.&#39;)
+
+    if len(args) != self.net_in_n:
+        raise ValueError(&#39;Input tensor number to model should be equal to the net(&#39;
+            f&#39;{self.net_in_n}). But the actual input is: {len(args)}&#39;)
+
+    for key, in_tensor in args.items():
+        assert (key in self.tensor), \
+            f&#39;Tensor name {key} is not the input or this tensor name is not correct,&#39; \
+             + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+        # feed data process will separate to below steps:
+        # step 1: check input data is matched with model input
+        self.__check_input(in_tensor, self.tensor[key])
+
+        # step 2:
+        #   copy input tensor&#39;s data(the front module&#39;s output data) ptr to variable input_ptr, 
+        #   while input_tensor_dict.values() is a class of AscendArray
+        input_ptr = in_tensor.ascend_data
+
+        # step 3:
+        #   copy model input tensor&#39;s data ptr to variable tensor_ptr
+        tensor_ptr = self.tensor[key].ascend_data
+
+        # step 4:
+        #   get data size that will be copy to model input dataset
+        size = min(self.tensor[key].nbytes, in_tensor.nbytes)
+
+        # step 5:
+        #   do copy
+        memcpy_d2d(tensor_ptr, input_ptr, size)
+
+    Log(INFO, &#39;feed data to model success.&#39;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.model.model.AscendModel.get_tensor_by_name"><code class="name flex">
+<span>def <span class="ident">get_tensor_by_name</span></span>(<span>self, out_node_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get tensor data from output of model inference.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>out_node_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Get specific tensor's data by name. </dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>Output tensor of node out_node_name after model inference.</dd>
+</dl>
+<p>Typical usage example: </p>
+<pre><code class="language-python"># 'output_tensor_name1' and 'output_tensor_name2' is the node of model output
+output_tensor1 = model.get_tensor_by_name('output_tensor_name1')
+output_tensor2 = model.get_tensor_by_name('output_tensor_name2')
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L380-L402" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_tensor_by_name(self, out_node_name:str):
+    &#34;&#34;&#34;Get tensor data from output of model inference.
+    Args:
+        out_node_name (str): Get specific tensor&#39;s data by name. 
+
+    Returns:
+        AscendArray: Output tensor of node out_node_name after model inference.
+
+    Typical usage example: 
+    ```python
+    # &#39;output_tensor_name1&#39; and &#39;output_tensor_name2&#39; is the node of model output
+    output_tensor1 = model.get_tensor_by_name(&#39;output_tensor_name1&#39;)
+    output_tensor2 = model.get_tensor_by_name(&#39;output_tensor_name2&#39;)
+    ```
+    &#34;&#34;&#34;
+    assert isinstance(out_node_name, str), \
+            f&#39;Func args of get_tensor_by_name expects str type, but got {type(out_node_name)}&#39;
+    
+    assert (out_node_name in self.tensor), \
+            f&#39;Tensor name [{out_node_name}] is not the output tensor or this tensor name is not correct,&#39; \
+             + f&#39; you should choose one of {self._tensor_names}.&#39;
+
+    return self.tensor[out_node_name]</code></pre>
+</details>
+</dd>
+<dt id="ascend.model.model.AscendModel.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Run model offline inference.</p>
+<pre><code class="language-python"># model is the instantiated AscendModel obj
+model.run()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L306-L326" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Run model offline inference.
+
+    ```python
+    # model is the instantiated AscendModel obj
+    model.run()
+    ```
+    &#34;&#34;&#34;
+    ret = acl.mdl.execute_async(
+                    self.model_id,
+                    self.dataset_in.dataset,
+                    self.dataset_out.dataset,
+                    self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to excute async in model inference, return {ret}.&#34;)
+    
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to synchronize stream in model inference, return {ret}.&#34;)
+
+    Log(INFO, &#39;model inference success.&#39;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.model.model.AscendModel.set_batch"><code class="name flex">
+<span>def <span class="ident">set_batch</span></span>(<span>self, tensor_name, batch)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set model input dynamic batch size.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tensor_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Input tensor's name</dd>
+<dt><strong><code>batch</code></strong> :&ensp;<code>int</code></dt>
+<dd>Configurated tensor's batch size</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L420-L436" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_batch(self, tensor_name, batch):
+    &#34;&#34;&#34;Set model input dynamic batch size.
+
+    Args:
+        tensor_name (str): Input tensor&#39;s name
+        batch (int): Configurated tensor&#39;s batch size
+    &#34;&#34;&#34;
+    if not isinstance(batch, int):
+        raise ValueError(f&#34;Input batch expects an int, but got {type(batch)}.&#34;)
+    
+    idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+    ret = acl.mdl.set_dynamic_batch_size(self.model_id, self.dataset_in, idx, batch)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;set dynamic batch size failed for input {idx}, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.model.model.AscendModel.set_shape"><code class="name flex">
+<span>def <span class="ident">set_shape</span></span>(<span>self, tensor_name, shape)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set model input dynamic shape.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>a tuple (w, h) of dynamic input shape</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L438-L455" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_shape(self, tensor_name, shape):
+    &#34;&#34;&#34;Set model input dynamic shape.
+    Args:
+        shape (tuple): a tuple (w, h) of dynamic input shape
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(shape, tuple):
+        raise ValueError(f&#34;Input shape expects an tuple, but got {type(shape)}.&#34;)
+    
+    idx, ret = acl.mdl.get_input_index_by_name(self.__model_desc.desc, tensor_name)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Input tensor name {tensor_name} is not a input.&#34;)
+
+    ret = acl.mdl.set_dynamic_hw_size(self.model_id, self.dataset, idx, shape[1], shape[0])
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;set dynamic shape failed for input {idx}, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.model.model.DataSet"><code class="flex name class">
+<span>class <span class="ident">DataSet</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a DataSet class to manage input/output buffer of model.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>dataset</code></strong> :&ensp;<code>dataset</code></dt>
+<dd>The created dataset</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L26-L75" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DataSet():
+    &#34;&#34;&#34;Define a DataSet class to manage input/output buffer of model.
+
+    Attributes:
+        dataset (dataset): The created dataset
+
+    &#34;&#34;&#34;    
+    def __init__(self):
+        self._class_name = self.__class__.__name__
+        self._dataset = acl.mdl.create_dataset()
+
+    @property
+    def dataset(self):
+        return self._dataset
+
+    def add_buffer(self, ascendarray):
+        &#34;&#34;&#34;Bind an AscendArray to the data buffer, and then add 
+            the data buffer to the created dataset.
+
+        Args:
+            ascendarray (AascendArray): Input data to be added in the model buffer.
+
+        Raises:
+            ValueError: add failed with acl.mdl.add_dataset_buffer api.
+        &#34;&#34;&#34;        
+        array = weakref.ref(ascendarray)
+        assert isinstance(array(), AscendArray), \
+                f&#34;Input args of func &#39;add_buffer&#39; expects a class of AscendArray, but got {type(array())}.&#34;
+
+        # add data buffer to the dataset
+        buffer = acl.create_data_buffer(array().ascend_data, array().nbytes)
+        _, ret = acl.mdl.add_dataset_buffer(self._dataset, buffer)
+        if ret != ACL_SUCCESS:
+            acl.destroy_data_buffer(buffer)
+            del array
+            raise ValueError(&#39;Return value of add_buffer should be ACL_SUCCESS(0). &#39;
+                f&#39;But received {ret}&#39;)
+
+    def __del__(self):
+        if hasattr(self, &#39;_dataset&#39;):
+            num_buffers = acl.mdl.get_dataset_num_buffers(self._dataset)
+            for idx in range(num_buffers):
+                data_buf = acl.mdl.get_dataset_buffer(self._dataset, idx)
+                if data_buf:
+                    ret = acl.destroy_data_buffer(data_buf)
+                    assert (ret == ACL_SUCCESS), f&#34;Fail to destroy data buffer, return {ret}.&#34;
+
+            ret = acl.mdl.destroy_dataset(self._dataset)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Failed to destroy output dataset, return {ret}.&#34;)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.model.model.DataSet.dataset"><code class="name">var <span class="ident">dataset</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L37-L39" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def dataset(self):
+    return self._dataset</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.model.model.DataSet.add_buffer"><code class="name flex">
+<span>def <span class="ident">add_buffer</span></span>(<span>self, ascendarray)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Bind an AscendArray to the data buffer, and then add
+the data buffer to the created dataset.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ascendarray</code></strong> :&ensp;<code>AascendArray</code></dt>
+<dd>Input data to be added in the model buffer.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>add failed with acl.mdl.add_dataset_buffer api.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L41-L62" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def add_buffer(self, ascendarray):
+    &#34;&#34;&#34;Bind an AscendArray to the data buffer, and then add 
+        the data buffer to the created dataset.
+
+    Args:
+        ascendarray (AascendArray): Input data to be added in the model buffer.
+
+    Raises:
+        ValueError: add failed with acl.mdl.add_dataset_buffer api.
+    &#34;&#34;&#34;        
+    array = weakref.ref(ascendarray)
+    assert isinstance(array(), AscendArray), \
+            f&#34;Input args of func &#39;add_buffer&#39; expects a class of AscendArray, but got {type(array())}.&#34;
+
+    # add data buffer to the dataset
+    buffer = acl.create_data_buffer(array().ascend_data, array().nbytes)
+    _, ret = acl.mdl.add_dataset_buffer(self._dataset, buffer)
+    if ret != ACL_SUCCESS:
+        acl.destroy_data_buffer(buffer)
+        del array
+        raise ValueError(&#39;Return value of add_buffer should be ACL_SUCCESS(0). &#39;
+            f&#39;But received {ret}&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.model.model.ModelDesc"><code class="flex name class">
+<span>class <span class="ident">ModelDesc</span></span>
+<span>(</span><span>model_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a ModelDesc class to manage loaded model.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>desc</code></strong> :&ensp;<code>int</code></dt>
+<dd>Created model desc</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L77-L99" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class ModelDesc():
+    &#34;&#34;&#34;Define a ModelDesc class to manage loaded model.
+
+    Attributes:
+        desc (int): Created model desc
+    &#34;&#34;&#34;  
+    def __init__(self, model_id):
+        self._class_name = self.__class__.__name__
+        self._model_desc = acl.mdl.create_desc()
+
+        ret = acl.mdl.get_desc(self._model_desc, model_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to init model desc in class ModelDesc \
+                    because of get_desc return {ret}.&#34;)
+        
+    @property
+    def desc(self):
+        return self._model_desc
+
+    def __del__(self):
+        ret = acl.mdl.destroy_desc(self._model_desc)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Fail to destroy model desc, return {ret}.&#34;)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.model.model.ModelDesc.desc"><code class="name">var <span class="ident">desc</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/model/model.py#L92-L94" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def desc(self):
+    return self._model_desc</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.model.model">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.model" href="index.html">ascend.model</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.model.model.AscendModel" href="#ascend.model.model.AscendModel">AscendModel</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ascend.model.model.AscendModel.feed_data" href="#ascend.model.model.AscendModel.feed_data">feed_data</a></code></li>
+<li><code><a title="ascend.model.model.AscendModel.get_tensor_by_name" href="#ascend.model.model.AscendModel.get_tensor_by_name">get_tensor_by_name</a></code></li>
+<li><code><a title="ascend.model.model.AscendModel.run" href="#ascend.model.model.AscendModel.run">run</a></code></li>
+<li><code><a title="ascend.model.model.AscendModel.set_batch" href="#ascend.model.model.AscendModel.set_batch">set_batch</a></code></li>
+<li><code><a title="ascend.model.model.AscendModel.set_shape" href="#ascend.model.model.AscendModel.set_shape">set_shape</a></code></li>
+<li><code><a title="ascend.model.model.AscendModel.tensor_names" href="#ascend.model.model.AscendModel.tensor_names">tensor_names</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.model.model.DataSet" href="#ascend.model.model.DataSet">DataSet</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.model.model.DataSet.add_buffer" href="#ascend.model.model.DataSet.add_buffer">add_buffer</a></code></li>
+<li><code><a title="ascend.model.model.DataSet.dataset" href="#ascend.model.model.DataSet.dataset">dataset</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.model.model.ModelDesc" href="#ascend.model.model.ModelDesc">ModelDesc</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.model.model.ModelDesc.desc" href="#ascend.model.model.ModelDesc.desc">desc</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

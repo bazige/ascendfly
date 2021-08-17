@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.image.aipp API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/image/aipp.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.image.aipp</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L0-L370" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+
+import acl
+import numpy as np
+
+from ..common.const import *
+from ..common.clip import bbox_clip
+from ..model.model import AscendModel
+from ..resource.context import create_stream
+
+
+ACL_DATA_WITH_DYNAMIC_AIPP = 2
+
+
+class Aipp():
+    &#34;&#34;&#34; define a Aipp object, to manage image color space convert and pixel process.
+
+    Attributes:
+        context (int): context resource
+        shape (tuple[int]): the original image shape(tuple(w, h))
+        format (str or int): the output image format
+
+    Methods:
+        desc    : the created dvpp pic desc
+    &#34;&#34;&#34;
+
+    def __init__(self, context, model_inst, tensor_name, **kwargs):
+        if not isinstance(context, int):
+            raise TypeError(
+                f&#34;Input context expects an int value, but got {type(context)}.&#34;)
+
+        if not isinstance(model_inst, AscendModel):
+            raise TypeError(
+                f&#34;Input model_inst expects an AscendModel, but got {type(context)}.&#34;)
+
+        if not isinstance(tensor_name, str):
+            raise TypeError(
+                f&#34;Input tensor_name expects a string, but got {type(tensor_name)}.&#34;)
+
+        self._stream = create_stream(context)
+
+        # get input id that setting aipp
+        need_aipp = []
+        for index in range(model_inst.net_in_n):
+            aipp_type, _, ret = acl.mdl.get_aipp_type(
+                model_inst.model_id, index)
+            assert ret == ACL_SUCCESS, f&#34;get aipp type failed, return {ret}.&#34;
+
+            if aipp_type == ACL_DATA_WITH_DYNAMIC_AIPP:
+                need_aipp.append(index)
+
+        assert len(need_aipp) &gt;= 2, f&#34;aipp only support one input, but got {len(need_aipp)}.&#34;
+
+        self._shape = None
+        self._format = None
+        self._swap_switch = False
+        self._swap_ax_switch = False
+        batch_size = model_inst.tensor[tensor_name].shape[0]
+        self.aipp_set = acl.mdl.create_aipp(batch_size)
+
+        for key, arg_val in kwargs.items():
+            if key == &#39;shape&#39;:
+                self.shape = arg_val
+            elif key == &#39;format&#39;:
+                self.format = arg_val
+            elif key == &#39;csc&#39;:
+                # key-value is a 3-elements tuple(csc_mat, i_bias_mat, o_bias_mat)
+                csc_mat = arg_val[0]
+                i_bias_mat = arg_val[1]
+                o_bias_mat = arg_val[2]
+                self.set_csc(self, csc_mat, i_bias_mat, o_bias_mat)
+            elif key == &#39;swap_switch&#39;:
+                self.swap_switch = arg_val
+            elif key == &#39;swap_ax&#39;:
+                self.swap_ax = arg_val
+            elif key == &#39;means&#39;:
+                self.means(arg_val, input_id=need_aipp[0])
+            elif key == &#39;min&#39;:
+                self.set_means(arg_val, input_id=need_aipp[0])
+            elif key == &#39;var&#39;:
+                self.set_var(arg_val, input_id=need_aipp[0])
+            elif key == &#39;crop&#39;:
+                self.set_crop(arg_val, input_id=need_aipp[0])
+            elif key == &#39;set&#39;:
+                self.set_aipp(model_inst.model_id,
+                              model_inst.dataset, input_id=need_aipp[0])
+
+    @property
+    def shape(self):
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        &#34;&#34;&#34; Set aipp input image shape.
+
+        Args:
+            shape : The input image shape.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(shape, tuple):
+            raise TypeError(
+                f&#34;Input shape expects a tuple, but got {type(shape)}.&#34;)
+
+        assert len(shape) == 2, f&#34;Input shape expects 2 elements tuple, but got {len(shape)}.&#34;
+        ret = acl.mdl.set_aipp_src_image_size(self.aipp_set, shape[0], shape[1])
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp input image format failed, return {ret}.&#34;)
+
+        self._shape = shape
+
+    @property
+    def format(self):
+        return self._format
+
+    @format.setter
+    def format(self, fmt):
+        &#34;&#34;&#34; Set aipp input image format.
+
+        Args:
+            fmt : The input image format.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(fmt, int):
+            raise TypeError(f&#34;Input &#34;)
+
+        try:
+            format = pix_aipp_map[fmt]
+        except:
+            raise ValueError(f&#34;Aipp does not support this format {fmt}.&#34;)
+
+        ret = acl.mdl.set_aipp_input_format(self.aipp_set, format)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp input image format failed, return {ret}.&#34;)
+
+        self._format = format
+
+    def set_csc(self, csc_mat, i_bias_mat, o_bias_mat):
+        &#34;&#34;&#34; Set aipp color space convert parameters.
+
+        Args:
+            csc_mat : The input color space convert matrix.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(csc_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input csc_mat expects a np.ndrray, but got {type(csc_mat)}.&#34;)
+
+        if not isinstance(i_bias_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input bias_mat expects a np.ndrray, but got {type(i_bias_mat)}.&#34;)
+
+        if not isinstance(o_bias_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input bias_mat expects a np.ndrray, but got {type(o_bias_mat)}.&#34;)
+
+        assert csc_mat.shape == (3, 3), \
+            f&#34;Input csc_mat expects a 3x3 matrix, but got {csc_mat.shape} matrix.&#34;
+
+        assert i_bias_mat.shape[-1] == 3, \
+            f&#34;Input bias_mat expects a 3x1 matrix, but got a {i_bias_mat.shape} matrix.&#34;
+
+        assert o_bias_mat.shape[-1] == 3, \
+            f&#34;Input bias_mat expects a 3x1 matrix, but got a {o_bias_mat.shape} matrix.&#34;
+
+        # convert to 1 dim array
+        i_bias_mat = i_bias_mat.flatten()
+        o_bias_mat = o_bias_mat.flatten()
+
+        # matrix_r0c0 matrix_r0c1 matrix_r0c2
+        # matrix_r1c0 matrix_r1c1 matrix_r1c2
+        # matrix_r2c0 matrix_r2c1 matrix_r2c2
+        ret = acl.mdl.set_aipp_csc_params(self.aipp_set, 1,
+                                          csc_mat[0][0], csc_mat[0][1], csc_mat[0][2],
+                                          csc_mat[1][0], csc_mat[1][1], csc_mat[1][2],
+                                          csc_mat[2][0], csc_mat[2][1], csc_mat[2][2],
+                                          i_bias_mat[0], i_bias_mat[1], i_bias_mat[2],
+                                          o_bias_mat[0], o_bias_mat[1], o_bias_mat[2])
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp color space convert parameters failed, return {ret}.&#34;)
+
+    @property
+    def swap_switch(self):
+        return self._swap_switch
+
+    @swap_switch.setter
+    def swap_switch(self, swap_switch):
+        &#34;&#34;&#34; Set aipp swap R/B or U/V swith flag.
+
+        Args:
+            swap_switch :swap swith
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        swap_switch = int(bool(swap_switch))
+        ret = acl.mdl.set_aipp_rbuv_swap_switch(self.aipp_set, swap_switch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap R/B or U/V swith failed, return {ret}.&#34;)
+
+        self._swap_switch = swap_switch
+
+    @property
+    def swap_ax(self):
+        return self._swap_ax_switch
+
+    @swap_ax.setter
+    def swap_ax(self, swap_ax):
+        &#34;&#34;&#34; Set aipp swap ax swith flag.
+
+        Args:
+            swap_ax :swap ax swith
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        swap_ax_switch = int(bool(swap_ax))
+        ret = acl.mdl.set_aipp_ax_swap_switch(self.aipp_set, swap_ax_switch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap R/B or U/V swith failed, return {ret}.&#34;)
+
+        self._swap_ax_switch = swap_ax_switch
+
+    def set_means(self, means, input_id=0):
+        &#34;&#34;&#34; Set aipp color channel data mean.
+
+        Args:
+            means : input mean value of channel 
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(means, np.ndarray):
+            raise TypeError(
+                f&#34;Input means expects a np.ndrray, but got {type(means)}.&#34;)
+
+        assert means.shape[-1] == 3 or means.shape[-1] == 4, \
+            f&#34;Input means expects a 3x1 or 4x1 matrix, but got {means.shape} matrix.&#34;
+
+        # means = [mean_chn0, mean_chn1, mean_chn2, mean_chn3]
+        if means.shape[-1] == 3:
+            means = np.append(means, np.array([0], dtype=means.dtype))
+
+        ret = acl.mdl.set_aipp_dtc_pixel_mean(
+            self.aipp_set, means[0], means[1], means[2], means[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set input mean value of channel failed, return {ret}.&#34;)
+
+    def set_min(self, minm, input_id=0):
+        &#34;&#34;&#34; Set aipp minimum pixel value.
+
+        Args:
+            minm : aipp pixel mean value  
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(minm, np.ndarray):
+            raise TypeError(
+                f&#34;Input minm expects a np.ndrray, but got {type(minm)}.&#34;)
+
+        assert minm.shape[-1] == 3 or minm.shape[-1] == 4, \
+            f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {minm.shape} matrix.&#34;
+
+        # minm = [min_chn0, min_chn1, min_chn2, min_chn3]
+        if minm.shape[-1] == 3:
+            minm = np.append(minm, np.array([0], dtype=minm.dtype))
+
+        ret = acl.mdl.set_aipp_dtc_pixel_min(
+            self.aipp_set, minm[0], minm[1], minm[2], minm[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set input minimum value of channel failed, return {ret}.&#34;)
+
+    def set_var(self, var, input_id=0):
+        &#34;&#34;&#34; Set aipp variance of image.
+
+        Args:
+            var : aipp pixel variance value  
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(var, np.ndarray):
+            raise TypeError(
+                f&#34;Input var expects a np.ndrray, but got {type(var)}.&#34;)
+
+        assert var.shape[-1] == 3 or var.shape[-1] == 4, \
+            f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {var.shape} matrix.&#34;
+
+        # var = [var_chn0, var_chn1, var_chn2, var_chn3]
+        if var.shape[-1] == 3:
+            var = np.append(var, np.array([1.0], dtype=var.dtype))
+
+        ret = acl.mdl.set_aipp_pixel_var_reci(
+            self.aipp_set, var[0], var[1], var[2], var[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)
+
+    def set_crop(self, rect, input_id=0):
+        &#34;&#34;&#34; Set aipp crop prarameters.
+
+        Args:
+            value : aipp pixel crop prarameters. 
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(rect, np.ndarray):
+            raise TypeError(
+                f&#34;Input var expects a np.ndrray, but got {type(rect)}.&#34;)
+
+        assert rect.shape[-1] == 4, \
+            f&#34;Input rect expects a 4x1 matrix, but got {rect.shape} matrix.&#34;
+
+        # caculate crop rectangle
+        clipped_bbox = bbox_clip(rect, self.shape)
+        startx, starty, w, h = clipped_bbox.tolist()
+
+        ret = acl.mdl.set_aipp_crop_params(
+            self.aipp_set, 1, startx, starty, w, h, input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)
+
+    def set_aipp(self, model_id, dataset, input_id=0):
+        &#34;&#34;&#34; Add aipp to model according to input model index.
+
+        Args:
+            model_id : input model id. 
+            input_id : input io id
+            dataset  : input dataset
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        ret = acl.mdl.set_aipp_by_input_index(
+            model_id, dataset, input_id, self.aipp_set)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;Add aipp to model according to input model index failed, return {ret}.&#34;)
+
+    def __del__(self):
+        if hasattr(self, &#39;aipp_set&#39;):
+            ret = acl.mdl.destroy_aipp(self.aipp_set)
+            assert ret == ACL_SUCCESS, f&#34;destroy aipp {self.aipp_set} failed, return {ret}.&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.image.aipp.Aipp"><code class="flex name class">
+<span>class <span class="ident">Aipp</span></span>
+<span>(</span><span>context, model_inst, tensor_name, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>define a Aipp object, to manage image color space convert and pixel process.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code>int</code></dt>
+<dd>context resource</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple[int]</code></dt>
+<dd>the original image shape(tuple(w, h))</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>str</code> or <code>int</code></dt>
+<dd>the output image format</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<p>desc
+: the created dvpp pic desc</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L28-L371" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Aipp():
+    &#34;&#34;&#34; define a Aipp object, to manage image color space convert and pixel process.
+
+    Attributes:
+        context (int): context resource
+        shape (tuple[int]): the original image shape(tuple(w, h))
+        format (str or int): the output image format
+
+    Methods:
+        desc    : the created dvpp pic desc
+    &#34;&#34;&#34;
+
+    def __init__(self, context, model_inst, tensor_name, **kwargs):
+        if not isinstance(context, int):
+            raise TypeError(
+                f&#34;Input context expects an int value, but got {type(context)}.&#34;)
+
+        if not isinstance(model_inst, AscendModel):
+            raise TypeError(
+                f&#34;Input model_inst expects an AscendModel, but got {type(context)}.&#34;)
+
+        if not isinstance(tensor_name, str):
+            raise TypeError(
+                f&#34;Input tensor_name expects a string, but got {type(tensor_name)}.&#34;)
+
+        self._stream = create_stream(context)
+
+        # get input id that setting aipp
+        need_aipp = []
+        for index in range(model_inst.net_in_n):
+            aipp_type, _, ret = acl.mdl.get_aipp_type(
+                model_inst.model_id, index)
+            assert ret == ACL_SUCCESS, f&#34;get aipp type failed, return {ret}.&#34;
+
+            if aipp_type == ACL_DATA_WITH_DYNAMIC_AIPP:
+                need_aipp.append(index)
+
+        assert len(need_aipp) &gt;= 2, f&#34;aipp only support one input, but got {len(need_aipp)}.&#34;
+
+        self._shape = None
+        self._format = None
+        self._swap_switch = False
+        self._swap_ax_switch = False
+        batch_size = model_inst.tensor[tensor_name].shape[0]
+        self.aipp_set = acl.mdl.create_aipp(batch_size)
+
+        for key, arg_val in kwargs.items():
+            if key == &#39;shape&#39;:
+                self.shape = arg_val
+            elif key == &#39;format&#39;:
+                self.format = arg_val
+            elif key == &#39;csc&#39;:
+                # key-value is a 3-elements tuple(csc_mat, i_bias_mat, o_bias_mat)
+                csc_mat = arg_val[0]
+                i_bias_mat = arg_val[1]
+                o_bias_mat = arg_val[2]
+                self.set_csc(self, csc_mat, i_bias_mat, o_bias_mat)
+            elif key == &#39;swap_switch&#39;:
+                self.swap_switch = arg_val
+            elif key == &#39;swap_ax&#39;:
+                self.swap_ax = arg_val
+            elif key == &#39;means&#39;:
+                self.means(arg_val, input_id=need_aipp[0])
+            elif key == &#39;min&#39;:
+                self.set_means(arg_val, input_id=need_aipp[0])
+            elif key == &#39;var&#39;:
+                self.set_var(arg_val, input_id=need_aipp[0])
+            elif key == &#39;crop&#39;:
+                self.set_crop(arg_val, input_id=need_aipp[0])
+            elif key == &#39;set&#39;:
+                self.set_aipp(model_inst.model_id,
+                              model_inst.dataset, input_id=need_aipp[0])
+
+    @property
+    def shape(self):
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        &#34;&#34;&#34; Set aipp input image shape.
+
+        Args:
+            shape : The input image shape.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(shape, tuple):
+            raise TypeError(
+                f&#34;Input shape expects a tuple, but got {type(shape)}.&#34;)
+
+        assert len(shape) == 2, f&#34;Input shape expects 2 elements tuple, but got {len(shape)}.&#34;
+        ret = acl.mdl.set_aipp_src_image_size(self.aipp_set, shape[0], shape[1])
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp input image format failed, return {ret}.&#34;)
+
+        self._shape = shape
+
+    @property
+    def format(self):
+        return self._format
+
+    @format.setter
+    def format(self, fmt):
+        &#34;&#34;&#34; Set aipp input image format.
+
+        Args:
+            fmt : The input image format.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(fmt, int):
+            raise TypeError(f&#34;Input &#34;)
+
+        try:
+            format = pix_aipp_map[fmt]
+        except:
+            raise ValueError(f&#34;Aipp does not support this format {fmt}.&#34;)
+
+        ret = acl.mdl.set_aipp_input_format(self.aipp_set, format)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp input image format failed, return {ret}.&#34;)
+
+        self._format = format
+
+    def set_csc(self, csc_mat, i_bias_mat, o_bias_mat):
+        &#34;&#34;&#34; Set aipp color space convert parameters.
+
+        Args:
+            csc_mat : The input color space convert matrix.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(csc_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input csc_mat expects a np.ndrray, but got {type(csc_mat)}.&#34;)
+
+        if not isinstance(i_bias_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input bias_mat expects a np.ndrray, but got {type(i_bias_mat)}.&#34;)
+
+        if not isinstance(o_bias_mat, np.ndarray):
+            raise TypeError(
+                f&#34;Input bias_mat expects a np.ndrray, but got {type(o_bias_mat)}.&#34;)
+
+        assert csc_mat.shape == (3, 3), \
+            f&#34;Input csc_mat expects a 3x3 matrix, but got {csc_mat.shape} matrix.&#34;
+
+        assert i_bias_mat.shape[-1] == 3, \
+            f&#34;Input bias_mat expects a 3x1 matrix, but got a {i_bias_mat.shape} matrix.&#34;
+
+        assert o_bias_mat.shape[-1] == 3, \
+            f&#34;Input bias_mat expects a 3x1 matrix, but got a {o_bias_mat.shape} matrix.&#34;
+
+        # convert to 1 dim array
+        i_bias_mat = i_bias_mat.flatten()
+        o_bias_mat = o_bias_mat.flatten()
+
+        # matrix_r0c0 matrix_r0c1 matrix_r0c2
+        # matrix_r1c0 matrix_r1c1 matrix_r1c2
+        # matrix_r2c0 matrix_r2c1 matrix_r2c2
+        ret = acl.mdl.set_aipp_csc_params(self.aipp_set, 1,
+                                          csc_mat[0][0], csc_mat[0][1], csc_mat[0][2],
+                                          csc_mat[1][0], csc_mat[1][1], csc_mat[1][2],
+                                          csc_mat[2][0], csc_mat[2][1], csc_mat[2][2],
+                                          i_bias_mat[0], i_bias_mat[1], i_bias_mat[2],
+                                          o_bias_mat[0], o_bias_mat[1], o_bias_mat[2])
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp color space convert parameters failed, return {ret}.&#34;)
+
+    @property
+    def swap_switch(self):
+        return self._swap_switch
+
+    @swap_switch.setter
+    def swap_switch(self, swap_switch):
+        &#34;&#34;&#34; Set aipp swap R/B or U/V swith flag.
+
+        Args:
+            swap_switch :swap swith
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        swap_switch = int(bool(swap_switch))
+        ret = acl.mdl.set_aipp_rbuv_swap_switch(self.aipp_set, swap_switch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap R/B or U/V swith failed, return {ret}.&#34;)
+
+        self._swap_switch = swap_switch
+
+    @property
+    def swap_ax(self):
+        return self._swap_ax_switch
+
+    @swap_ax.setter
+    def swap_ax(self, swap_ax):
+        &#34;&#34;&#34; Set aipp swap ax swith flag.
+
+        Args:
+            swap_ax :swap ax swith
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        swap_ax_switch = int(bool(swap_ax))
+        ret = acl.mdl.set_aipp_ax_swap_switch(self.aipp_set, swap_ax_switch)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap R/B or U/V swith failed, return {ret}.&#34;)
+
+        self._swap_ax_switch = swap_ax_switch
+
+    def set_means(self, means, input_id=0):
+        &#34;&#34;&#34; Set aipp color channel data mean.
+
+        Args:
+            means : input mean value of channel 
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(means, np.ndarray):
+            raise TypeError(
+                f&#34;Input means expects a np.ndrray, but got {type(means)}.&#34;)
+
+        assert means.shape[-1] == 3 or means.shape[-1] == 4, \
+            f&#34;Input means expects a 3x1 or 4x1 matrix, but got {means.shape} matrix.&#34;
+
+        # means = [mean_chn0, mean_chn1, mean_chn2, mean_chn3]
+        if means.shape[-1] == 3:
+            means = np.append(means, np.array([0], dtype=means.dtype))
+
+        ret = acl.mdl.set_aipp_dtc_pixel_mean(
+            self.aipp_set, means[0], means[1], means[2], means[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set input mean value of channel failed, return {ret}.&#34;)
+
+    def set_min(self, minm, input_id=0):
+        &#34;&#34;&#34; Set aipp minimum pixel value.
+
+        Args:
+            minm : aipp pixel mean value  
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(minm, np.ndarray):
+            raise TypeError(
+                f&#34;Input minm expects a np.ndrray, but got {type(minm)}.&#34;)
+
+        assert minm.shape[-1] == 3 or minm.shape[-1] == 4, \
+            f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {minm.shape} matrix.&#34;
+
+        # minm = [min_chn0, min_chn1, min_chn2, min_chn3]
+        if minm.shape[-1] == 3:
+            minm = np.append(minm, np.array([0], dtype=minm.dtype))
+
+        ret = acl.mdl.set_aipp_dtc_pixel_min(
+            self.aipp_set, minm[0], minm[1], minm[2], minm[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set input minimum value of channel failed, return {ret}.&#34;)
+
+    def set_var(self, var, input_id=0):
+        &#34;&#34;&#34; Set aipp variance of image.
+
+        Args:
+            var : aipp pixel variance value  
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(var, np.ndarray):
+            raise TypeError(
+                f&#34;Input var expects a np.ndrray, but got {type(var)}.&#34;)
+
+        assert var.shape[-1] == 3 or var.shape[-1] == 4, \
+            f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {var.shape} matrix.&#34;
+
+        # var = [var_chn0, var_chn1, var_chn2, var_chn3]
+        if var.shape[-1] == 3:
+            var = np.append(var, np.array([1.0], dtype=var.dtype))
+
+        ret = acl.mdl.set_aipp_pixel_var_reci(
+            self.aipp_set, var[0], var[1], var[2], var[3], input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)
+
+    def set_crop(self, rect, input_id=0):
+        &#34;&#34;&#34; Set aipp crop prarameters.
+
+        Args:
+            value : aipp pixel crop prarameters. 
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(rect, np.ndarray):
+            raise TypeError(
+                f&#34;Input var expects a np.ndrray, but got {type(rect)}.&#34;)
+
+        assert rect.shape[-1] == 4, \
+            f&#34;Input rect expects a 4x1 matrix, but got {rect.shape} matrix.&#34;
+
+        # caculate crop rectangle
+        clipped_bbox = bbox_clip(rect, self.shape)
+        startx, starty, w, h = clipped_bbox.tolist()
+
+        ret = acl.mdl.set_aipp_crop_params(
+            self.aipp_set, 1, startx, starty, w, h, input_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)
+
+    def set_aipp(self, model_id, dataset, input_id=0):
+        &#34;&#34;&#34; Add aipp to model according to input model index.
+
+        Args:
+            model_id : input model id. 
+            input_id : input io id
+            dataset  : input dataset
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        ret = acl.mdl.set_aipp_by_input_index(
+            model_id, dataset, input_id, self.aipp_set)
+        if ret != ACL_SUCCESS:
+            raise ValueError(
+                f&#34;Add aipp to model according to input model index failed, return {ret}.&#34;)
+
+    def __del__(self):
+        if hasattr(self, &#39;aipp_set&#39;):
+            ret = acl.mdl.destroy_aipp(self.aipp_set)
+            assert ret == ACL_SUCCESS, f&#34;destroy aipp {self.aipp_set} failed, return {ret}.&#34;</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.image.aipp.Aipp.format"><code class="name">var <span class="ident">format</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L127-L129" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def format(self):
+    return self._format</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.shape"><code class="name">var <span class="ident">shape</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L101-L103" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def shape(self):
+    return self._shape</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.swap_ax"><code class="name">var <span class="ident">swap_ax</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L225-L227" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def swap_ax(self):
+    return self._swap_ax_switch</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.swap_switch"><code class="name">var <span class="ident">swap_switch</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L203-L205" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def swap_switch(self):
+    return self._swap_switch</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.image.aipp.Aipp.set_aipp"><code class="name flex">
+<span>def <span class="ident">set_aipp</span></span>(<span>self, model_id, dataset, input_id=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add aipp to model according to input model index.</p>
+<h2 id="args">Args</h2>
+<p>model_id : input model id.
+input_id : input io id
+dataset
+: input dataset</p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L351-L366" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_aipp(self, model_id, dataset, input_id=0):
+    &#34;&#34;&#34; Add aipp to model according to input model index.
+
+    Args:
+        model_id : input model id. 
+        input_id : input io id
+        dataset  : input dataset
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    ret = acl.mdl.set_aipp_by_input_index(
+        model_id, dataset, input_id, self.aipp_set)
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;Add aipp to model according to input model index failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.set_crop"><code class="name flex">
+<span>def <span class="ident">set_crop</span></span>(<span>self, rect, input_id=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set aipp crop prarameters.</p>
+<h2 id="args">Args</h2>
+<p>value : aipp pixel crop prarameters. </p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L325-L349" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_crop(self, rect, input_id=0):
+    &#34;&#34;&#34; Set aipp crop prarameters.
+
+    Args:
+        value : aipp pixel crop prarameters. 
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(rect, np.ndarray):
+        raise TypeError(
+            f&#34;Input var expects a np.ndrray, but got {type(rect)}.&#34;)
+
+    assert rect.shape[-1] == 4, \
+        f&#34;Input rect expects a 4x1 matrix, but got {rect.shape} matrix.&#34;
+
+    # caculate crop rectangle
+    clipped_bbox = bbox_clip(rect, self.shape)
+    startx, starty, w, h = clipped_bbox.tolist()
+
+    ret = acl.mdl.set_aipp_crop_params(
+        self.aipp_set, 1, startx, starty, w, h, input_id)
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.set_csc"><code class="name flex">
+<span>def <span class="ident">set_csc</span></span>(<span>self, csc_mat, i_bias_mat, o_bias_mat)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set aipp color space convert parameters.</p>
+<h2 id="args">Args</h2>
+<p>csc_mat : The input color space convert matrix.</p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L156-L201" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_csc(self, csc_mat, i_bias_mat, o_bias_mat):
+    &#34;&#34;&#34; Set aipp color space convert parameters.
+
+    Args:
+        csc_mat : The input color space convert matrix.
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(csc_mat, np.ndarray):
+        raise TypeError(
+            f&#34;Input csc_mat expects a np.ndrray, but got {type(csc_mat)}.&#34;)
+
+    if not isinstance(i_bias_mat, np.ndarray):
+        raise TypeError(
+            f&#34;Input bias_mat expects a np.ndrray, but got {type(i_bias_mat)}.&#34;)
+
+    if not isinstance(o_bias_mat, np.ndarray):
+        raise TypeError(
+            f&#34;Input bias_mat expects a np.ndrray, but got {type(o_bias_mat)}.&#34;)
+
+    assert csc_mat.shape == (3, 3), \
+        f&#34;Input csc_mat expects a 3x3 matrix, but got {csc_mat.shape} matrix.&#34;
+
+    assert i_bias_mat.shape[-1] == 3, \
+        f&#34;Input bias_mat expects a 3x1 matrix, but got a {i_bias_mat.shape} matrix.&#34;
+
+    assert o_bias_mat.shape[-1] == 3, \
+        f&#34;Input bias_mat expects a 3x1 matrix, but got a {o_bias_mat.shape} matrix.&#34;
+
+    # convert to 1 dim array
+    i_bias_mat = i_bias_mat.flatten()
+    o_bias_mat = o_bias_mat.flatten()
+
+    # matrix_r0c0 matrix_r0c1 matrix_r0c2
+    # matrix_r1c0 matrix_r1c1 matrix_r1c2
+    # matrix_r2c0 matrix_r2c1 matrix_r2c2
+    ret = acl.mdl.set_aipp_csc_params(self.aipp_set, 1,
+                                      csc_mat[0][0], csc_mat[0][1], csc_mat[0][2],
+                                      csc_mat[1][0], csc_mat[1][1], csc_mat[1][2],
+                                      csc_mat[2][0], csc_mat[2][1], csc_mat[2][2],
+                                      i_bias_mat[0], i_bias_mat[1], i_bias_mat[2],
+                                      o_bias_mat[0], o_bias_mat[1], o_bias_mat[2])
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;set aipp color space convert parameters failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.set_means"><code class="name flex">
+<span>def <span class="ident">set_means</span></span>(<span>self, means, input_id=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set aipp color channel data mean.</p>
+<h2 id="args">Args</h2>
+<p>means : input mean value of channel </p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L247-L271" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_means(self, means, input_id=0):
+    &#34;&#34;&#34; Set aipp color channel data mean.
+
+    Args:
+        means : input mean value of channel 
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(means, np.ndarray):
+        raise TypeError(
+            f&#34;Input means expects a np.ndrray, but got {type(means)}.&#34;)
+
+    assert means.shape[-1] == 3 or means.shape[-1] == 4, \
+        f&#34;Input means expects a 3x1 or 4x1 matrix, but got {means.shape} matrix.&#34;
+
+    # means = [mean_chn0, mean_chn1, mean_chn2, mean_chn3]
+    if means.shape[-1] == 3:
+        means = np.append(means, np.array([0], dtype=means.dtype))
+
+    ret = acl.mdl.set_aipp_dtc_pixel_mean(
+        self.aipp_set, means[0], means[1], means[2], means[3], input_id)
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;set input mean value of channel failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.set_min"><code class="name flex">
+<span>def <span class="ident">set_min</span></span>(<span>self, minm, input_id=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set aipp minimum pixel value.</p>
+<h2 id="args">Args</h2>
+<p>minm : aipp pixel mean value
+</p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L273-L297" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_min(self, minm, input_id=0):
+    &#34;&#34;&#34; Set aipp minimum pixel value.
+
+    Args:
+        minm : aipp pixel mean value  
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(minm, np.ndarray):
+        raise TypeError(
+            f&#34;Input minm expects a np.ndrray, but got {type(minm)}.&#34;)
+
+    assert minm.shape[-1] == 3 or minm.shape[-1] == 4, \
+        f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {minm.shape} matrix.&#34;
+
+    # minm = [min_chn0, min_chn1, min_chn2, min_chn3]
+    if minm.shape[-1] == 3:
+        minm = np.append(minm, np.array([0], dtype=minm.dtype))
+
+    ret = acl.mdl.set_aipp_dtc_pixel_min(
+        self.aipp_set, minm[0], minm[1], minm[2], minm[3], input_id)
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;set input minimum value of channel failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.aipp.Aipp.set_var"><code class="name flex">
+<span>def <span class="ident">set_var</span></span>(<span>self, var, input_id=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set aipp variance of image.</p>
+<h2 id="args">Args</h2>
+<p>var : aipp pixel variance value
+</p>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/aipp.py#L299-L323" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_var(self, var, input_id=0):
+    &#34;&#34;&#34; Set aipp variance of image.
+
+    Args:
+        var : aipp pixel variance value  
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+    if not isinstance(var, np.ndarray):
+        raise TypeError(
+            f&#34;Input var expects a np.ndrray, but got {type(var)}.&#34;)
+
+    assert var.shape[-1] == 3 or var.shape[-1] == 4, \
+        f&#34;Input minm expects a 3x1 or 4x1 matrix, but got {var.shape} matrix.&#34;
+
+    # var = [var_chn0, var_chn1, var_chn2, var_chn3]
+    if var.shape[-1] == 3:
+        var = np.append(var, np.array([1.0], dtype=var.dtype))
+
+    ret = acl.mdl.set_aipp_pixel_var_reci(
+        self.aipp_set, var[0], var[1], var[2], var[3], input_id)
+    if ret != ACL_SUCCESS:
+        raise ValueError(
+            f&#34;set aipp swap aipp variance pixel value failed, return {ret}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.image.aipp">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.image" href="index.html">ascend.image</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.image.aipp.Aipp" href="#ascend.image.aipp.Aipp">Aipp</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ascend.image.aipp.Aipp.format" href="#ascend.image.aipp.Aipp.format">format</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_aipp" href="#ascend.image.aipp.Aipp.set_aipp">set_aipp</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_crop" href="#ascend.image.aipp.Aipp.set_crop">set_crop</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_csc" href="#ascend.image.aipp.Aipp.set_csc">set_csc</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_means" href="#ascend.image.aipp.Aipp.set_means">set_means</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_min" href="#ascend.image.aipp.Aipp.set_min">set_min</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.set_var" href="#ascend.image.aipp.Aipp.set_var">set_var</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.shape" href="#ascend.image.aipp.Aipp.shape">shape</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.swap_ax" href="#ascend.image.aipp.Aipp.swap_ax">swap_ax</a></code></li>
+<li><code><a title="ascend.image.aipp.Aipp.swap_switch" href="#ascend.image.aipp.Aipp.swap_switch">swap_switch</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.post_process API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/post_process/">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.post_process</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/__init__.py#L0-L15" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">from .bbox_overlaps import bbox_overlaps
+from .class_names import (wider_face_classes, voc_classes, imagenet_det_classes,
+                        imagenet_vid_classes, coco_classes, cityscapes_classes,
+                        get_classes)
+from .color import Color, color_val, color_gen
+from .nms import nms
+from .image import (imshow, imshow_bboxes, imshow_det_bboxes, imshow_bboxes_colors)
+
+
+
+__all__ = [
+    &#39;bbox_overlaps&#39;, &#39;wider_face_classes&#39;, &#39;voc_classes&#39;, &#39;imagenet_det_classes&#39;,
+    &#39;imagenet_vid_classes&#39;, &#39;coco_classes&#39;, &#39;cityscapes_classes&#39;, &#39;get_classes&#39;, 
+    &#39;Color&#39;, &#39;color_val&#39;, &#39;nms&#39;, &#39;color_gen&#39;,
+    &#39;imshow&#39;, &#39;imshow_bboxes&#39;, &#39;imshow_det_bboxes&#39;, &#39;imshow_bboxes_colors&#39;, 
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="ascend.post_process.class_names" href="class_names.html">ascend.post_process.class_names</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="ascend.post_process.color" href="color.html">ascend.post_process.color</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="ascend.post_process.image" href="image.html">ascend.post_process.image</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.post_process.bbox_overlaps"><code class="name flex">
+<span>def <span class="ident">bbox_overlaps</span></span>(<span>bboxes1, bboxes2, mode='iou', eps=1e-06)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the ious between each bbox of bboxes1 and bboxes2.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bboxes1</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Input bboxes1 with shape (n, 4)</dd>
+<dt><strong><code>bboxes2</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Input bboxes2 with shape (k, 4)</dd>
+<dt><strong><code>mode</code></strong> :&ensp;<code>str</code></dt>
+<dd>Iou (intersection over union) or iof (intersection
+over foreground)</dd>
+<dt><strong><code>eps</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The adjusted parameter. Defaults to 1e-6.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>ious (ndarray): The result with shape (n, k)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/bbox_overlaps.py#L4-L56" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def bbox_overlaps(bboxes1, bboxes2, mode=&#39;iou&#39;, eps=1e-6):
+    &#34;&#34;&#34;Calculate the ious between each bbox of bboxes1 and bboxes2.
+
+    Args:
+        bboxes1 (ndarray): Input bboxes1 with shape (n, 4)
+        bboxes2 (ndarray): Input bboxes2 with shape (k, 4)
+        mode (str): Iou (intersection over union) or iof (intersection
+            over foreground)
+        eps (float, optional): The adjusted parameter. Defaults to 1e-6.
+
+    Returns:
+        ious (ndarray): The result with shape (n, k)
+    &#34;&#34;&#34;
+    if not isinstance(bboxes1, np.ndarray):
+        raise TypeError(f&#34;Input bboxes1 expects a np.ndrray, but got {type(bboxes1)}.&#34;)
+    if not isinstance(bboxes2, np.ndarray):
+        raise TypeError(f&#34;Input bboxes2 expects a np.ndrray, but got {type(bboxes2)}.&#34;)
+
+    assert mode in [&#39;iou&#39;, &#39;iof&#39;]
+
+    bboxes1 = bboxes1.astype(np.float32)
+    bboxes2 = bboxes2.astype(np.float32)
+    rows = bboxes1.shape[0]
+    cols = bboxes2.shape[0]
+    ious = np.zeros((rows, cols), dtype=np.float32)
+    if rows * cols == 0:
+        return ious
+        
+    exchange = False
+    if bboxes1.shape[0] &gt; bboxes2.shape[0]:
+        bboxes1, bboxes2 = bboxes2, bboxes1
+        ious = np.zeros((cols, rows), dtype=np.float32)
+        exchange = True
+
+    area1 = (bboxes1[:, 2] - bboxes1[:, 0]) * (bboxes1[:, 3] - bboxes1[:, 1])
+    area2 = (bboxes2[:, 2] - bboxes2[:, 0]) * (bboxes2[:, 3] - bboxes2[:, 1])
+
+    for i in range(bboxes1.shape[0]):
+        x_start = np.maximum(bboxes1[i, 0], bboxes2[:, 0])
+        y_start = np.maximum(bboxes1[i, 1], bboxes2[:, 1])
+        x_end = np.minimum(bboxes1[i, 2], bboxes2[:, 2])
+        y_end = np.minimum(bboxes1[i, 3], bboxes2[:, 3])
+        overlap = np.maximum(x_end - x_start, 0) * np.maximum(
+            y_end - y_start, 0)
+        if mode == &#39;iou&#39;:
+            union = area1[i] + area2 - overlap
+        else:
+            union = area1[i] if not exchange else area2
+        union = np.maximum(union, eps)
+        ious[i, :] = overlap / union
+    if exchange:
+        ious = ious.T
+    return ious</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.cityscapes_classes"><code class="name flex">
+<span>def <span class="ident">cityscapes_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cityscapes dataset classes</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Cityscapes dataset classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L108-L117" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def cityscapes_classes():
+    &#34;&#34;&#34;Cityscapes dataset classes
+
+    Returns:
+        list: Cityscapes dataset classes
+    &#34;&#34;&#34;    
+    return [
+        &#39;person&#39;, &#39;rider&#39;, &#39;car&#39;, &#39;truck&#39;, &#39;bus&#39;, &#39;train&#39;, &#39;motorcycle&#39;,
+        &#39;bicycle&#39;
+    ]</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.coco_classes"><code class="name flex">
+<span>def <span class="ident">coco_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>COCO dataset classes</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>COCO dataset classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L85-L105" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def coco_classes():
+    &#34;&#34;&#34;COCO dataset classes
+
+    Returns:
+        list: COCO dataset classes
+    &#34;&#34;&#34;    
+    return [
+        &#39;person&#39;, &#39;bicycle&#39;, &#39;car&#39;, &#39;motorcycle&#39;, &#39;airplane&#39;, &#39;bus&#39;, &#39;train&#39;,
+        &#39;truck&#39;, &#39;boat&#39;, &#39;traffic_light&#39;, &#39;fire_hydrant&#39;, &#39;stop_sign&#39;,
+        &#39;parking_meter&#39;, &#39;bench&#39;, &#39;bird&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;horse&#39;, &#39;sheep&#39;,
+        &#39;cow&#39;, &#39;elephant&#39;, &#39;bear&#39;, &#39;zebra&#39;, &#39;giraffe&#39;, &#39;backpack&#39;, &#39;umbrella&#39;,
+        &#39;handbag&#39;, &#39;tie&#39;, &#39;suitcase&#39;, &#39;frisbee&#39;, &#39;skis&#39;, &#39;snowboard&#39;,
+        &#39;sports_ball&#39;, &#39;kite&#39;, &#39;baseball_bat&#39;, &#39;baseball_glove&#39;, &#39;skateboard&#39;,
+        &#39;surfboard&#39;, &#39;tennis_racket&#39;, &#39;bottle&#39;, &#39;wine_glass&#39;, &#39;cup&#39;, &#39;fork&#39;,
+        &#39;knife&#39;, &#39;spoon&#39;, &#39;bowl&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;sandwich&#39;, &#39;orange&#39;,
+        &#39;broccoli&#39;, &#39;carrot&#39;, &#39;hot_dog&#39;, &#39;pizza&#39;, &#39;donut&#39;, &#39;cake&#39;, &#39;chair&#39;,
+        &#39;couch&#39;, &#39;potted_plant&#39;, &#39;bed&#39;, &#39;dining_table&#39;, &#39;toilet&#39;, &#39;tv&#39;,
+        &#39;laptop&#39;, &#39;mouse&#39;, &#39;remote&#39;, &#39;keyboard&#39;, &#39;cell_phone&#39;, &#39;microwave&#39;,
+        &#39;oven&#39;, &#39;toaster&#39;, &#39;sink&#39;, &#39;refrigerator&#39;, &#39;book&#39;, &#39;clock&#39;, &#39;vase&#39;,
+        &#39;scissors&#39;, &#39;teddy_bear&#39;, &#39;hair_drier&#39;, &#39;toothbrush&#39;
+    ]</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.color_gen"><code class="name flex">
+<span>def <span class="ident">color_gen</span></span>(<span>class_num)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert various input to color tuples.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>class_num</code></strong> :&ensp;<code>int</code></dt>
+<dd>Class numbers</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[int]</code></dt>
+<dd>Generate colors according to class number.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/color.py#L53-L67" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def color_gen(class_num):
+    &#34;&#34;&#34;Convert various input to color tuples.
+
+    Args:
+        class_num (int): Class numbers
+
+    Returns:
+        list[int]: Generate colors according to class number.
+    &#34;&#34;&#34;
+    assert class_num &gt;= 0, f&#34;Input class_num should be larger than 0.&#34;
+    gen_color = []
+    for _ in range(class_num):
+        color = np.random.randint(0, 255, size=3).tolist()
+        gen_color.append(color)
+    return gen_color</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.color_val"><code class="name flex">
+<span>def <span class="ident">color_val</span></span>(<span>color)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert various input to color tuples.</p>
+<h2 id="args">Args</h2>
+<p>color (<code><a title="ascend.post_process.Color" href="#ascend.post_process.Color">Color</a></code>/str/tuple/int/ndarray): Color inputs</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple[int]</code></dt>
+<dd>A tuple of 3 integers indicating BGR channels.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/color.py#L24-L51" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def color_val(color):
+    &#34;&#34;&#34;Convert various input to color tuples.
+
+    Args:
+        color (`Color`/str/tuple/int/ndarray): Color inputs
+
+    Returns:
+        tuple[int]: A tuple of 3 integers indicating BGR channels.
+    &#34;&#34;&#34;
+    if is_str(color):
+        return Color[color].value
+    elif isinstance(color, Color):
+        return color.value
+    elif isinstance(color, tuple):
+        assert len(color) == 3
+        for channel in color:
+            assert 0 &lt;= channel &lt;= 255
+        return color
+    elif isinstance(color, int):
+        assert 0 &lt;= color &lt;= 255
+        return color, color, color
+    elif isinstance(color, np.ndarray):
+        assert color.ndim == 1 and color.size == 3
+        assert np.all((color &gt;= 0) &amp; (color &lt;= 255))
+        color = color.astype(np.uint8)
+        return tuple(color)
+    else:
+        raise TypeError(f&#39;Invalid type for color: {type(color)}&#39;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.get_classes"><code class="name flex">
+<span>def <span class="ident">get_classes</span></span>(<span>dataset)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get class names of a dataset.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dataset</code></strong> :&ensp;<code>str</code></dt>
+<dd>Input dataset's name</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The specific dataset classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L130-L151" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_classes(dataset):
+    &#34;&#34;&#34;Get class names of a dataset.
+
+    Args:
+        dataset (str): Input dataset&#39;s name
+
+    Returns:
+        list: The specific dataset classes
+    &#34;&#34;&#34;    
+    alias2name = {}
+    for name, aliases in dataset_aliases.items():
+        for alias in aliases:
+            alias2name[alias] = name
+
+    if isinstance(dataset, str):
+        if dataset in alias2name:
+            labels = eval(alias2name[dataset] + &#39;_classes()&#39;)
+        else:
+            raise ValueError(f&#39;Unrecognized dataset: {dataset}&#39;)
+    else:
+        raise TypeError(f&#39;dataset must a str, but got {type(dataset)}&#39;)
+    return labels</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imagenet_det_classes"><code class="name flex">
+<span>def <span class="ident">imagenet_det_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Imagenet detection classes</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Imagenet classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L24-L67" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imagenet_det_classes():
+    &#34;&#34;&#34;Imagenet detection classes
+
+    Returns:
+        list: Imagenet classes
+    &#34;&#34;&#34;    
+    return [
+        &#39;accordion&#39;, &#39;airplane&#39;, &#39;ant&#39;, &#39;antelope&#39;, &#39;apple&#39;, &#39;armadillo&#39;,
+        &#39;artichoke&#39;, &#39;axe&#39;, &#39;baby_bed&#39;, &#39;backpack&#39;, &#39;bagel&#39;, &#39;balance_beam&#39;,
+        &#39;banana&#39;, &#39;band_aid&#39;, &#39;banjo&#39;, &#39;baseball&#39;, &#39;basketball&#39;, &#39;bathing_cap&#39;,
+        &#39;beaker&#39;, &#39;bear&#39;, &#39;bee&#39;, &#39;bell_pepper&#39;, &#39;bench&#39;, &#39;bicycle&#39;, &#39;binder&#39;,
+        &#39;bird&#39;, &#39;bookshelf&#39;, &#39;bow_tie&#39;, &#39;bow&#39;, &#39;bowl&#39;, &#39;brassiere&#39;, &#39;burrito&#39;,
+        &#39;bus&#39;, &#39;butterfly&#39;, &#39;camel&#39;, &#39;can_opener&#39;, &#39;car&#39;, &#39;cart&#39;, &#39;cattle&#39;,
+        &#39;cello&#39;, &#39;centipede&#39;, &#39;chain_saw&#39;, &#39;chair&#39;, &#39;chime&#39;, &#39;cocktail_shaker&#39;,
+        &#39;coffee_maker&#39;, &#39;computer_keyboard&#39;, &#39;computer_mouse&#39;, &#39;corkscrew&#39;,
+        &#39;cream&#39;, &#39;croquet_ball&#39;, &#39;crutch&#39;, &#39;cucumber&#39;, &#39;cup_or_mug&#39;, &#39;diaper&#39;,
+        &#39;digital_clock&#39;, &#39;dishwasher&#39;, &#39;dog&#39;, &#39;domestic_cat&#39;, &#39;dragonfly&#39;,
+        &#39;drum&#39;, &#39;dumbbell&#39;, &#39;electric_fan&#39;, &#39;elephant&#39;, &#39;face_powder&#39;, &#39;fig&#39;,
+        &#39;filing_cabinet&#39;, &#39;flower_pot&#39;, &#39;flute&#39;, &#39;fox&#39;, &#39;french_horn&#39;, &#39;frog&#39;,
+        &#39;frying_pan&#39;, &#39;giant_panda&#39;, &#39;goldfish&#39;, &#39;golf_ball&#39;, &#39;golfcart&#39;,
+        &#39;guacamole&#39;, &#39;guitar&#39;, &#39;hair_dryer&#39;, &#39;hair_spray&#39;, &#39;hamburger&#39;,
+        &#39;hammer&#39;, &#39;hamster&#39;, &#39;harmonica&#39;, &#39;harp&#39;, &#39;hat_with_a_wide_brim&#39;,
+        &#39;head_cabbage&#39;, &#39;helmet&#39;, &#39;hippopotamus&#39;, &#39;horizontal_bar&#39;, &#39;horse&#39;,
+        &#39;hotdog&#39;, &#39;iPod&#39;, &#39;isopod&#39;, &#39;jellyfish&#39;, &#39;koala_bear&#39;, &#39;ladle&#39;,
+        &#39;ladybug&#39;, &#39;lamp&#39;, &#39;laptop&#39;, &#39;lemon&#39;, &#39;lion&#39;, &#39;lipstick&#39;, &#39;lizard&#39;,
+        &#39;lobster&#39;, &#39;maillot&#39;, &#39;maraca&#39;, &#39;microphone&#39;, &#39;microwave&#39;, &#39;milk_can&#39;,
+        &#39;miniskirt&#39;, &#39;monkey&#39;, &#39;motorcycle&#39;, &#39;mushroom&#39;, &#39;nail&#39;, &#39;neck_brace&#39;,
+        &#39;oboe&#39;, &#39;orange&#39;, &#39;otter&#39;, &#39;pencil_box&#39;, &#39;pencil_sharpener&#39;, &#39;perfume&#39;,
+        &#39;person&#39;, &#39;piano&#39;, &#39;pineapple&#39;, &#39;ping-pong_ball&#39;, &#39;pitcher&#39;, &#39;pizza&#39;,
+        &#39;plastic_bag&#39;, &#39;plate_rack&#39;, &#39;pomegranate&#39;, &#39;popsicle&#39;, &#39;porcupine&#39;,
+        &#39;power_drill&#39;, &#39;pretzel&#39;, &#39;printer&#39;, &#39;puck&#39;, &#39;punching_bag&#39;, &#39;purse&#39;,
+        &#39;rabbit&#39;, &#39;racket&#39;, &#39;ray&#39;, &#39;red_panda&#39;, &#39;refrigerator&#39;,
+        &#39;remote_control&#39;, &#39;rubber_eraser&#39;, &#39;rugby_ball&#39;, &#39;ruler&#39;,
+        &#39;salt_or_pepper_shaker&#39;, &#39;saxophone&#39;, &#39;scorpion&#39;, &#39;screwdriver&#39;,
+        &#39;seal&#39;, &#39;sheep&#39;, &#39;ski&#39;, &#39;skunk&#39;, &#39;snail&#39;, &#39;snake&#39;, &#39;snowmobile&#39;,
+        &#39;snowplow&#39;, &#39;soap_dispenser&#39;, &#39;soccer_ball&#39;, &#39;sofa&#39;, &#39;spatula&#39;,
+        &#39;squirrel&#39;, &#39;starfish&#39;, &#39;stethoscope&#39;, &#39;stove&#39;, &#39;strainer&#39;,
+        &#39;strawberry&#39;, &#39;stretcher&#39;, &#39;sunglasses&#39;, &#39;swimming_trunks&#39;, &#39;swine&#39;,
+        &#39;syringe&#39;, &#39;table&#39;, &#39;tape_player&#39;, &#39;tennis_ball&#39;, &#39;tick&#39;, &#39;tie&#39;,
+        &#39;tiger&#39;, &#39;toaster&#39;, &#39;traffic_light&#39;, &#39;train&#39;, &#39;trombone&#39;, &#39;trumpet&#39;,
+        &#39;turtle&#39;, &#39;tv_or_monitor&#39;, &#39;unicycle&#39;, &#39;vacuum&#39;, &#39;violin&#39;,
+        &#39;volleyball&#39;, &#39;waffle_iron&#39;, &#39;washer&#39;, &#39;water_bottle&#39;, &#39;watercraft&#39;,
+        &#39;whale&#39;, &#39;wine_bottle&#39;, &#39;zebra&#39;
+    ]</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imagenet_vid_classes"><code class="name flex">
+<span>def <span class="ident">imagenet_vid_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Imagenet validation classes</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Imagenet validation classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L70-L82" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imagenet_vid_classes():
+    &#34;&#34;&#34;Imagenet validation classes
+
+    Returns:
+        list: Imagenet validation classes
+    &#34;&#34;&#34;    
+    return [
+        &#39;airplane&#39;, &#39;antelope&#39;, &#39;bear&#39;, &#39;bicycle&#39;, &#39;bird&#39;, &#39;bus&#39;, &#39;car&#39;,
+        &#39;cattle&#39;, &#39;dog&#39;, &#39;domestic_cat&#39;, &#39;elephant&#39;, &#39;fox&#39;, &#39;giant_panda&#39;,
+        &#39;hamster&#39;, &#39;horse&#39;, &#39;lion&#39;, &#39;lizard&#39;, &#39;monkey&#39;, &#39;motorcycle&#39;, &#39;rabbit&#39;,
+        &#39;red_panda&#39;, &#39;sheep&#39;, &#39;snake&#39;, &#39;squirrel&#39;, &#39;tiger&#39;, &#39;train&#39;, &#39;turtle&#39;,
+        &#39;watercraft&#39;, &#39;whale&#39;, &#39;zebra&#39;
+    ]</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imshow"><code class="name flex">
+<span>def <span class="ident">imshow</span></span>(<span>img, win_name='', wait_time=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show an image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code> or <code>ndarray</code></dt>
+<dd>The image to be displayed.</dd>
+<dt><strong><code>win_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The window name.</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code></dt>
+<dd>Value of waitKey param.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/image.py#L28-L48" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imshow(img, win_name=&#39;&#39;, wait_time=0):
+    &#34;&#34;&#34;Show an image.
+
+    Args:
+        img (AscendArray or ndarray): The image to be displayed.
+        win_name (str): The window name.
+        wait_time (int): Value of waitKey param.
+    &#34;&#34;&#34;
+    img = trans_numpy(img)
+    cv2.imshow(win_name, img)
+
+    if wait_time == 0:  # prevent from hangning if windows was closed
+        while True:
+            ret = cv2.waitKey(1)
+
+            closed = cv2.getWindowProperty(win_name, cv2.WND_PROP_VISIBLE) &lt; 1
+            # if user closed window or if some key pressed
+            if closed or ret != -1:
+                break
+    else:
+        ret = cv2.waitKey(wait_time)</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imshow_bboxes"><code class="name flex">
+<span>def <span class="ident">imshow_bboxes</span></span>(<span>img, bboxes, colors='green', top_k=-1, thickness=1, show=True, win_name='', wait_time=0, out_file=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw bboxes on an image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code> or <code>ndarray</code></dt>
+<dd>The image to be displayed.</dd>
+<dt><strong><code>bboxes</code></strong> :&ensp;<code>list</code> or <code>ndarray</code></dt>
+<dd>A list of ndarray of shape (k, 4).</dd>
+<dt><strong><code>colors</code></strong> :&ensp;<code>list[str</code> or <code>tuple</code> or <code><a title="ascend.post_process.Color" href="#ascend.post_process.Color">Color</a>]</code></dt>
+<dd>A list of colors.</dd>
+<dt><strong><code>top_k</code></strong> :&ensp;<code>int</code></dt>
+<dd>Plot the first k bboxes only if set positive.</dd>
+<dt><strong><code>thickness</code></strong> :&ensp;<code>int</code></dt>
+<dd>Thickness of lines.</dd>
+<dt><strong><code>show</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show the image.</dd>
+<dt><strong><code>win_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The window name.</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code></dt>
+<dd>Value of waitKey param.</dd>
+<dt><strong><code>out_file</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The filename to write the image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ndarray</code></dt>
+<dd>The image with bboxes drawn on it.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/image.py#L51-L101" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imshow_bboxes(img,
+                  bboxes,
+                  colors=&#39;green&#39;,
+                  top_k=-1,
+                  thickness=1,
+                  show=True,
+                  win_name=&#39;&#39;,
+                  wait_time=0,
+                  out_file=None):
+    &#34;&#34;&#34;Draw bboxes on an image.
+
+    Args:
+        img (AscendArray or ndarray): The image to be displayed.
+        bboxes (list or ndarray): A list of ndarray of shape (k, 4).
+        colors (list[str or tuple or Color]): A list of colors.
+        top_k (int): Plot the first k bboxes only if set positive.
+        thickness (int): Thickness of lines.
+        show (bool): Whether to show the image.
+        win_name (str): The window name.
+        wait_time (int): Value of waitKey param.
+        out_file (str, optional): The filename to write the image.
+
+    Returns:
+        ndarray: The image with bboxes drawn on it.
+    &#34;&#34;&#34;
+    img = trans_numpy(img)
+
+    if isinstance(bboxes, np.ndarray):
+        bboxes = [bboxes]
+    if not isinstance(colors, list):
+        colors = [colors for _ in range(len(bboxes))]
+    colors = [color_val(c) for c in colors]
+    assert len(bboxes) == len(colors)
+
+    for i, _bboxes in enumerate(bboxes):
+        _bboxes = _bboxes.astype(np.int32)
+        if top_k &lt;= 0:
+            _top_k = _bboxes.shape[0]
+        else:
+            _top_k = min(top_k, _bboxes.shape[0])
+        for j in range(_top_k):
+            left_top = (_bboxes[j, 0], _bboxes[j, 1])
+            right_bottom = (_bboxes[j, 2], _bboxes[j, 3])
+            cv2.rectangle(
+                img, left_top, right_bottom, colors[i], thickness=thickness)
+
+    if show:
+        imshow(img, win_name, wait_time)
+    if out_file is not None:
+        cv2.imwrite(out_file, img)
+    return img</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imshow_bboxes_colors"><code class="name flex">
+<span>def <span class="ident">imshow_bboxes_colors</span></span>(<span>img, bboxes, class_names, colors, score_thr=0, thickness=1, font_scale=0.5, show=True, win_name='', wait_time=0, out_file=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw bboxes and class labels (with scores) on an image using various color.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray, ndarray</code></dt>
+<dd>The image to be displayed.</dd>
+<dt><strong><code>bboxes</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Bounding boxes (with scores, label), shaped (n, 5) or (n, 6).
+shape like [x1, y1, x2, y2, scores, classid] or [x1, y1, x2, y2, classid]</dd>
+<dt><strong><code>class_names</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Names of each classes.</dd>
+<dt><strong><code>score_thr</code></strong> :&ensp;<code>float</code></dt>
+<dd>Minimum score of bboxes to be shown.</dd>
+<dt><strong><code>thickness</code></strong> :&ensp;<code>int</code></dt>
+<dd>Thickness of lines.</dd>
+<dt><strong><code>font_scale</code></strong> :&ensp;<code>float</code></dt>
+<dd>Font scales of texts.</dd>
+<dt><strong><code>show</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show the image.</dd>
+<dt><strong><code>win_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The window name.</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code></dt>
+<dd>Value of waitKey param.</dd>
+<dt><strong><code>out_file</code></strong> :&ensp;<code>str</code> or <code>None</code></dt>
+<dd>The filename to write the image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ndarray</code></dt>
+<dd>The image with bboxes drawn on it.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/image.py#L176-L236" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imshow_bboxes_colors(img,
+                   bboxes,
+                   class_names,
+                   colors,
+                   score_thr=0,
+                   thickness=1,
+                   font_scale=0.5,
+                   show=True,
+                   win_name=&#39;&#39;,
+                   wait_time=0,
+                   out_file=None):
+    &#34;&#34;&#34;Draw bboxes and class labels (with scores) on an image using various color.
+
+    Args:
+        img (AscendArray, ndarray): The image to be displayed.
+        bboxes (ndarray): Bounding boxes (with scores, label), shaped (n, 5) or (n, 6).
+            shape like [x1, y1, x2, y2, scores, classid] or [x1, y1, x2, y2, classid]
+
+        class_names (list[str]): Names of each classes.
+        score_thr (float): Minimum score of bboxes to be shown.
+        thickness (int): Thickness of lines.
+        font_scale (float): Font scales of texts.
+        show (bool): Whether to show the image.
+        win_name (str): The window name.
+        wait_time (int): Value of waitKey param.
+        out_file (str or None): The filename to write the image.
+
+    Returns:
+        ndarray: The image with bboxes drawn on it.
+    &#34;&#34;&#34;
+    assert bboxes.ndim == 2
+    assert bboxes.shape[1] == 5 or bboxes.shape[1] == 6
+    assert len(colors) == len(class_names)
+    img = trans_numpy(img)
+
+    if score_thr &gt; 0:
+        assert bboxes.shape[1] == 6
+        scores = bboxes[:, 4]
+        inds = scores &gt; score_thr
+        bboxes = bboxes[inds, :]
+
+    img = np.ascontiguousarray(img).astype(np.uint8)  # 可能传入的不是uint8
+
+    for bbox, label in zip(bboxes[:,:5], bboxes[:,-1].astype(&#39;int32&#39;)):
+        bbox_int = bbox.astype(np.int32)
+        left_top = (bbox_int[0], bbox_int[1])
+        right_bottom = (bbox_int[2], bbox_int[3])
+        cv2.rectangle(
+            img, left_top, right_bottom, colors[label], thickness=thickness)
+        label_text = class_names[
+            label] if class_names is not None else f&#39;cls {label}&#39;
+        if len(bbox) &gt; 4:
+            label_text += f&#39;|{bbox[-1]:.02f}&#39;
+        cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
+                    cv2.FONT_HERSHEY_COMPLEX, font_scale, colors[label])
+
+    if show:
+        imshow(img, win_name, wait_time)
+    if out_file is not None:
+        cv2.imwrite(out_file, img)
+    return img</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.imshow_det_bboxes"><code class="name flex">
+<span>def <span class="ident">imshow_det_bboxes</span></span>(<span>img, bboxes, labels, class_names=None, score_thr=0, bbox_color='green', text_color='green', thickness=1, font_scale=0.5, show=True, win_name='', wait_time=0, out_file=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw bboxes and class labels (with scores) on an image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray, ndarray</code></dt>
+<dd>The image to be displayed.</dd>
+<dt><strong><code>bboxes</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Bounding boxes (with scores), shaped (n, 4) or
+(n, 5).</dd>
+<dt><strong><code>labels</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Labels of bboxes.</dd>
+<dt><strong><code>class_names</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Names of each classes.</dd>
+<dt><strong><code>score_thr</code></strong> :&ensp;<code>float</code></dt>
+<dd>Minimum score of bboxes to be shown.</dd>
+<dt><strong><code>bbox_color</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Color of bbox lines. It also accept value of <code><a title="ascend.post_process.Color" href="#ascend.post_process.Color">Color</a></code>/str/tuple.
+Defaults to 'green'.</dd>
+<dt><strong><code>text_color</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Color of texts. It also accept value of <code><a title="ascend.post_process.Color" href="#ascend.post_process.Color">Color</a></code>/str/tuple.
+Defaults to 'green'.</dd>
+<dt><strong><code>thickness</code></strong> :&ensp;<code>int</code></dt>
+<dd>Thickness of lines.</dd>
+<dt><strong><code>font_scale</code></strong> :&ensp;<code>float</code></dt>
+<dd>Font scales of texts.</dd>
+<dt><strong><code>show</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show the image.</dd>
+<dt><strong><code>win_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The window name.</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code></dt>
+<dd>Value of waitKey param.</dd>
+<dt><strong><code>out_file</code></strong> :&ensp;<code>str</code> or <code>None</code></dt>
+<dd>The filename to write the image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ndarray</code></dt>
+<dd>The image with bboxes drawn on it.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/image.py#L104-L173" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imshow_det_bboxes(img,
+                      bboxes,
+                      labels,
+                      class_names=None,
+                      score_thr=0,
+                      bbox_color=&#39;green&#39;,
+                      text_color=&#39;green&#39;,
+                      thickness=1,
+                      font_scale=0.5,
+                      show=True,
+                      win_name=&#39;&#39;,
+                      wait_time=0,
+                      out_file=None):
+    &#34;&#34;&#34;Draw bboxes and class labels (with scores) on an image.
+
+    Args:
+        img (AscendArray, ndarray): The image to be displayed.
+        bboxes (ndarray): Bounding boxes (with scores), shaped (n, 4) or
+            (n, 5).
+        labels (ndarray): Labels of bboxes.
+        class_names (list[str]): Names of each classes.
+        score_thr (float): Minimum score of bboxes to be shown.
+        bbox_color (str, optional): Color of bbox lines. It also accept value of `Color`/str/tuple. 
+            Defaults to &#39;green&#39;.
+        text_color (str, optional): Color of texts. It also accept value of `Color`/str/tuple. 
+            Defaults to &#39;green&#39;.
+        thickness (int): Thickness of lines.
+        font_scale (float): Font scales of texts.
+        show (bool): Whether to show the image.
+        win_name (str): The window name.
+        wait_time (int): Value of waitKey param.
+        out_file (str or None): The filename to write the image.
+
+    Returns:
+        ndarray: The image with bboxes drawn on it.
+    &#34;&#34;&#34;
+    assert bboxes.ndim == 2
+    assert labels.ndim == 1
+    assert bboxes.shape[0] == labels.shape[0]
+    assert bboxes.shape[1] == 4 or bboxes.shape[1] == 5
+    img = trans_numpy(img)
+
+    if score_thr &gt; 0:
+        assert bboxes.shape[1] == 5
+        scores = bboxes[:, -1]
+        inds = scores &gt; score_thr
+        bboxes = bboxes[inds, :]
+        labels = labels[inds]
+
+    bbox_color = color_val(bbox_color)
+    text_color = color_val(text_color)
+    img = np.ascontiguousarray(img).astype(np.uint8)  # 可能传入的不是uint8
+    for bbox, label in zip(bboxes, labels):
+        bbox_int = bbox.astype(np.int32)
+        left_top = (bbox_int[0], bbox_int[1])
+        right_bottom = (bbox_int[2], bbox_int[3])
+        cv2.rectangle(
+            img, left_top, right_bottom, bbox_color, thickness=thickness)
+        label_text = class_names[
+            label] if class_names is not None else f&#39;cls {label}&#39;
+        if len(bbox) &gt; 4:
+            label_text += f&#39;|{bbox[-1]:.02f}&#39;
+        cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
+                    cv2.FONT_HERSHEY_COMPLEX, font_scale, text_color)
+
+    if show:
+        imshow(img, win_name, wait_time)
+    if out_file is not None:
+        cv2.imwrite(out_file, img)
+    return img</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.nms"><code class="name flex">
+<span>def <span class="ident">nms</span></span>(<span>boxes, scores, nms_thresh=0.3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Suppress overlapping detected bbox.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>boxes</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Input bboxes with shape (n, 4)</dd>
+<dt><strong><code>scores</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Input scores with shape (k, 4) of bboxes</dd>
+<dt><strong><code>nms_thresh</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The threshold of iou (intersection over union).
+Defaults to 0.3.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>keep (ndarray): The result of nms</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/nms.py#L17-L65" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def nms(boxes, scores, nms_thresh=0.3):
+    &#34;&#34;&#34;Suppress overlapping detected bbox.
+
+    Args:
+        boxes (ndarray): Input bboxes with shape (n, 4)
+        scores (ndarray): Input scores with shape (k, 4) of bboxes
+        nms_thresh (float, optional): The threshold of iou (intersection over union). 
+            Defaults to 0.3.
+
+    Returns:
+        keep (ndarray): The result of nms
+    &#34;&#34;&#34;
+    x1 = boxes[:, 0]
+    y1 = boxes[:, 1]
+    x2 = boxes[:, 2]
+    y2 = boxes[:, 3]
+    areas = (x2 - x1 + 1) * (y2 - y1 + 1)
+    order = np.argsort(scores)[::-1]
+    num_det = boxes.shape[0]
+    suppressed = np.zeros((num_det,), dtype=np.bool)
+
+    keep = []
+    for _i in range(num_det):
+        i = order[_i]
+        if suppressed[i]:
+            continue
+        keep.append(i)
+
+        ix1, iy1, ix2, iy2 = x1[i], y1[i], x2[i], y2[i]
+        iarea = areas[i]
+
+        for _j in range(_i + 1, num_det):
+            j = order[_j]
+            if suppressed[j]:
+                continue
+
+            xx1 = max(ix1, x1[j])
+            yy1 = max(iy1, y1[j])
+            xx2 = min(ix2, x2[j])
+            yy2 = min(iy2, y2[j])
+            w = max(0, xx2 - xx1 + 1)
+            h = max(0, yy2 - yy1 + 1)
+
+            inter = w * h
+            ovr = inter / (iarea + areas[j] - inter)
+            if ovr &gt;= nms_thresh:
+                suppressed[j] = True
+
+    return keep</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.voc_classes"><code class="name flex">
+<span>def <span class="ident">voc_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>VOC classes</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>VOC classes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L11-L21" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def voc_classes():
+    &#34;&#34;&#34;VOC classes
+
+    Returns:
+        list: VOC classes
+    &#34;&#34;&#34;    
+    return [
+        &#39;aeroplane&#39;, &#39;bicycle&#39;, &#39;bird&#39;, &#39;boat&#39;, &#39;bottle&#39;, &#39;bus&#39;, &#39;car&#39;, &#39;cat&#39;,
+        &#39;chair&#39;, &#39;cow&#39;, &#39;diningtable&#39;, &#39;dog&#39;, &#39;horse&#39;, &#39;motorbike&#39;, &#39;person&#39;,
+        &#39;pottedplant&#39;, &#39;sheep&#39;, &#39;sofa&#39;, &#39;train&#39;, &#39;tvmonitor&#39;
+    ]</code></pre>
+</details>
+</dd>
+<dt id="ascend.post_process.wider_face_classes"><code class="name flex">
+<span>def <span class="ident">wider_face_classes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wider face classes.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>face class</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/class_names.py#L2-L8" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def wider_face_classes():
+    &#34;&#34;&#34;Wider face classes.
+
+    Returns:
+        list: face class
+    &#34;&#34;&#34;    
+    return [&#39;face&#39;]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.post_process.Color"><code class="flex name class">
+<span>class <span class="ident">Color</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enum that defines common colors.</p>
+<p>Contains <code>red</code>, <code>green</code>, <code>blue</code>, <code>cyan</code>, <code>yellow</code>, <code>magenta</code>, <code>white</code> and <code>black</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/post_process/color.py#L9-L21" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Color(Enum):
+    &#34;&#34;&#34;An enum that defines common colors.
+
+    Contains `red`, `green`, `blue`, `cyan`, `yellow`, `magenta`, `white` and `black`.
+    &#34;&#34;&#34;
+    red = (0, 0, 255)
+    green = (0, 255, 0)
+    blue = (255, 0, 0)
+    cyan = (255, 255, 0)
+    yellow = (0, 255, 255)
+    magenta = (255, 0, 255)
+    white = (255, 255, 255)
+    black = (0, 0, 0)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="ascend.post_process.Color.black"><code class="name">var <span class="ident">black</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.blue"><code class="name">var <span class="ident">blue</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.cyan"><code class="name">var <span class="ident">cyan</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.green"><code class="name">var <span class="ident">green</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.magenta"><code class="name">var <span class="ident">magenta</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.red"><code class="name">var <span class="ident">red</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.white"><code class="name">var <span class="ident">white</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.post_process.Color.yellow"><code class="name">var <span class="ident">yellow</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.post_process">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend" href="../index.html">ascend</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="ascend.post_process.class_names" href="class_names.html">ascend.post_process.class_names</a></code></li>
+<li><code><a title="ascend.post_process.color" href="color.html">ascend.post_process.color</a></code></li>
+<li><code><a title="ascend.post_process.image" href="image.html">ascend.post_process.image</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ascend.post_process.bbox_overlaps" href="#ascend.post_process.bbox_overlaps">bbox_overlaps</a></code></li>
+<li><code><a title="ascend.post_process.cityscapes_classes" href="#ascend.post_process.cityscapes_classes">cityscapes_classes</a></code></li>
+<li><code><a title="ascend.post_process.coco_classes" href="#ascend.post_process.coco_classes">coco_classes</a></code></li>
+<li><code><a title="ascend.post_process.color_gen" href="#ascend.post_process.color_gen">color_gen</a></code></li>
+<li><code><a title="ascend.post_process.color_val" href="#ascend.post_process.color_val">color_val</a></code></li>
+<li><code><a title="ascend.post_process.get_classes" href="#ascend.post_process.get_classes">get_classes</a></code></li>
+<li><code><a title="ascend.post_process.imagenet_det_classes" href="#ascend.post_process.imagenet_det_classes">imagenet_det_classes</a></code></li>
+<li><code><a title="ascend.post_process.imagenet_vid_classes" href="#ascend.post_process.imagenet_vid_classes">imagenet_vid_classes</a></code></li>
+<li><code><a title="ascend.post_process.imshow" href="#ascend.post_process.imshow">imshow</a></code></li>
+<li><code><a title="ascend.post_process.imshow_bboxes" href="#ascend.post_process.imshow_bboxes">imshow_bboxes</a></code></li>
+<li><code><a title="ascend.post_process.imshow_bboxes_colors" href="#ascend.post_process.imshow_bboxes_colors">imshow_bboxes_colors</a></code></li>
+<li><code><a title="ascend.post_process.imshow_det_bboxes" href="#ascend.post_process.imshow_det_bboxes">imshow_det_bboxes</a></code></li>
+<li><code><a title="ascend.post_process.nms" href="#ascend.post_process.nms">nms</a></code></li>
+<li><code><a title="ascend.post_process.voc_classes" href="#ascend.post_process.voc_classes">voc_classes</a></code></li>
+<li><code><a title="ascend.post_process.wider_face_classes" href="#ascend.post_process.wider_face_classes">wider_face_classes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.post_process.Color" href="#ascend.post_process.Color">Color</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ascend.post_process.Color.black" href="#ascend.post_process.Color.black">black</a></code></li>
+<li><code><a title="ascend.post_process.Color.blue" href="#ascend.post_process.Color.blue">blue</a></code></li>
+<li><code><a title="ascend.post_process.Color.cyan" href="#ascend.post_process.Color.cyan">cyan</a></code></li>
+<li><code><a title="ascend.post_process.Color.green" href="#ascend.post_process.Color.green">green</a></code></li>
+<li><code><a title="ascend.post_process.Color.magenta" href="#ascend.post_process.Color.magenta">magenta</a></code></li>
+<li><code><a title="ascend.post_process.Color.red" href="#ascend.post_process.Color.red">red</a></code></li>
+<li><code><a title="ascend.post_process.Color.white" href="#ascend.post_process.Color.white">white</a></code></li>
+<li><code><a title="ascend.post_process.Color.yellow" href="#ascend.post_process.Color.yellow">yellow</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

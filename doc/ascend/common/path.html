@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.common.path API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/common/path.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.common.path</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L0-L181" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+import os
+import os.path as osp
+from pathlib import Path
+
+
+def is_str(x):
+    &#34;&#34;&#34;judge x is a str type object
+
+    Args:
+        x : input x
+
+    Returns:
+        [bool]: 
+        - True for x is str, 
+        - False for x is not str
+    &#34;&#34;&#34;    
+    return isinstance(x, str)
+
+
+def is_filepath(x):
+    &#34;&#34;&#34;judge x is a filepath
+
+    Args:
+        x : input x
+
+    Returns:
+        [bool]: 
+        - True: for x is filepath, 
+        - False: for x is not filepath
+    &#34;&#34;&#34;    
+    return is_str(x) or isinstance(x, Path)
+
+
+def fopen(filepath, *args, **kwargs):
+    if is_str(filepath):
+        return open(filepath, *args, **kwargs)
+    elif isinstance(filepath, Path):
+        return filepath.open(*args, **kwargs)
+    raise ValueError(&#39;`filepath` should be a string or a Path&#39;)
+
+
+def check_file_exist(filename, msg_tmpl=&#34;file &#39;{}&#39; does not exist&#34;):
+    &#34;&#34;&#34;Check specific file is exist
+
+    Args:
+        filename (str): Input file name 
+        msg_tmpl (str, optional): raise message. Defaults to &#34;file &#39;{}&#39; does not exist&#34;.
+    &#34;&#34;&#34;    
+    if not osp.isfile(filename):
+        raise FileNotFoundError(msg_tmpl.format(filename))
+
+
+def mkdir_or_exist(dir_name, mode=0o777):
+    &#34;&#34;&#34;Make a directory
+
+    Args:
+        dir_name (str): The directory name
+        mode (number, optional): The directory&#39;s permission. Defaults to 0o777.
+    &#34;&#34;&#34;    
+    if dir_name == &#39;&#39;:
+        return
+    dir_name = osp.expanduser(dir_name)
+    os.makedirs(dir_name, mode=mode, exist_ok=True)
+
+
+def symlink(src, dst, overwrite=True, **kwargs):
+    if os.path.lexists(dst) and overwrite:
+        os.remove(dst)
+    os.symlink(src, dst, **kwargs)
+
+
+def scandir(dir_path, suffix=None, recursive=False):
+    &#34;&#34;&#34;AI is creating summary for scandir
+
+    Args:
+        dir_path (`Path` or str): Path of the directory.
+        suffix (str or tuple(str), optional): File suffix that we are interested in. Defaults to None.
+        recursive (bool, optional): If set to True, recursively scan the directory. Defaults to False.
+
+    Returns:
+        generator: A generator for all the interested files with relative pathes.
+
+    Yields:
+        rel_path: related path.
+    &#34;&#34;&#34; 
+    if isinstance(dir_path, (str, Path)):
+        dir_path = str(dir_path)
+    else:
+        raise TypeError(&#39;&#34;dir_path&#34; must be a string or Path object&#39;)
+
+    if (suffix is not None) and not isinstance(suffix, (str, tuple)):
+        raise TypeError(&#39;&#34;suffix&#34; must be a string or tuple of strings&#39;)
+
+    root = dir_path
+
+    def _scandir(dir_path, suffix, recursive):
+        for entry in os.scandir(dir_path):
+            if not entry.name.startswith(&#39;.&#39;) and entry.is_file():
+                rel_path = osp.relpath(entry.path, root)
+                if suffix is None:
+                    yield rel_path
+                elif rel_path.endswith(suffix):
+                    yield rel_path
+            else:
+                if recursive:
+                    yield from _scandir(
+                        entry.path, suffix=suffix, recursive=recursive)
+                else:
+                    continue
+
+    return _scandir(dir_path, suffix=suffix, recursive=recursive)
+
+
+def find_vcs_root(path, markers=(&#39;.git&#39;, )):
+    &#34;&#34;&#34;Finds the root directory (including itself) of specified markers.
+
+    Args:
+        path (str): Path of directory or file.
+        markers (list[str], optional): List of file or directory names.
+
+    Returns:
+        The directory contained one of the markers or None if not found.
+    &#34;&#34;&#34;
+    if osp.isfile(path):
+        path = osp.dirname(path)
+
+    prev, cur = None, osp.abspath(osp.expanduser(path))
+    while cur != prev:
+        if any(osp.exists(osp.join(cur, marker)) for marker in markers):
+            return cur
+        prev, cur = cur, osp.split(cur)[0]
+    return None
+
+
+def traverse_file_paths(path, extensions, exclude_extensions=None):
+    &#34;&#34;&#34;Recursively reads all files under given folder, until all files have been ergodic.
+
+    Args:
+        path (`Path` or str): Path of the directory.
+        extensions (str): File suffix.
+        exclude_extensions (list, optional): Exclude extensions. Default: None.
+
+    Returns:
+        list: path_list contains all wanted files.
+    &#34;&#34;&#34;
+    def is_valid_file(x):
+        if exclude_extensions is None:
+            return x.lower().endswith(extensions)
+        else:
+            return x.lower().endswith(extensions) and not x.lower().endswith(exclude_extensions)
+
+    # check_file_exist(path)
+    if isinstance(extensions, list):
+        extensions = tuple(extensions)
+    if isinstance(exclude_extensions, list):
+        exclude_extensions = tuple(exclude_extensions)
+
+    all_list = os.listdir(path)
+    path_list = []
+    for subpath in all_list:
+        path_next = os.path.join(path, subpath)
+        if os.path.isdir(path_next):
+            path_list.extend(traverse_file_paths(
+                path_next, extensions, exclude_extensions))
+        else:
+            if is_valid_file(path_next):
+                path_list.append(path_next)
+    return path_list</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.common.path.check_file_exist"><code class="name flex">
+<span>def <span class="ident">check_file_exist</span></span>(<span>filename, msg_tmpl="file '{}' does not exist")</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check specific file is exist</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>Input file name </dd>
+<dt><strong><code>msg_tmpl</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>raise message. Defaults to "file '{}' does not exist".</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L56-L64" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def check_file_exist(filename, msg_tmpl=&#34;file &#39;{}&#39; does not exist&#34;):
+    &#34;&#34;&#34;Check specific file is exist
+
+    Args:
+        filename (str): Input file name 
+        msg_tmpl (str, optional): raise message. Defaults to &#34;file &#39;{}&#39; does not exist&#34;.
+    &#34;&#34;&#34;    
+    if not osp.isfile(filename):
+        raise FileNotFoundError(msg_tmpl.format(filename))</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.find_vcs_root"><code class="name flex">
+<span>def <span class="ident">find_vcs_root</span></span>(<span>path, markers=('.git',))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the root directory (including itself) of specified markers.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path of directory or file.</dd>
+<dt><strong><code>markers</code></strong> :&ensp;<code>list[str]</code>, optional</dt>
+<dd>List of file or directory names.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>The directory contained one of the markers or None if not found.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L128-L146" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def find_vcs_root(path, markers=(&#39;.git&#39;, )):
+    &#34;&#34;&#34;Finds the root directory (including itself) of specified markers.
+
+    Args:
+        path (str): Path of directory or file.
+        markers (list[str], optional): List of file or directory names.
+
+    Returns:
+        The directory contained one of the markers or None if not found.
+    &#34;&#34;&#34;
+    if osp.isfile(path):
+        path = osp.dirname(path)
+
+    prev, cur = None, osp.abspath(osp.expanduser(path))
+    while cur != prev:
+        if any(osp.exists(osp.join(cur, marker)) for marker in markers):
+            return cur
+        prev, cur = cur, osp.split(cur)[0]
+    return None</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.fopen"><code class="name flex">
+<span>def <span class="ident">fopen</span></span>(<span>filepath, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L48-L53" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def fopen(filepath, *args, **kwargs):
+    if is_str(filepath):
+        return open(filepath, *args, **kwargs)
+    elif isinstance(filepath, Path):
+        return filepath.open(*args, **kwargs)
+    raise ValueError(&#39;`filepath` should be a string or a Path&#39;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.is_filepath"><code class="name flex">
+<span>def <span class="ident">is_filepath</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>judge x is a filepath</p>
+<h2 id="args">Args</h2>
+<p>x : input x</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<ul>
+<li>True: for x is filepath, </li>
+<li>False: for x is not filepath</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L34-L45" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def is_filepath(x):
+    &#34;&#34;&#34;judge x is a filepath
+
+    Args:
+        x : input x
+
+    Returns:
+        [bool]: 
+        - True: for x is filepath, 
+        - False: for x is not filepath
+    &#34;&#34;&#34;    
+    return is_str(x) or isinstance(x, Path)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.is_str"><code class="name flex">
+<span>def <span class="ident">is_str</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>judge x is a str type object</p>
+<h2 id="args">Args</h2>
+<p>x : input x</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<ul>
+<li>True for x is str, </li>
+<li>False for x is not str</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L20-L31" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def is_str(x):
+    &#34;&#34;&#34;judge x is a str type object
+
+    Args:
+        x : input x
+
+    Returns:
+        [bool]: 
+        - True for x is str, 
+        - False for x is not str
+    &#34;&#34;&#34;    
+    return isinstance(x, str)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.mkdir_or_exist"><code class="name flex">
+<span>def <span class="ident">mkdir_or_exist</span></span>(<span>dir_name, mode=511)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make a directory</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dir_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The directory name</dd>
+<dt><strong><code>mode</code></strong> :&ensp;<code>number</code>, optional</dt>
+<dd>The directory's permission. Defaults to 0o777.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L67-L77" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def mkdir_or_exist(dir_name, mode=0o777):
+    &#34;&#34;&#34;Make a directory
+
+    Args:
+        dir_name (str): The directory name
+        mode (number, optional): The directory&#39;s permission. Defaults to 0o777.
+    &#34;&#34;&#34;    
+    if dir_name == &#39;&#39;:
+        return
+    dir_name = osp.expanduser(dir_name)
+    os.makedirs(dir_name, mode=mode, exist_ok=True)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.scandir"><code class="name flex">
+<span>def <span class="ident">scandir</span></span>(<span>dir_path, suffix=None, recursive=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>AI is creating summary for scandir</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>dir_path (<code>Path</code> or str): Path of the directory.</dt>
+<dt>suffix (str or tuple(str), optional): File suffix that we are interested in. Defaults to None.</dt>
+<dt><strong><code>recursive</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If set to True, recursively scan the directory. Defaults to False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>generator</code></dt>
+<dd>A generator for all the interested files with relative pathes.</dd>
+</dl>
+<h2 id="yields">Yields</h2>
+<dl>
+<dt><code>rel_path</code></dt>
+<dd>related path.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L86-L125" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def scandir(dir_path, suffix=None, recursive=False):
+    &#34;&#34;&#34;AI is creating summary for scandir
+
+    Args:
+        dir_path (`Path` or str): Path of the directory.
+        suffix (str or tuple(str), optional): File suffix that we are interested in. Defaults to None.
+        recursive (bool, optional): If set to True, recursively scan the directory. Defaults to False.
+
+    Returns:
+        generator: A generator for all the interested files with relative pathes.
+
+    Yields:
+        rel_path: related path.
+    &#34;&#34;&#34; 
+    if isinstance(dir_path, (str, Path)):
+        dir_path = str(dir_path)
+    else:
+        raise TypeError(&#39;&#34;dir_path&#34; must be a string or Path object&#39;)
+
+    if (suffix is not None) and not isinstance(suffix, (str, tuple)):
+        raise TypeError(&#39;&#34;suffix&#34; must be a string or tuple of strings&#39;)
+
+    root = dir_path
+
+    def _scandir(dir_path, suffix, recursive):
+        for entry in os.scandir(dir_path):
+            if not entry.name.startswith(&#39;.&#39;) and entry.is_file():
+                rel_path = osp.relpath(entry.path, root)
+                if suffix is None:
+                    yield rel_path
+                elif rel_path.endswith(suffix):
+                    yield rel_path
+            else:
+                if recursive:
+                    yield from _scandir(
+                        entry.path, suffix=suffix, recursive=recursive)
+                else:
+                    continue
+
+    return _scandir(dir_path, suffix=suffix, recursive=recursive)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.symlink"><code class="name flex">
+<span>def <span class="ident">symlink</span></span>(<span>src, dst, overwrite=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L80-L83" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def symlink(src, dst, overwrite=True, **kwargs):
+    if os.path.lexists(dst) and overwrite:
+        os.remove(dst)
+    os.symlink(src, dst, **kwargs)</code></pre>
+</details>
+</dd>
+<dt id="ascend.common.path.traverse_file_paths"><code class="name flex">
+<span>def <span class="ident">traverse_file_paths</span></span>(<span>path, extensions, exclude_extensions=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Recursively reads all files under given folder, until all files have been ergodic.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>path (<code>Path</code> or str): Path of the directory.</dt>
+<dt><strong><code>extensions</code></strong> :&ensp;<code>str</code></dt>
+<dd>File suffix.</dd>
+<dt><strong><code>exclude_extensions</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>Exclude extensions. Default: None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>path_list contains all wanted files.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/common/path.py#L149-L182" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def traverse_file_paths(path, extensions, exclude_extensions=None):
+    &#34;&#34;&#34;Recursively reads all files under given folder, until all files have been ergodic.
+
+    Args:
+        path (`Path` or str): Path of the directory.
+        extensions (str): File suffix.
+        exclude_extensions (list, optional): Exclude extensions. Default: None.
+
+    Returns:
+        list: path_list contains all wanted files.
+    &#34;&#34;&#34;
+    def is_valid_file(x):
+        if exclude_extensions is None:
+            return x.lower().endswith(extensions)
+        else:
+            return x.lower().endswith(extensions) and not x.lower().endswith(exclude_extensions)
+
+    # check_file_exist(path)
+    if isinstance(extensions, list):
+        extensions = tuple(extensions)
+    if isinstance(exclude_extensions, list):
+        exclude_extensions = tuple(exclude_extensions)
+
+    all_list = os.listdir(path)
+    path_list = []
+    for subpath in all_list:
+        path_next = os.path.join(path, subpath)
+        if os.path.isdir(path_next):
+            path_list.extend(traverse_file_paths(
+                path_next, extensions, exclude_extensions))
+        else:
+            if is_valid_file(path_next):
+                path_list.append(path_next)
+    return path_list</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.common.path">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.common" href="index.html">ascend.common</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="ascend.common.path.check_file_exist" href="#ascend.common.path.check_file_exist">check_file_exist</a></code></li>
+<li><code><a title="ascend.common.path.find_vcs_root" href="#ascend.common.path.find_vcs_root">find_vcs_root</a></code></li>
+<li><code><a title="ascend.common.path.fopen" href="#ascend.common.path.fopen">fopen</a></code></li>
+<li><code><a title="ascend.common.path.is_filepath" href="#ascend.common.path.is_filepath">is_filepath</a></code></li>
+<li><code><a title="ascend.common.path.is_str" href="#ascend.common.path.is_str">is_str</a></code></li>
+<li><code><a title="ascend.common.path.mkdir_or_exist" href="#ascend.common.path.mkdir_or_exist">mkdir_or_exist</a></code></li>
+<li><code><a title="ascend.common.path.scandir" href="#ascend.common.path.scandir">scandir</a></code></li>
+<li><code><a title="ascend.common.path.symlink" href="#ascend.common.path.symlink">symlink</a></code></li>
+<li><code><a title="ascend.common.path.traverse_file_paths" href="#ascend.common.path.traverse_file_paths">traverse_file_paths</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

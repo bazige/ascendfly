@@ -1,0 +1,11 @@
+atc --model="../modelzoo/googlenet.prototxt" \
+    --weight="../modelzoo/googlenet.caffemodel" \
+    --input_shape="data:1,3,224,224" \
+    --output_type=FP32 \
+    --check_report=../check_report_result.json \
+    --input_format=NCHW \
+    --output="../modelzoo/" \
+    --soc_version=Ascend310 \
+    --insert_op_conf=../modelzoo//insert_op.cfg \
+    --framework=0 \
+    --save_original_model=false 

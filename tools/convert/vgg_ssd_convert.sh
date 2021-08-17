@@ -1,0 +1,10 @@
+atc --output_type=FP32 \
+    --input_shape="data:1,3,300,300" \
+    --weight=./vgg_ssd.caffemodel \
+    --input_format=NCHW \
+    --output=./vgg_ssd \
+    --soc_version=Ascend310 \
+    --insert_op_conf=./insert_op.cfg \
+    --framework=0 \
+    --save_original_model=false \
+    --model=./vgg_ssd.prototxt

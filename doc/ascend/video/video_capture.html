@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.video.video_capture API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/video/video_capture.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.video.video_capture</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L0-L411" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+
+import av
+import av.datasets
+import numpy as np
+from enum import Enum
+from ..common.log import Log
+from ..common.const import *
+from .vdec import Vdec
+from .frame import Frame
+from ..resource.context import bind_context
+
+class Status(Enum):
+    &#34;&#34;&#34;An enum that defines decode work status.
+
+    Contains `IDLE`, `READY`, `START`, `RUN`, `END`.
+    &#34;&#34;&#34;
+    IDLE = 0
+    READY = 1
+    START = 2
+    RUN = 3
+    END = 4
+
+
+class VideoCapture():
+    &#34;&#34;&#34;Define a VideoCaputure class to get the stream and parser packet. It also include method to push 
+       packets to ascend dvpp video decoder, and the decoder only support annex-b h264 video format or
+       rtsp ip camera. 
+    
+    .. warning::
+       Input an IP video stream for video capturing, and stream_path expect an absolute path for video dir. 
+
+    Attributes:
+        context (int): context resource video capture working on
+        container (av.Container obj): The pyav container object.
+        stream (container.streams obj): The pyav Container streams object.
+        packets (av.Packet obj): The pyav Packet object.
+        decoder (Vdec obj): The ascend DVPP decoder object.
+        width (int): frame&#39;s width
+        height (int): frame&#39;s height
+        coded_height (int): video coded height
+        codel_width (int): video coded width
+        display_aspect_ratio (Fraction obj): get the video stream display aspect ratio.
+        format (av.VideoFormat obj): video stream format.
+        framerate (float): video stream framerate
+        fps (float): video stream framerate, same to framerate
+        has_b_frames (bool): bool value, indicate stream has b frames
+        pix_fmt (int): the decoded frame&#39;s pixel format
+        frames (int): frame number of video stream
+
+
+    Methods:
+        - skip_frame : Signal that we only want to look at frames, only work in ffmpeg
+        - is_open    : Returns true if video capturing has been initialized already
+        - read       : Grabs, decodes and returns the next video frame
+        - set        : Sets a property in the VideoCapture
+        - get        : Returns the specified VideoCapture property
+        - release    : Closes and release video capture&#39;s resource
+
+    &#34;&#34;&#34;
+    def __init__(self, context, stream_path, channel=None):
+        if not isinstance(stream_path, str):
+            raise TypeError(f&#34;Input stream_path expects an string in initial VideoCapture, \
+                 but got {type(stream_path)}.&#34;)
+
+        if not isinstance(context, int):
+            raise TypeError(f&#34;VideoCaputre input context expects an int type, bug got {type(context)}.&#34;)
+
+        self.context = context
+        self._status = Status.IDLE
+
+        # open video container
+        self.container = av.open(av.datasets.curated(stream_path))
+
+        # only use video stream
+        self.stream = self.container.streams.video[0]
+        
+        # check video format is support or not, and get en_type of video stream.
+        en_type = self.__check_stream_format(self.stream.codec_context)
+        
+        # push stream.
+        self.stream.thread_type = &#39;AUTO&#39;
+        self.packets = self.container.demux()
+
+        # set context
+        bind_context(context)
+
+        pix_fmt = pix_fmt_map.get(self.stream.pix_fmt, PIXEL_FORMAT_YUV_SEMIPLANAR_420)
+        chan_id = channel if channel else self.stream.id
+        self.decoder = Vdec(context, en_type=en_type, pix_fmt=pix_fmt, channel=chan_id)
+
+        # set initial working status
+        self._frame = 0
+        self._status = Status.READY
+
+    def __check_stream_format(self, codec_context):
+        &#34;&#34;&#34; check the video stream format is Annex-b or not, and Annex-b format h264 extradata is start
+            with 0x000001 or 0x00000001
+        Args:
+            stream : input stream
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        extradata = np.frombuffer(codec_context.extradata, np.ubyte)
+        if (extradata[:3] == [0, 0, 1]).all():
+            profile_id = extradata[4]
+        elif (extradata[:4] == [0, 0, 0, 1]).all():
+            profile_id = extradata[5]
+        else:
+            raise ValueError(f&#34;Input stream {stream} is not annex-b h264.&#34;)
+
+        if codec_context.name not in [&#39;h264&#39;, &#39;h265&#39;]:
+            raise ValueError(f&#34;unsupport this video stream codec type {codec_context.name}.&#34;)
+
+        try:
+            en_type = en_type_map[profile_id]
+        except KeyError:
+            raise ValueError(f&#34;Input stream format is not one of {en_type_map}.&#34;)
+
+        return en_type
+
+
+    @property
+    def width(self):
+        return self.stream.width
+
+    @property
+    def height(self):
+        return self.stream.height
+
+    @property
+    def coded_height(self):
+        return self.stream.coded_height
+
+    @property
+    def coded_width(self):
+        return self.stream.coded_width
+
+    @property
+    def display_aspect_ratio(self):
+        &#34;&#34;&#34;
+        .. note:: 
+            Get the video stream display aspect ratio, and it returns an fraction object 
+            like Fraction(16, 9).
+        &#34;&#34;&#34;
+        return self.stream.display_aspect_ratio
+
+    @property
+    def format(self):
+        &#34;&#34;&#34;
+        .. note:: 
+            Get the video stream format info like &lt;av.VideoFormat yuv420p, 3840x2160&gt;. It 
+            return an av.VideoFormat object.
+        &#34;&#34;&#34;
+        return self.stream.format
+
+    @property
+    def framerate(self):
+        return float(self.stream.framerate)
+
+    @property
+    def fps(self):
+        return self.framerate
+
+    @property
+    def has_b_frames(self):
+        return self.stream.has_b_frames
+
+    @property
+    def pix_fmt(self):
+        return self.stream.pix_fmt
+
+    @property
+    def frames(self):
+        return self.stream.frames
+
+    def skip_frame(self, skip_type):
+        &#34;&#34;&#34;Signal that we only want to look at frames, only work in ffmpeg.
+        Args:
+            skip_type (int): A class of av.codec.context.SkipType
+
+        ```python
+        -------------------------------------------------------------------------------
+        SkipType Name | Flag Value | Meaning in FFmpeg                                 
+        --------------+------------+---------------------------------------------------
+        NONE          | 0x-10      | Discard nothing                                   
+        DEFAULT       | 0x0        | Discard useless packets like 0 size packets in AVI
+        NONREF        | 0x8        | Discard all non reference                         
+        BIDIR         | 0x10       | Discard all bidirectional frames                  
+        NONINTRA      | 0x18       | Discard all non intra frames                      
+        NONKEY        | 0x20       | Discard all frames except keyframes               
+        ALL           | 0x30       | Discard all                                       
+        -------------------------------------------------------------------------------
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(skip_type, str):
+            raise TypeError(f&#34;Input skip_type expect a string, but got {type(skip_type)}.&#34;)
+
+        if skip_type in [&#39;NONE&#39;, &#39;DEFAULT&#39;, &#39;NONREF&#39;, &#39;BIDIR&#39;, &#39;NONINTRA&#39;, &#39;NONKEY&#39;, &#39;ALL&#39;]:
+            self.stream.codec_context.skip_frame = skip_type
+        else:
+            Log(WARNING, &#39;skip_frame set value failed in Video Capture.&#39;)
+
+
+    def is_open(self):
+        &#34;&#34;&#34;Open the video capture and ready to decode.
+
+        ```python
+        The decode working on 5 status: IDLE, READY/START, RUN, END
+        =================================================================================
+        Status IDLE  | the idle status of decode, and the resource is uninitial, and
+                     | nothing can be used in instance. 
+        ---------------------------------------------------------------------------------
+        Status READY | class VideoCapture and Vdec is initialized, and waiting for start. 
+        ---------------------------------------------------------------------------------
+        Status START | this status start to open vdec and the dequeue is null, so it will
+                     | push packet until dequeue has decoded-image data. 
+        ---------------------------------------------------------------------------------
+        Status RUN   | run video decoder and pull stream packet until packet is null. 
+        ---------------------------------------------------------------------------------
+        Status END   | end of push packet to the vdec, and pop image data until the  
+                     | dequeue is null. 
+        =================================================================================
+        ```
+        Args:
+            None
+
+        Returns:
+            bool : True for VideoCapture is ready or False.
+        &#34;&#34;&#34;
+        if self._status == Status.START or self._status == Status.READY:
+            # get one packet data
+            packet = next(self.packets)
+
+            # if packet is null, jump to status IDLE
+            if packet.buffer_size &lt;= 0:
+                self._status == Status.IDLE
+                return False
+
+            # construct a frame
+            self._frame = self._frame + 1
+            shape = (self.stream.width, self.stream.height)
+            frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+            # do video decode
+            self.decoder.process(frame)
+
+            # if dequeue has image data, it jump to status RUN
+            if not self.decoder.image.empty():
+                self._status = Status.RUN
+            return True
+
+        elif self._status == Status.RUN:
+            # get one packet data
+            packet = next(self.packets)
+            
+            # if packet is null, send eos frame and jump to status IDLE
+            shape = (self.stream.width, self.stream.height)
+            if packet.buffer_size &lt;= 0:
+                # send eos frame
+                frame = Frame(packet, shape, is_last=True, context=self.context)
+
+                # after send eos, it jump to status END
+                self._status = Status.END
+            else:
+                self._frame = self._frame + 1
+                frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+            # do video decode
+            self.decoder.process(frame)
+            return True
+
+        elif self._status == Status.END:
+            if self.decoder.image.empty():
+                self.decoder.finish()
+                self._status = Status.IDLE
+                return False
+
+            return True
+        else:
+            self._status = Status.IDLE
+            return False
+
+
+    def read(self, print_status=True):     
+        &#34;&#34;&#34;Read one frame from caputure in device. If we cann&#39;t get the data in the timeout, 
+            it will be raise an timeout error.
+        Args:
+            print_status (bool, optional): Get the queue status for True
+
+        Returns:
+            [AscendArray]: Get a decoded frame.
+        &#34;&#34;&#34;
+        if self._status != Status.IDLE and not self.decoder.image.empty():
+            if print_status:
+                Log(INFO, f&#34;qsize = {self.decoder.image.qsize()}.&#34;)
+                print(f&#34;qsize = {self.decoder.image.qsize()}&#34;)
+            frame_id, image = self.decoder.image.get(timeout=30)
+            
+            return image, frame_id
+        else:
+            Log(WARNING, &#39;read image failed in Video Capture.&#39;)
+            return (None, None)
+
+    def set(self, attr, value):
+        &#34;&#34;&#34;set(attr, value) -&gt; retval
+            Sets a property in the VideoCapture
+        Args:
+            attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+            value (int): Value of the property
+
+        Returns:
+            bool : `True` if the property is supported by the backend used by the VideoCapture instance.
+        &#34;&#34;&#34;
+        if self._status == Status.READY:
+            if attr == &#39;qsize&#39;: 
+                self.decoder.queue_size = value
+            elif attr == &#39;channel_id&#39;: 
+                self.decoder.channel_id = value
+            elif attr == &#39;ref_num&#39;: 
+                self.decoder.ref_num = value
+            elif attr == &#39;enc_type&#39;: 
+                self.decoder.encoder_type = value
+            elif attr == &#39;pix_fmt&#39;: 
+                self.decoder.pic_format = value
+            elif attr == &#39;bit_depth&#39;: 
+                self.decoder.bit_depth = value
+            elif attr == &#39;out_mode&#39;: 
+                self.decoder.out_mode = value
+            else:
+                Log(ERROR, f&#39;attr {attr} is not support in VideoCapture.&#39;)
+                return False
+            return True
+        else:
+            Log(ERROR, f&#39;Set attr {attr} in status {self._status}.&#39;)
+            raise ValueError(f&#34;Set attr {attr} in status {self._status}.&#34;)
+
+    def get(self, attr):   
+        &#34;&#34;&#34; get(attr) -&gt; retval
+            Returns the specified VideoCapture property
+        Args:
+            attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+            
+        Returns:
+            [Value]: Value for the specified property. Value 0 is returned when querying a 
+                property that is not supported by the backend used by the VideoCapture instance.
+        &#34;&#34;&#34;
+        if not isinstance(attr, str):
+            raise TypeError(f&#34;Input attr expects a string, but got {type(attr)}.&#34;)
+        
+        attr_dict = {
+            &#39;width&#39;       : self.stream.width,
+            &#39;height&#39;      : self.stream.height,
+            &#39;frame_height&#39;: self.stream.coded_height,
+            &#39;frame_width&#39; : self.stream.coded_width,
+            &#39;aspect_ratio&#39;: self.stream.display_aspect_ratio,
+            &#39;fps&#39;         : self.framerate,
+            &#39;format&#39;      : self.stream.format,
+            &#39;pix_fmt&#39;     : self.stream.pix_fmt, 
+            &#39;frames&#39;      : self.stream.frames
+        }
+
+        try:
+            return attr_dict[attr]
+        except KeyError:
+            return 0
+
+    def release(self):
+        &#34;&#34;&#34;Closes video file or capturing device and release resource.
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;container&#39;):
+            self.container.close()
+
+        if hasattr(self, &#39;decoder&#39;):
+            del self.decoder
+        
+        self._status = False
+
+    def __del__(self):
+        self.release()
+
+if __name__ == &#34;__main__&#34;:
+    import cv2
+    from resource.context import Context
+    resource = Context({1})
+    context = resource.context_dict[1]
+    stream_path = &#39;./cars_around_mountain_640_360.264&#39;
+
+    cap = VideoCapture(context, stream_path)
+
+    while cap.is_open():
+        image, frame_id = cap.read()
+        if image:
+            yuv_np = image.to_np
+            img_color = cv2.cvtColor(yuv_np, cv2.COLOR_YUV2RGB_NV21)
+            cv2.imshow(&#39;result&#39;, img_color)
+            cv2.waitKey(10)
+    cv2.destroyAllWindows()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.video.video_capture.Status"><code class="flex name class">
+<span>class <span class="ident">Status</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enum that defines decode work status.</p>
+<p>Contains <code>IDLE</code>, <code>READY</code>, <code>START</code>, <code>RUN</code>, <code>END</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L26-L35" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Status(Enum):
+    &#34;&#34;&#34;An enum that defines decode work status.
+
+    Contains `IDLE`, `READY`, `START`, `RUN`, `END`.
+    &#34;&#34;&#34;
+    IDLE = 0
+    READY = 1
+    START = 2
+    RUN = 3
+    END = 4</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="ascend.video.video_capture.Status.END"><code class="name">var <span class="ident">END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.video.video_capture.Status.IDLE"><code class="name">var <span class="ident">IDLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.video.video_capture.Status.READY"><code class="name">var <span class="ident">READY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.video.video_capture.Status.RUN"><code class="name">var <span class="ident">RUN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ascend.video.video_capture.Status.START"><code class="name">var <span class="ident">START</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture"><code class="flex name class">
+<span>class <span class="ident">VideoCapture</span></span>
+<span>(</span><span>context, stream_path, channel=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a VideoCaputure class to get the stream and parser packet. It also include method to push
+packets to ascend dvpp video decoder, and the decoder only support annex-b h264 video format or
+rtsp ip camera. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Input an IP video stream for video capturing, and stream_path expect an absolute path for video dir.</p>
+</div>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code>int</code></dt>
+<dd>context resource video capture working on</dd>
+<dt><strong><code>container</code></strong> :&ensp;<code>av.Container obj</code></dt>
+<dd>The pyav container object.</dd>
+<dt><strong><code>stream</code></strong> :&ensp;<code>container.streams obj</code></dt>
+<dd>The pyav Container streams object.</dd>
+<dt><strong><code>packets</code></strong> :&ensp;<code>av.Packet obj</code></dt>
+<dd>The pyav Packet object.</dd>
+<dt><strong><code>decoder</code></strong> :&ensp;<code>Vdec obj</code></dt>
+<dd>The ascend DVPP decoder object.</dd>
+<dt><strong><code>width</code></strong> :&ensp;<code>int</code></dt>
+<dd>frame's width</dd>
+<dt><strong><code>height</code></strong> :&ensp;<code>int</code></dt>
+<dd>frame's height</dd>
+<dt><strong><code>coded_height</code></strong> :&ensp;<code>int</code></dt>
+<dd>video coded height</dd>
+<dt><strong><code>codel_width</code></strong> :&ensp;<code>int</code></dt>
+<dd>video coded width</dd>
+<dt><strong><code>display_aspect_ratio</code></strong> :&ensp;<code>Fraction obj</code></dt>
+<dd>get the video stream display aspect ratio.</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>av.VideoFormat obj</code></dt>
+<dd>video stream format.</dd>
+<dt><strong><code>framerate</code></strong> :&ensp;<code>float</code></dt>
+<dd>video stream framerate</dd>
+<dt><strong><code>fps</code></strong> :&ensp;<code>float</code></dt>
+<dd>video stream framerate, same to framerate</dd>
+<dt><strong><code>has_b_frames</code></strong> :&ensp;<code>bool</code></dt>
+<dd>bool value, indicate stream has b frames</dd>
+<dt><strong><code>pix_fmt</code></strong> :&ensp;<code>int</code></dt>
+<dd>the decoded frame's pixel format</dd>
+<dt><strong><code>frames</code></strong> :&ensp;<code>int</code></dt>
+<dd>frame number of video stream</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<ul>
+<li>skip_frame : Signal that we only want to look at frames, only work in ffmpeg</li>
+<li>is_open
+: Returns true if video capturing has been initialized already</li>
+<li>read
+: Grabs, decodes and returns the next video frame</li>
+<li>set
+: Sets a property in the VideoCapture</li>
+<li>get
+: Returns the specified VideoCapture property</li>
+<li>release
+: Closes and release video capture's resource</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L38-L394" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class VideoCapture():
+    &#34;&#34;&#34;Define a VideoCaputure class to get the stream and parser packet. It also include method to push 
+       packets to ascend dvpp video decoder, and the decoder only support annex-b h264 video format or
+       rtsp ip camera. 
+    
+    .. warning::
+       Input an IP video stream for video capturing, and stream_path expect an absolute path for video dir. 
+
+    Attributes:
+        context (int): context resource video capture working on
+        container (av.Container obj): The pyav container object.
+        stream (container.streams obj): The pyav Container streams object.
+        packets (av.Packet obj): The pyav Packet object.
+        decoder (Vdec obj): The ascend DVPP decoder object.
+        width (int): frame&#39;s width
+        height (int): frame&#39;s height
+        coded_height (int): video coded height
+        codel_width (int): video coded width
+        display_aspect_ratio (Fraction obj): get the video stream display aspect ratio.
+        format (av.VideoFormat obj): video stream format.
+        framerate (float): video stream framerate
+        fps (float): video stream framerate, same to framerate
+        has_b_frames (bool): bool value, indicate stream has b frames
+        pix_fmt (int): the decoded frame&#39;s pixel format
+        frames (int): frame number of video stream
+
+
+    Methods:
+        - skip_frame : Signal that we only want to look at frames, only work in ffmpeg
+        - is_open    : Returns true if video capturing has been initialized already
+        - read       : Grabs, decodes and returns the next video frame
+        - set        : Sets a property in the VideoCapture
+        - get        : Returns the specified VideoCapture property
+        - release    : Closes and release video capture&#39;s resource
+
+    &#34;&#34;&#34;
+    def __init__(self, context, stream_path, channel=None):
+        if not isinstance(stream_path, str):
+            raise TypeError(f&#34;Input stream_path expects an string in initial VideoCapture, \
+                 but got {type(stream_path)}.&#34;)
+
+        if not isinstance(context, int):
+            raise TypeError(f&#34;VideoCaputre input context expects an int type, bug got {type(context)}.&#34;)
+
+        self.context = context
+        self._status = Status.IDLE
+
+        # open video container
+        self.container = av.open(av.datasets.curated(stream_path))
+
+        # only use video stream
+        self.stream = self.container.streams.video[0]
+        
+        # check video format is support or not, and get en_type of video stream.
+        en_type = self.__check_stream_format(self.stream.codec_context)
+        
+        # push stream.
+        self.stream.thread_type = &#39;AUTO&#39;
+        self.packets = self.container.demux()
+
+        # set context
+        bind_context(context)
+
+        pix_fmt = pix_fmt_map.get(self.stream.pix_fmt, PIXEL_FORMAT_YUV_SEMIPLANAR_420)
+        chan_id = channel if channel else self.stream.id
+        self.decoder = Vdec(context, en_type=en_type, pix_fmt=pix_fmt, channel=chan_id)
+
+        # set initial working status
+        self._frame = 0
+        self._status = Status.READY
+
+    def __check_stream_format(self, codec_context):
+        &#34;&#34;&#34; check the video stream format is Annex-b or not, and Annex-b format h264 extradata is start
+            with 0x000001 or 0x00000001
+        Args:
+            stream : input stream
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        extradata = np.frombuffer(codec_context.extradata, np.ubyte)
+        if (extradata[:3] == [0, 0, 1]).all():
+            profile_id = extradata[4]
+        elif (extradata[:4] == [0, 0, 0, 1]).all():
+            profile_id = extradata[5]
+        else:
+            raise ValueError(f&#34;Input stream {stream} is not annex-b h264.&#34;)
+
+        if codec_context.name not in [&#39;h264&#39;, &#39;h265&#39;]:
+            raise ValueError(f&#34;unsupport this video stream codec type {codec_context.name}.&#34;)
+
+        try:
+            en_type = en_type_map[profile_id]
+        except KeyError:
+            raise ValueError(f&#34;Input stream format is not one of {en_type_map}.&#34;)
+
+        return en_type
+
+
+    @property
+    def width(self):
+        return self.stream.width
+
+    @property
+    def height(self):
+        return self.stream.height
+
+    @property
+    def coded_height(self):
+        return self.stream.coded_height
+
+    @property
+    def coded_width(self):
+        return self.stream.coded_width
+
+    @property
+    def display_aspect_ratio(self):
+        &#34;&#34;&#34;
+        .. note:: 
+            Get the video stream display aspect ratio, and it returns an fraction object 
+            like Fraction(16, 9).
+        &#34;&#34;&#34;
+        return self.stream.display_aspect_ratio
+
+    @property
+    def format(self):
+        &#34;&#34;&#34;
+        .. note:: 
+            Get the video stream format info like &lt;av.VideoFormat yuv420p, 3840x2160&gt;. It 
+            return an av.VideoFormat object.
+        &#34;&#34;&#34;
+        return self.stream.format
+
+    @property
+    def framerate(self):
+        return float(self.stream.framerate)
+
+    @property
+    def fps(self):
+        return self.framerate
+
+    @property
+    def has_b_frames(self):
+        return self.stream.has_b_frames
+
+    @property
+    def pix_fmt(self):
+        return self.stream.pix_fmt
+
+    @property
+    def frames(self):
+        return self.stream.frames
+
+    def skip_frame(self, skip_type):
+        &#34;&#34;&#34;Signal that we only want to look at frames, only work in ffmpeg.
+        Args:
+            skip_type (int): A class of av.codec.context.SkipType
+
+        ```python
+        -------------------------------------------------------------------------------
+        SkipType Name | Flag Value | Meaning in FFmpeg                                 
+        --------------+------------+---------------------------------------------------
+        NONE          | 0x-10      | Discard nothing                                   
+        DEFAULT       | 0x0        | Discard useless packets like 0 size packets in AVI
+        NONREF        | 0x8        | Discard all non reference                         
+        BIDIR         | 0x10       | Discard all bidirectional frames                  
+        NONINTRA      | 0x18       | Discard all non intra frames                      
+        NONKEY        | 0x20       | Discard all frames except keyframes               
+        ALL           | 0x30       | Discard all                                       
+        -------------------------------------------------------------------------------
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(skip_type, str):
+            raise TypeError(f&#34;Input skip_type expect a string, but got {type(skip_type)}.&#34;)
+
+        if skip_type in [&#39;NONE&#39;, &#39;DEFAULT&#39;, &#39;NONREF&#39;, &#39;BIDIR&#39;, &#39;NONINTRA&#39;, &#39;NONKEY&#39;, &#39;ALL&#39;]:
+            self.stream.codec_context.skip_frame = skip_type
+        else:
+            Log(WARNING, &#39;skip_frame set value failed in Video Capture.&#39;)
+
+
+    def is_open(self):
+        &#34;&#34;&#34;Open the video capture and ready to decode.
+
+        ```python
+        The decode working on 5 status: IDLE, READY/START, RUN, END
+        =================================================================================
+        Status IDLE  | the idle status of decode, and the resource is uninitial, and
+                     | nothing can be used in instance. 
+        ---------------------------------------------------------------------------------
+        Status READY | class VideoCapture and Vdec is initialized, and waiting for start. 
+        ---------------------------------------------------------------------------------
+        Status START | this status start to open vdec and the dequeue is null, so it will
+                     | push packet until dequeue has decoded-image data. 
+        ---------------------------------------------------------------------------------
+        Status RUN   | run video decoder and pull stream packet until packet is null. 
+        ---------------------------------------------------------------------------------
+        Status END   | end of push packet to the vdec, and pop image data until the  
+                     | dequeue is null. 
+        =================================================================================
+        ```
+        Args:
+            None
+
+        Returns:
+            bool : True for VideoCapture is ready or False.
+        &#34;&#34;&#34;
+        if self._status == Status.START or self._status == Status.READY:
+            # get one packet data
+            packet = next(self.packets)
+
+            # if packet is null, jump to status IDLE
+            if packet.buffer_size &lt;= 0:
+                self._status == Status.IDLE
+                return False
+
+            # construct a frame
+            self._frame = self._frame + 1
+            shape = (self.stream.width, self.stream.height)
+            frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+            # do video decode
+            self.decoder.process(frame)
+
+            # if dequeue has image data, it jump to status RUN
+            if not self.decoder.image.empty():
+                self._status = Status.RUN
+            return True
+
+        elif self._status == Status.RUN:
+            # get one packet data
+            packet = next(self.packets)
+            
+            # if packet is null, send eos frame and jump to status IDLE
+            shape = (self.stream.width, self.stream.height)
+            if packet.buffer_size &lt;= 0:
+                # send eos frame
+                frame = Frame(packet, shape, is_last=True, context=self.context)
+
+                # after send eos, it jump to status END
+                self._status = Status.END
+            else:
+                self._frame = self._frame + 1
+                frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+            # do video decode
+            self.decoder.process(frame)
+            return True
+
+        elif self._status == Status.END:
+            if self.decoder.image.empty():
+                self.decoder.finish()
+                self._status = Status.IDLE
+                return False
+
+            return True
+        else:
+            self._status = Status.IDLE
+            return False
+
+
+    def read(self, print_status=True):     
+        &#34;&#34;&#34;Read one frame from caputure in device. If we cann&#39;t get the data in the timeout, 
+            it will be raise an timeout error.
+        Args:
+            print_status (bool, optional): Get the queue status for True
+
+        Returns:
+            [AscendArray]: Get a decoded frame.
+        &#34;&#34;&#34;
+        if self._status != Status.IDLE and not self.decoder.image.empty():
+            if print_status:
+                Log(INFO, f&#34;qsize = {self.decoder.image.qsize()}.&#34;)
+                print(f&#34;qsize = {self.decoder.image.qsize()}&#34;)
+            frame_id, image = self.decoder.image.get(timeout=30)
+            
+            return image, frame_id
+        else:
+            Log(WARNING, &#39;read image failed in Video Capture.&#39;)
+            return (None, None)
+
+    def set(self, attr, value):
+        &#34;&#34;&#34;set(attr, value) -&gt; retval
+            Sets a property in the VideoCapture
+        Args:
+            attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+            value (int): Value of the property
+
+        Returns:
+            bool : `True` if the property is supported by the backend used by the VideoCapture instance.
+        &#34;&#34;&#34;
+        if self._status == Status.READY:
+            if attr == &#39;qsize&#39;: 
+                self.decoder.queue_size = value
+            elif attr == &#39;channel_id&#39;: 
+                self.decoder.channel_id = value
+            elif attr == &#39;ref_num&#39;: 
+                self.decoder.ref_num = value
+            elif attr == &#39;enc_type&#39;: 
+                self.decoder.encoder_type = value
+            elif attr == &#39;pix_fmt&#39;: 
+                self.decoder.pic_format = value
+            elif attr == &#39;bit_depth&#39;: 
+                self.decoder.bit_depth = value
+            elif attr == &#39;out_mode&#39;: 
+                self.decoder.out_mode = value
+            else:
+                Log(ERROR, f&#39;attr {attr} is not support in VideoCapture.&#39;)
+                return False
+            return True
+        else:
+            Log(ERROR, f&#39;Set attr {attr} in status {self._status}.&#39;)
+            raise ValueError(f&#34;Set attr {attr} in status {self._status}.&#34;)
+
+    def get(self, attr):   
+        &#34;&#34;&#34; get(attr) -&gt; retval
+            Returns the specified VideoCapture property
+        Args:
+            attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+            
+        Returns:
+            [Value]: Value for the specified property. Value 0 is returned when querying a 
+                property that is not supported by the backend used by the VideoCapture instance.
+        &#34;&#34;&#34;
+        if not isinstance(attr, str):
+            raise TypeError(f&#34;Input attr expects a string, but got {type(attr)}.&#34;)
+        
+        attr_dict = {
+            &#39;width&#39;       : self.stream.width,
+            &#39;height&#39;      : self.stream.height,
+            &#39;frame_height&#39;: self.stream.coded_height,
+            &#39;frame_width&#39; : self.stream.coded_width,
+            &#39;aspect_ratio&#39;: self.stream.display_aspect_ratio,
+            &#39;fps&#39;         : self.framerate,
+            &#39;format&#39;      : self.stream.format,
+            &#39;pix_fmt&#39;     : self.stream.pix_fmt, 
+            &#39;frames&#39;      : self.stream.frames
+        }
+
+        try:
+            return attr_dict[attr]
+        except KeyError:
+            return 0
+
+    def release(self):
+        &#34;&#34;&#34;Closes video file or capturing device and release resource.
+        &#34;&#34;&#34;
+        if hasattr(self, &#39;container&#39;):
+            self.container.close()
+
+        if hasattr(self, &#39;decoder&#39;):
+            del self.decoder
+        
+        self._status = False
+
+    def __del__(self):
+        self.release()</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.video.video_capture.VideoCapture.coded_height"><code class="name">var <span class="ident">coded_height</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L145-L147" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def coded_height(self):
+    return self.stream.coded_height</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.coded_width"><code class="name">var <span class="ident">coded_width</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L149-L151" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def coded_width(self):
+    return self.stream.coded_width</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.display_aspect_ratio"><code class="name">var <span class="ident">display_aspect_ratio</span></code></dt>
+<dd>
+<div class="desc"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Get the video stream display aspect ratio, and it returns an fraction object
+like Fraction(16, 9).</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L153-L160" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def display_aspect_ratio(self):
+    &#34;&#34;&#34;
+    .. note:: 
+        Get the video stream display aspect ratio, and it returns an fraction object 
+        like Fraction(16, 9).
+    &#34;&#34;&#34;
+    return self.stream.display_aspect_ratio</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.format"><code class="name">var <span class="ident">format</span></code></dt>
+<dd>
+<div class="desc"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Get the video stream format info like <av.VideoFormat yuv420p, 3840x2160>. It
+return an av.VideoFormat object.</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L162-L169" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def format(self):
+    &#34;&#34;&#34;
+    .. note:: 
+        Get the video stream format info like &lt;av.VideoFormat yuv420p, 3840x2160&gt;. It 
+        return an av.VideoFormat object.
+    &#34;&#34;&#34;
+    return self.stream.format</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.fps"><code class="name">var <span class="ident">fps</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L175-L177" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def fps(self):
+    return self.framerate</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.framerate"><code class="name">var <span class="ident">framerate</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L171-L173" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def framerate(self):
+    return float(self.stream.framerate)</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.frames"><code class="name">var <span class="ident">frames</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L187-L189" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def frames(self):
+    return self.stream.frames</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.has_b_frames"><code class="name">var <span class="ident">has_b_frames</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L179-L181" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def has_b_frames(self):
+    return self.stream.has_b_frames</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.height"><code class="name">var <span class="ident">height</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L141-L143" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def height(self):
+    return self.stream.height</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.pix_fmt"><code class="name">var <span class="ident">pix_fmt</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L183-L185" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def pix_fmt(self):
+    return self.stream.pix_fmt</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.width"><code class="name">var <span class="ident">width</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L137-L139" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def width(self):
+    return self.stream.width</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.video.video_capture.VideoCapture.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, attr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get(attr) -&gt; retval
+Returns the specified VideoCapture property</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attr</code></strong> :&ensp;<code>str</code></dt>
+<dd>Property from VideoCapture Properties (eg. 'width', 'fps', &hellip;)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[Value]</code></dt>
+<dd>Value for the specified property. Value 0 is returned when querying a
+property that is not supported by the backend used by the VideoCapture instance.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L352-L380" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get(self, attr):   
+    &#34;&#34;&#34; get(attr) -&gt; retval
+        Returns the specified VideoCapture property
+    Args:
+        attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+        
+    Returns:
+        [Value]: Value for the specified property. Value 0 is returned when querying a 
+            property that is not supported by the backend used by the VideoCapture instance.
+    &#34;&#34;&#34;
+    if not isinstance(attr, str):
+        raise TypeError(f&#34;Input attr expects a string, but got {type(attr)}.&#34;)
+    
+    attr_dict = {
+        &#39;width&#39;       : self.stream.width,
+        &#39;height&#39;      : self.stream.height,
+        &#39;frame_height&#39;: self.stream.coded_height,
+        &#39;frame_width&#39; : self.stream.coded_width,
+        &#39;aspect_ratio&#39;: self.stream.display_aspect_ratio,
+        &#39;fps&#39;         : self.framerate,
+        &#39;format&#39;      : self.stream.format,
+        &#39;pix_fmt&#39;     : self.stream.pix_fmt, 
+        &#39;frames&#39;      : self.stream.frames
+    }
+
+    try:
+        return attr_dict[attr]
+    except KeyError:
+        return 0</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.is_open"><code class="name flex">
+<span>def <span class="ident">is_open</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Open the video capture and ready to decode.</p>
+<pre><code class="language-python">The decode working on 5 status: IDLE, READY/START, RUN, END
+=================================================================================
+Status IDLE  | the idle status of decode, and the resource is uninitial, and
+             | nothing can be used in instance. 
+---------------------------------------------------------------------------------
+Status READY | class VideoCapture and Vdec is initialized, and waiting for start. 
+---------------------------------------------------------------------------------
+Status START | this status start to open vdec and the dequeue is null, so it will
+             | push packet until dequeue has decoded-image data. 
+---------------------------------------------------------------------------------
+Status RUN   | run video decoder and pull stream packet until packet is null. 
+---------------------------------------------------------------------------------
+Status END   | end of push packet to the vdec, and pop image data until the  
+             | dequeue is null. 
+=================================================================================
+</code></pre>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool </code></dt>
+<dd>True for VideoCapture is ready or False.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L219-L296" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def is_open(self):
+    &#34;&#34;&#34;Open the video capture and ready to decode.
+
+    ```python
+    The decode working on 5 status: IDLE, READY/START, RUN, END
+    =================================================================================
+    Status IDLE  | the idle status of decode, and the resource is uninitial, and
+                 | nothing can be used in instance. 
+    ---------------------------------------------------------------------------------
+    Status READY | class VideoCapture and Vdec is initialized, and waiting for start. 
+    ---------------------------------------------------------------------------------
+    Status START | this status start to open vdec and the dequeue is null, so it will
+                 | push packet until dequeue has decoded-image data. 
+    ---------------------------------------------------------------------------------
+    Status RUN   | run video decoder and pull stream packet until packet is null. 
+    ---------------------------------------------------------------------------------
+    Status END   | end of push packet to the vdec, and pop image data until the  
+                 | dequeue is null. 
+    =================================================================================
+    ```
+    Args:
+        None
+
+    Returns:
+        bool : True for VideoCapture is ready or False.
+    &#34;&#34;&#34;
+    if self._status == Status.START or self._status == Status.READY:
+        # get one packet data
+        packet = next(self.packets)
+
+        # if packet is null, jump to status IDLE
+        if packet.buffer_size &lt;= 0:
+            self._status == Status.IDLE
+            return False
+
+        # construct a frame
+        self._frame = self._frame + 1
+        shape = (self.stream.width, self.stream.height)
+        frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+        # do video decode
+        self.decoder.process(frame)
+
+        # if dequeue has image data, it jump to status RUN
+        if not self.decoder.image.empty():
+            self._status = Status.RUN
+        return True
+
+    elif self._status == Status.RUN:
+        # get one packet data
+        packet = next(self.packets)
+        
+        # if packet is null, send eos frame and jump to status IDLE
+        shape = (self.stream.width, self.stream.height)
+        if packet.buffer_size &lt;= 0:
+            # send eos frame
+            frame = Frame(packet, shape, is_last=True, context=self.context)
+
+            # after send eos, it jump to status END
+            self._status = Status.END
+        else:
+            self._frame = self._frame + 1
+            frame = Frame(packet, shape, frame_id=self._frame, context=self.context)
+
+        # do video decode
+        self.decoder.process(frame)
+        return True
+
+    elif self._status == Status.END:
+        if self.decoder.image.empty():
+            self.decoder.finish()
+            self._status = Status.IDLE
+            return False
+
+        return True
+    else:
+        self._status = Status.IDLE
+        return False</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.read"><code class="name flex">
+<span>def <span class="ident">read</span></span>(<span>self, print_status=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Read one frame from caputure in device. If we cann't get the data in the timeout,
+it will be raise an timeout error.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>print_status</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Get the queue status for True</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[AscendArray]</code></dt>
+<dd>Get a decoded frame.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L299-L317" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def read(self, print_status=True):     
+    &#34;&#34;&#34;Read one frame from caputure in device. If we cann&#39;t get the data in the timeout, 
+        it will be raise an timeout error.
+    Args:
+        print_status (bool, optional): Get the queue status for True
+
+    Returns:
+        [AscendArray]: Get a decoded frame.
+    &#34;&#34;&#34;
+    if self._status != Status.IDLE and not self.decoder.image.empty():
+        if print_status:
+            Log(INFO, f&#34;qsize = {self.decoder.image.qsize()}.&#34;)
+            print(f&#34;qsize = {self.decoder.image.qsize()}&#34;)
+        frame_id, image = self.decoder.image.get(timeout=30)
+        
+        return image, frame_id
+    else:
+        Log(WARNING, &#39;read image failed in Video Capture.&#39;)
+        return (None, None)</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.release"><code class="name flex">
+<span>def <span class="ident">release</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Closes video file or capturing device and release resource.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L382-L391" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def release(self):
+    &#34;&#34;&#34;Closes video file or capturing device and release resource.
+    &#34;&#34;&#34;
+    if hasattr(self, &#39;container&#39;):
+        self.container.close()
+
+    if hasattr(self, &#39;decoder&#39;):
+        del self.decoder
+    
+    self._status = False</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.set"><code class="name flex">
+<span>def <span class="ident">set</span></span>(<span>self, attr, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>set(attr, value) -&gt; retval
+Sets a property in the VideoCapture</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attr</code></strong> :&ensp;<code>str</code></dt>
+<dd>Property from VideoCapture Properties (eg. 'width', 'fps', &hellip;)</dd>
+<dt><strong><code>value</code></strong> :&ensp;<code>int</code></dt>
+<dd>Value of the property</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool </code></dt>
+<dd><code>True</code> if the property is supported by the backend used by the VideoCapture instance.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L319-L350" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set(self, attr, value):
+    &#34;&#34;&#34;set(attr, value) -&gt; retval
+        Sets a property in the VideoCapture
+    Args:
+        attr (str): Property from VideoCapture Properties (eg. &#39;width&#39;, &#39;fps&#39;, ...)
+        value (int): Value of the property
+
+    Returns:
+        bool : `True` if the property is supported by the backend used by the VideoCapture instance.
+    &#34;&#34;&#34;
+    if self._status == Status.READY:
+        if attr == &#39;qsize&#39;: 
+            self.decoder.queue_size = value
+        elif attr == &#39;channel_id&#39;: 
+            self.decoder.channel_id = value
+        elif attr == &#39;ref_num&#39;: 
+            self.decoder.ref_num = value
+        elif attr == &#39;enc_type&#39;: 
+            self.decoder.encoder_type = value
+        elif attr == &#39;pix_fmt&#39;: 
+            self.decoder.pic_format = value
+        elif attr == &#39;bit_depth&#39;: 
+            self.decoder.bit_depth = value
+        elif attr == &#39;out_mode&#39;: 
+            self.decoder.out_mode = value
+        else:
+            Log(ERROR, f&#39;attr {attr} is not support in VideoCapture.&#39;)
+            return False
+        return True
+    else:
+        Log(ERROR, f&#39;Set attr {attr} in status {self._status}.&#39;)
+        raise ValueError(f&#34;Set attr {attr} in status {self._status}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.video.video_capture.VideoCapture.skip_frame"><code class="name flex">
+<span>def <span class="ident">skip_frame</span></span>(<span>self, skip_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Signal that we only want to look at frames, only work in ffmpeg.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>skip_type</code></strong> :&ensp;<code>int</code></dt>
+<dd>A class of av.codec.context.SkipType</dd>
+</dl>
+<pre><code class="language-python">-------------------------------------------------------------------------------
+SkipType Name | Flag Value | Meaning in FFmpeg                                 
+--------------+------------+---------------------------------------------------
+NONE          | 0x-10      | Discard nothing                                   
+DEFAULT       | 0x0        | Discard useless packets like 0 size packets in AVI
+NONREF        | 0x8        | Discard all non reference                         
+BIDIR         | 0x10       | Discard all bidirectional frames                  
+NONINTRA      | 0x18       | Discard all non intra frames                      
+NONKEY        | 0x20       | Discard all frames except keyframes               
+ALL           | 0x30       | Discard all                                       
+-------------------------------------------------------------------------------
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/video/video_capture.py#L191-L216" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def skip_frame(self, skip_type):
+    &#34;&#34;&#34;Signal that we only want to look at frames, only work in ffmpeg.
+    Args:
+        skip_type (int): A class of av.codec.context.SkipType
+
+    ```python
+    -------------------------------------------------------------------------------
+    SkipType Name | Flag Value | Meaning in FFmpeg                                 
+    --------------+------------+---------------------------------------------------
+    NONE          | 0x-10      | Discard nothing                                   
+    DEFAULT       | 0x0        | Discard useless packets like 0 size packets in AVI
+    NONREF        | 0x8        | Discard all non reference                         
+    BIDIR         | 0x10       | Discard all bidirectional frames                  
+    NONINTRA      | 0x18       | Discard all non intra frames                      
+    NONKEY        | 0x20       | Discard all frames except keyframes               
+    ALL           | 0x30       | Discard all                                       
+    -------------------------------------------------------------------------------
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(skip_type, str):
+        raise TypeError(f&#34;Input skip_type expect a string, but got {type(skip_type)}.&#34;)
+
+    if skip_type in [&#39;NONE&#39;, &#39;DEFAULT&#39;, &#39;NONREF&#39;, &#39;BIDIR&#39;, &#39;NONINTRA&#39;, &#39;NONKEY&#39;, &#39;ALL&#39;]:
+        self.stream.codec_context.skip_frame = skip_type
+    else:
+        Log(WARNING, &#39;skip_frame set value failed in Video Capture.&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.video.video_capture">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.video" href="index.html">ascend.video</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.video.video_capture.Status" href="#ascend.video.video_capture.Status">Status</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.video.video_capture.Status.END" href="#ascend.video.video_capture.Status.END">END</a></code></li>
+<li><code><a title="ascend.video.video_capture.Status.IDLE" href="#ascend.video.video_capture.Status.IDLE">IDLE</a></code></li>
+<li><code><a title="ascend.video.video_capture.Status.READY" href="#ascend.video.video_capture.Status.READY">READY</a></code></li>
+<li><code><a title="ascend.video.video_capture.Status.RUN" href="#ascend.video.video_capture.Status.RUN">RUN</a></code></li>
+<li><code><a title="ascend.video.video_capture.Status.START" href="#ascend.video.video_capture.Status.START">START</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.video.video_capture.VideoCapture" href="#ascend.video.video_capture.VideoCapture">VideoCapture</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.video.video_capture.VideoCapture.coded_height" href="#ascend.video.video_capture.VideoCapture.coded_height">coded_height</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.coded_width" href="#ascend.video.video_capture.VideoCapture.coded_width">coded_width</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.display_aspect_ratio" href="#ascend.video.video_capture.VideoCapture.display_aspect_ratio">display_aspect_ratio</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.format" href="#ascend.video.video_capture.VideoCapture.format">format</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.fps" href="#ascend.video.video_capture.VideoCapture.fps">fps</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.framerate" href="#ascend.video.video_capture.VideoCapture.framerate">framerate</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.frames" href="#ascend.video.video_capture.VideoCapture.frames">frames</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.get" href="#ascend.video.video_capture.VideoCapture.get">get</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.has_b_frames" href="#ascend.video.video_capture.VideoCapture.has_b_frames">has_b_frames</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.height" href="#ascend.video.video_capture.VideoCapture.height">height</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.is_open" href="#ascend.video.video_capture.VideoCapture.is_open">is_open</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.pix_fmt" href="#ascend.video.video_capture.VideoCapture.pix_fmt">pix_fmt</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.read" href="#ascend.video.video_capture.VideoCapture.read">read</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.release" href="#ascend.video.video_capture.VideoCapture.release">release</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.set" href="#ascend.video.video_capture.VideoCapture.set">set</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.skip_frame" href="#ascend.video.video_capture.VideoCapture.skip_frame">skip_frame</a></code></li>
+<li><code><a title="ascend.video.video_capture.VideoCapture.width" href="#ascend.video.video_capture.VideoCapture.width">width</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

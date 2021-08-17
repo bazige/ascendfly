@@ -1,0 +1,4075 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.image.geome API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/image/geome.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.image.geome</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L0-L1280" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+import acl
+import numpy as np
+import numbers
+import os.path as osp
+from pathlib import Path
+
+from ..common.const import *
+from ..data.ascendarray import AscendArray
+from ..resource.mem import Memory
+from ..resource.context import create_stream
+from ..common.log import Log
+from ..common.align import aligned, calc_size
+from ..common.clip import (_scale_size, bbox_clip, bbox_scaling)
+from ..common.path import check_file_exist, is_str, mkdir_or_exist
+
+
+try:
+    from PIL import Image
+except ImportError:
+    Image = None
+
+
+def align_img(img, func=&#39;vdec&#39;):
+    &#34;&#34;&#34;Align a Ascend image&#39;s width and height using this function.
+
+    Args:
+        img (AscendArray): Image or croped area of image(bbox).
+        func (str, optional): The alinged method to be used. Defaults to &#39;vdec&#39;.
+
+    Returns:
+        [tuple]: The returned data format is `(image, (w, h))`
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but got {type(img)}.&#34;)
+
+    # step 1: get the truth h and w of image.
+    if img.format in yuv420:
+        h, w = (img.shape[0] * 2 // 3, img.shape[1])
+    else:
+        h, w = img.shape[:2]
+
+    # step 2: caculate image aligned shape and buffer size
+    stride_w = aligned(w, func=func, aligned=&#39;w&#39;)
+    stride_h = aligned(h, func=func, aligned=&#39;h&#39;)
+    buf_size = calc_size(stride_w, stride_h, img.format)
+
+    # step 3: if image not aligned, create a new image(a AscendArray object)
+    if (stride_h, stride_w) != (h, w):
+        image = AscendArray((stride_w,), np.dtype(&#39;uint8&#39;), size=buf_size, \
+                        format=img.format, flag=&#39;DVPP&#39;)
+        img.to(image)
+        image.reshape(image.shape[::-1])
+        return image, (w, h)
+
+    return img, (w, h)
+
+def create_align_img(w, h, format=PIXEL_FORMAT_YUV_SEMIPLANAR_420, func=&#39;vdec&#39;):
+    &#34;&#34;&#34;Assemble image parameters to the created image desc.
+
+    Args:
+        w (int): The original image&#39;s width.
+        h (int): The original image&#39;s height.
+        format (int, optional): Image pixel formats. Defaults to `PIXEL_FORMAT_YUV_SEMIPLANAR_420`.
+        func (str, optional): Ascend image process method. Defaults to &#39;vdec&#39;.
+
+    Returns:
+        AscendArray: The created image
+    &#34;&#34;&#34;
+    # step 1: caculate image aligned w,h and buffer size
+    stride_w = aligned(w, func=func, aligned=&#39;w&#39;)
+    stride_h = aligned(h, func=func, aligned=&#39;h&#39;)
+    buf_size = calc_size(stride_w, stride_h, format)
+
+    # step 2: create a image(a AscendArray object) with dvpp memory
+    image = AscendArray((stride_w,), np.dtype(&#39;uint8&#39;), size=buf_size, \
+                        format=format, flag=&#39;DVPP&#39;)
+    image.reshape(image.shape[::-1])
+
+    return image
+
+
+
+def _pillow2array(img, flag=&#39;color&#39;, channel_order=&#39;bgr&#39;):
+    &#34;&#34;&#34;Convert a pillow image to numpy array.
+
+    Args:
+        img (:obj:`PIL.Image.Image`): The image loaded using PIL
+        flag (str): Flags specifying the color type of a loaded image,
+            candidates are &#39;color&#39;, &#39;grayscale&#39; and &#39;unchanged&#39;.
+            Default to &#39;color&#39;.
+        channel_order (str): The channel order of the output image array,
+            candidates are &#39;bgr&#39; and &#39;rgb&#39;. Default to &#39;bgr&#39;.
+
+    Returns:
+        np.ndarray: The converted numpy array
+    &#34;&#34;&#34;
+    channel_order = channel_order.lower()
+    if channel_order not in [&#39;rgb&#39;, &#39;bgr&#39;]:
+        raise ValueError(&#39;channel order must be either &#34;rgb&#34; or &#34;bgr&#34;&#39;)
+
+    if flag == &#39;unchanged&#39;:
+        array = np.array(img)
+        if array.ndim &gt;= 3 and array.shape[2] &gt;= 3:  # color image
+            array[:, :, :3] = array[:, :, (2, 1, 0)]  # RGB to BGR
+    else:
+        # If the image mode is not &#39;RGB&#39;, convert it to &#39;RGB&#39; first.
+        if img.mode != &#39;RGB&#39;:
+            if img.mode != &#39;LA&#39;:
+                # Most formats except &#39;LA&#39; can be directly converted to RGB
+                img = img.convert(&#39;RGB&#39;)
+            else:
+                # When the mode is &#39;LA&#39;, the default conversion will fill in
+                #  the canvas with black, which sometimes shadows black objects
+                #  in the foreground.
+                #
+                # Therefore, a random color (124, 117, 104) is used for canvas
+                img_rgba = img.convert(&#39;RGBA&#39;)
+                img = Image.new(&#39;RGB&#39;, img_rgba.size, (124, 117, 104))
+                img.paste(img_rgba, mask=img_rgba.split()[3])  # 3 is alpha
+        if flag == &#39;color&#39;:
+            array = np.array(img)
+            if channel_order != &#39;rgb&#39;:
+                array = array[:, :, ::-1]  # RGB to BGR
+        elif flag == &#39;grayscale&#39;:
+            img = img.convert(&#39;L&#39;)
+            array = np.array(img)
+        else:
+            raise ValueError(
+                &#39;flag must be &#34;color&#34;, &#34;grayscale&#34; or &#34;unchanged&#34;, &#39;
+                f&#39;but got {flag}&#39;)
+    return array
+
+class PicDesc():
+    &#34;&#34;&#34;Define a PicDesc object, to construct an picture info.
+
+    Attributes:
+        desc (obj): The created dvpp pic desc
+
+    &#34;&#34;&#34;
+    def __init__(self, obj, shape=None):
+        if not isinstance(obj, (AscendArray, list)):
+            raise TypeError(f&#34;Input obj expects an AscendArray object or \
+                a list of AscendArray object, but got {type(obj)}.&#34;)
+
+        if shape and not isinstance(shape, tuple):
+            raise TypeError(f&#34;Input shape expects an tuple, but got {type(shape)}.&#34;)
+
+        if isinstance(obj, AscendArray):
+            self._desc = acl.media.dvpp_create_pic_desc()
+            self.__assemble_desc(self._desc, obj, shape=shape)
+        else:
+            batch = len(obj)
+            assert batch &gt; 0, f&#34;Input image list is null.&#34;
+
+            self._batch_desc = acl.media.dvpp_create_batch_pic_desc(batch)
+            for i, image in enumerate(obj):
+                desc = acl.media.dvpp_get_pic_desc(self._batch_desc, i)
+                self.__assemble_desc(desc, image, shape=shape)
+
+    def __assemble_desc(self, desc, image, shape=None):
+        &#34;&#34;&#34;assemble image parameters to the created image desc.
+
+        Args:
+            desc  : the created pic desc
+            image : (AsendArray) image or croped area of image(bbox).
+            shape : the original size of image or (w, h) not to be aligned.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if not isinstance(image, AscendArray):
+            raise TypeError(f&#34;Input image expects an AscendArray object, but got {type(image)}.&#34;)
+
+        h, w = (image.shape[0] * 2 // 3, image.shape[1]) if image.format in yuv420 else image.shape[:2]
+
+        if shape is None:
+            shape = (w, h)
+
+        ret = acl.media.dvpp_set_pic_desc_data(desc, image.ascend_data)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc data, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_size(desc, image.nbytes)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc size, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_format(desc, image.format)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc format, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_width(desc, shape[0])
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc width, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_height(desc, shape[1])
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc height, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_width_stride(desc, w)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc width_stride, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_height_stride(desc, h)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc height_stride, return {ret}.&#34;
+
+    @property
+    def desc(self):
+        if hasattr(self, &#39;_desc&#39;):
+            return self._desc
+        
+        if hasattr(self, &#39;_batch_desc&#39;):
+            return self._batch_desc
+        
+
+    def __del__(self):
+        if hasattr(self, &#39;_desc&#39;):
+            ret = acl.media.dvpp_destroy_pic_desc(self._desc)
+            assert ret == ACL_SUCCESS, f&#34;destroy pic desc error in \
+                dvpp_destroy_pic_desc, return {ret}.&#34;
+
+        if hasattr(self, &#39;_batch_desc&#39;):
+            ret = acl.media.dvpp_destroy_batch_pic_desc(self._batch_desc)
+            assert ret == ACL_SUCCESS, f&#34;destroy pic desc error in \
+                dvpp_destroy_batch_pic_desc, return {ret}.&#34;
+
+
+class Image():
+    &#34;&#34;&#34;Define an Image class to process image.
+
+    Attributes:
+       context (int): The context resource working on
+       stream (int): The stream resource working on
+
+
+    .. hint:: 
+       - imdecode  : reads an image from the specified numpy ndarray and decode to yuv image
+       - imresize  : resizes the image img down to or up to the specified size
+       - imrescale : Resize image while keeping the aspect ratio.
+       - imflip    : Flip an image horizontally or vertically
+       - imrotate  : Rotate an image
+       - imcrop    : Crop image patches
+
+    &#34;&#34;&#34;
+    def __init__(self, context=None, stream=None):
+        self.class_name = self.__class__.__name__
+        self.context = context
+ 
+        # create a stream according to context
+        self.stream = create_stream(context)
+
+        # create dvpp image processing channel
+        self._channel_desc = acl.media.dvpp_create_channel_desc()
+        ret = acl.media.dvpp_create_channel(self._channel_desc)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;create channel failed, return {ret}.&#34;)
+
+    def imdecode(self, array, format=PIXEL_FORMAT_YUV_SEMIPLANAR_420, return_shape=False):
+        &#34;&#34;&#34; imdecode(array, format) -&gt; retval
+        
+        .. note::
+            The function imdecode reads an image from the specified numpy ndarray and decode to yuv image.
+            See www.hiascend.com for the list of supported format.
+
+        Args:
+            array (ndarray): Input numpy ndarray.
+            format (int, optional): The supported decode image format. Defaults to PIXEL_FORMAT_YUV_SEMIPLANAR_420.
+            return_shape (bool, optional): Return original shape(h, w, c) of image.
+
+        Returns:
+            AscendArray : The decoded image(AscendArray obj)
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        data = np.fromfile(&#39;./image.jpg&#39;, dtype=np.uint8)
+        image = Img.imdecode(data)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(array, np.ndarray):
+            raise TypeError(f&#34;Input array expects an np.ndarray object, but got {type(array)}.&#34;)
+
+        img_ptr = acl.util.numpy_to_ptr(array)
+
+        w, h, c, ret = acl.media.dvpp_jpeg_get_image_info(img_ptr, array.nbytes)
+        if ret == ACL_SUCCESS:
+            decoder = &#39;jpg&#39;
+        else:
+            w, h, c, ret = acl.media.dvpp_png_get_image_info(img_ptr, array.nbytes)
+            assert ret ==ACL_SUCCESS, f&#34;Get input image&#39;s info failed, return {ret}.&#34;
+            decoder = &#39;png&#39;
+
+        constrain_ = 8192 if decoder == &#39;jpg&#39; else 4096
+        if w &lt; 32 or w &gt; constrain_:
+            raise ValueError(f&#34;Input image&#39;s width out of range [32, {constrain_}].&#34;)
+
+        if h &lt; 32 or h &gt; constrain_:
+            raise ValueError(f&#34;Input image&#39;s height out of range [32, {constrain_}].&#34;)
+
+        if decoder == &#39;jpg&#39; and format not in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_422,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_444
+            ]:
+            raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+        if decoder ==&#39;png&#39; and format not in [
+            PIXEL_FORMAT_RGB_888,
+            PIXEL_FORMAT_BGR_888,
+            PIXEL_FORMAT_ARGB_8888,
+            PIXEL_FORMAT_ABGR_8888,
+            PIXEL_FORMAT_RGBA_8888,
+            PIXEL_FORMAT_BGRA_8888
+            ]:
+            raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # clone input image to device
+        data = AscendArray.clone(array, context=self.context, flag=&#34;DVPP&#34;)
+
+        image = create_align_img(w, h, format=format, func=&#39;jpegd&#39; if decoder == &#39;jpg&#39; else &#39;pngd&#39;)
+
+        # create output image desc and bind it with a output AscendArray object
+        pic_inst = PicDesc(image, (w, h))
+
+        # do jpeg decode
+        if decoder == &#39;jpg&#39;:
+            ret = acl.media.dvpp_jpeg_decode_async(self._channel_desc,
+                                                data.ascend_data,
+                                                data.nbytes,
+                                                pic_inst.desc,
+                                                self.stream)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_jpeg_decode_async, return {ret}.&#34;
+        else:
+            ret = acl.media.dvpp_png_decode_async(self._channel_desc,
+                                                data.ascend_data,
+                                                data.nbytes,
+                                                pic_inst.desc,
+                                                self.stream)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_png_decode_async, return {ret}.&#34;
+        
+        # finish jpeg image decode
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to decode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+        # release the unused resource in future
+        del (data, pic_inst)
+        Log(INFO, &#39;imdecode success.&#39;)
+        if return_shape:
+            return image, (h, w, c)
+        else:
+            return image
+
+
+    def imencode(self, ext, img, params=None):
+        &#34;&#34;&#34; Encodes an image into a memory buffer.
+         
+        .. note::
+            The function imencode compresses the image and stores it in the memory buffer 
+            that is resized to fit the result. See www.hiascend.com for the list of 
+            supported format and flags description.
+         
+        Args:
+            ext (str): File extension that defines the output format.
+            img (AscendArray): Image to be written
+            params (str, optional): Format-specific parameters, not use.
+
+        Returns:
+            AscendArray : Output buffer resized to fit the compressed image.
+        
+        Typical usage example:
+        ```python
+        img_encode = img.imencode(&#39;.jpg&#39;, yuv_img)
+        str_encode = np.array(img_encode).tostring()
+        ```
+        &#34;&#34;&#34;
+        if ext not in IMG_EXT_ENC:
+            raise TypeError(f&#34;Input ext expects {IMG_EXT_ENC}, but got {ext}.&#34;)
+
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        if img.format not in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+            PIXEL_FORMAT_YUYV_PACKED_422, 
+            PIXEL_FORMAT_UYVY_PACKED_422, 
+            PIXEL_FORMAT_YVYU_PACKED_422,
+            PIXEL_FORMAT_VYUY_PACKED_422
+            ]:
+            raise ValueError(f&#34;Encode img&#39;s format {img.format} is invalid, this format not support.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        src_img, shape = align_img(img, func=&#39;encode&#39;)
+
+        # create input image desc and bind it with a input AscendArray object
+        src_inst = PicDesc(src_img, shape)
+
+        # create a jpeg image encode configurate
+        config = acl.media.dvpp_create_jpege_config()
+        ret = acl.media.dvpp_set_jpege_config_level(config, 100)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Set jpege config level failed, return {ret}.&#34;)
+
+        # predict out buffer size according to image desc
+        buff_size, ret = acl.media.dvpp_jpeg_predict_enc_size(src_inst.desc, config)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;jpeg predict encode size failed, return {ret}.&#34;)
+
+        # config out buffer of encode
+        out_size = np.array([buff_size], dtype=np.int32)
+        size_ptr = acl.util.numpy_to_ptr(out_size)
+        enc_jpg = AscendArray((buff_size,), np.dtype(&#39;uint8&#39;), format=img.format, flag=&#39;DVPP&#39;)
+        
+        # do jpeg decode
+        ret = acl.media.dvpp_jpeg_encode_async(self._channel_desc,
+                                               src_inst.desc,
+                                               enc_jpg.ascend_data,
+                                               size_ptr,
+                                               config,
+                                               self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_jpeg_encode_async, return {ret}.&#34;)
+        
+        # finish jpeg image decode
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to encode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+        # trans AscendArray data to numpy array
+        jpeg_img = enc_jpg.to_np
+
+        # release the unused resource in future
+        del (src_inst, src_img, enc_jpg)
+        Log(INFO, &#39;imdecode success.&#39;)
+
+        ret = acl.media.dvpp_destroy_jpege_config(config)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;destroy jpege config failed, return {ret}.&#34;)
+        return jpeg_img
+
+
+    def imresize(self, img, dsize, interpolation=&#39;huawei&#39;):
+        &#34;&#34;&#34;imresize(array, img, dsize, interpolation=&#39;huawei&#39;) -&gt; retval
+
+        To shrink an image, it will generally look best with #INTER_AREA interpolation
+
+        Args:
+            img (AscendArray): Input image
+            dsize (tuple): The output image size (tuple(w, h));
+            interpolation (str, optional): The interpolation method, its default method is researched 
+                by ourself.. Defaults to &#39;huawei&#39;.
+
+        Returns:
+            AscendArray: The resized image
+
+        .. note::
+            The function resize resizes the image img down to or up to the specified size. Note that the
+            initial dst type or size are not taken into account. Instead, the size and type are derived from
+            the img, dsize. 
+
+        you may call the function as follows:
+        ```python
+        # explicitly specify dsize (tuple[int]): Target size (w, h).
+        imresize(img, dsize, interpolation)
+        ```
+        If you want to decimate the image by factor of 2 in each direction, you can call the function this way:
+        ```python
+        # specify the element w and h of the destination image size.
+        imresize(img, (w//2, h//2), interpolation)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400 -&gt; PIXEL_FORMAT_BGRA_8888]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if dsize and not isinstance(dsize, tuple):
+            raise TypeError(f&#34;Input dsize expects a tuple object, but got {type(dsize)}.&#34;)
+
+        if dsize and (dsize[0] &gt; 16 * w or dsize[0] &lt; int(1/32 * w)):
+            raise ValueError(f&#34;Input dsize[0] out of resize ratio [1/32, 16]&#34;)
+
+        if dsize and (dsize[1] &gt; 16 * h or dsize[1] &lt; int(1/32 * h)):
+            raise ValueError(f&#34;Input dsize[1] out of resize ratio [1/32, 16]&#34;)
+
+        if interpolation not in interp_codes.keys():
+            raise ValueError(f&#34;Input decode flag {interpolation} is unsupport.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # do image aligned and create aligned image to save resized image
+        src_img, shape = align_img(img, func=&#39;resize&#39;)
+        dst_img = create_align_img(dsize[0], dsize[1], format=img.format, func=&#39;resize&#39;)
+
+        # create output image desc and bind it with a output AscendArray object
+        src_inst = PicDesc(src_img, shape)
+        dst_inst = PicDesc(dst_img, dsize)
+
+        # create resize config
+        resize_conf = acl.media.dvpp_create_resize_config()
+
+        # set resize interpolation
+        ret = acl.media.dvpp_set_resize_config_interpolation(resize_conf, interp_codes[interpolation])
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to set resize_config_interpolation, return {ret}.&#34;)
+
+        # do image resize
+        ret = acl.media.dvpp_vpc_resize_async(self._channel_desc,
+                                              src_inst.desc,
+                                              dst_inst.desc,
+                                              resize_conf,
+                                              self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_resize_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to resize image in synchronize_stream, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_resize_config(resize_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;do dvpp_destroy_resize_config failed, return {ret}.&#34;)
+
+        del (img, src_img, src_inst, dst_inst)
+        Log(INFO, &#39;resize image success&#39;)
+
+        return dst_img
+
+
+    def imrescale(self, img, scale, interpolation=&#39;huawei&#39;, return_shape=False):
+        &#34;&#34;&#34;Resize image while keeping the aspect ratio.
+
+        Args:
+            img (AsecendArray): The input image.
+            scale (float, tuple[int]): The scaling factor or maximum size. If it is a float 
+                number, then the image will be rescaled by this factor, else if it is a tuple 
+                of 2 integers, then the image will be rescaled as large as possible within 
+                the scale.
+            interpolation (str, optional): Same as :func:`imresize`.
+            return_shape (bool, optional): Return scale shape not aligned.
+
+        Returns:
+            AsecendArray : The rescaled image.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv_rescale1 = Img.imrescale(yuv, 0.3)
+        yuv_rescale2 = Img.imrescale(yuv, (320, 540))
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if isinstance(scale, (float, int)):
+            if scale &lt;= 0:
+                raise ValueError(f&#39;Invalid scale {scale}, must be positive.&#39;)  
+            scale_factor = scale
+        elif isinstance(scale, tuple):
+            max_long_edge = max(scale)
+            max_short_edge = min(scale)
+
+            # find the maximum rescale ratio, and the resized shape should be valid.
+            scale_factor = min(max_long_edge/max(h, w), max_short_edge/min(h, w))
+        else:
+            raise TypeError(
+                f&#39;Scale must be a number or tuple of int, but got {type(scale)}&#39;)
+
+        # caculate new rescaled size according to scale_factor 
+        new_size = _scale_size((w, h), scale_factor)
+
+        # do resize
+        rescaled_img = self.imresize(img, new_size, interpolation=interpolation)
+
+        if return_shape:
+            return rescaled_img, new_size
+        else:
+            return rescaled_img
+
+    def imflip(self, img, direction=&#39;horizontal&#39;):
+        &#34;&#34;&#34;Flip an image horizontally or vertically.
+
+        Args:
+            img (AscendArray): Image to be flipped.
+            direction (str): The flip direction, either &#34;horizontal&#34; or &#34;vertical&#34; or &#34;diagonal&#34;.
+
+        Returns:
+            AscendArray: The flipped image.
+        
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        im_flip = Img.imflip(img, direction=&#39;horizontal&#39;)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        assert direction in [&#39;horizontal&#39;, &#39;vertical&#39;, &#39;diagonal&#39;]
+
+        arr = img.to_np
+
+        if direction == &#39;horizontal&#39;:
+            return AscendArray.clone(np.flip(arr, axis=1))
+        elif direction == &#39;vertical&#39;:
+            return AscendArray.clone(np.flip(arr, axis=0))
+        else:
+            return AscendArray.clone(np.flip(arr, axis=(0, 1)))
+
+
+    def imrotate(self, 
+                img,
+                angle,
+                center=None,
+                scale=1.0,
+                border_value=0,
+                interpolation=&#39;bilinear&#39;,
+                auto_bound=False):
+        &#34;&#34;&#34;Rotate an image.
+
+        Args:
+            img (AscendArray): Image to be rotated.
+            angle (float): Rotation angle in degrees, positive values mean clockwise rotation.
+            center (tuple[float], optional): Center point (w, h) of the rotation in the source 
+                image. If not specified, the center of the image will be used.
+            scale (float, optional): Isotropic scale factor.
+            border_value (int, optional): Border value.
+            interpolation (str, optional): Same as function: `resize`.
+            auto_bound (bool, optional): Whether to adjust the image size to cover the whole
+                rotated image.
+
+        Returns:
+            AscendArray: The rotated image.
+        &#34;&#34;&#34;
+        try:
+            import cv2
+            cv2_interp_codes = {
+                &#39;nearest&#39;: cv2.INTER_NEAREST,
+                &#39;bilinear&#39;: cv2.INTER_LINEAR,
+                &#39;bicubic&#39;: cv2.INTER_CUBIC,
+                &#39;area&#39;: cv2.INTER_AREA,
+                &#39;lanczos&#39;: cv2.INTER_LANCZOS4
+            }
+        except ImportError:
+            Log(ERROR, &#39;import cv2 error while using imrotate, you should install opencv first.&#39;)
+            return
+
+        if center is not None and auto_bound:
+            raise ValueError(&#39;`auto_bound` conflicts with `center`&#39;)
+        h, w = img.shape[:2]
+        if center is None:
+            center = ((w - 1) * 0.5, (h - 1) * 0.5)
+        assert isinstance(center, tuple)
+
+        matrix = cv2.getRotationMatrix2D(center, -angle, scale)
+        if auto_bound:
+            cos = np.abs(matrix[0, 0])
+            sin = np.abs(matrix[0, 1])
+            new_w = h * sin + w * cos
+            new_h = h * cos + w * sin
+            matrix[0, 2] += (new_w - w) * 0.5
+            matrix[1, 2] += (new_h - h) * 0.5
+            w = int(np.round(new_w))
+            h = int(np.round(new_h))
+        rotated = cv2.warpAffine(
+            img.to_np,
+            matrix, (w, h),
+            flags=cv2_interp_codes[interpolation],
+            borderValue=border_value)
+        return AscendArray.clone(rotated)
+        
+
+    def imcrop(self, img, bboxes, scale=1.0):
+        &#34;&#34;&#34;Crop image patches, and resize bboxes.
+
+        Args:
+            img (AscendArray): Image to be cropped.
+            bboxes (ndarray): Shape (k, 4) or (4,), location of cropped bboxes.
+            scale (float, optional): Scale ratio of bboxes, the default value 1.0 means no padding.
+
+        Returns:
+            list[AscendArray] or AscendArray: The cropped image patches.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+        yuv_croped = Img.imcrop(img, bboxes)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        if not isinstance(bboxes, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(bboxes)}.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # step 1: caculate the cliped bbox shape
+        _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+        scaled_bboxes = bbox_scaling(_bboxes, scale).astype(np.int32)
+        clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+        # align original image
+        src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+        # step 2: input desc assembling, only process one image.
+        image_inst = PicDesc([src_img], shape)
+        roi_n_list = [clipped_bbox.shape[0]]
+
+        # step 3: clip bboxes of image
+        bboxes, roi_list = [], []
+        for i in range(clipped_bbox.shape[0]):
+            x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+            
+            # align w and h, and calc memory size of output box image
+            dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+            dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+            dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+            
+            # create a bbox(a AscendArray object) and bind with dvpp memory
+            dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                                format=img.format, flag=&#39;DVPP&#39;)
+            bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+            # create roi description
+            roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+            roi_list.append(roi_conf)
+
+        # create output image desc and bind it with a output AscendArray object
+        bboxes_inst = PicDesc(bboxes)
+
+        # step 4: crop processing
+        _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                            self._channel_desc,
+                                            image_inst.desc, 
+                                            roi_n_list,
+                                            bboxes_inst.desc,
+                                            roi_list,
+                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+        
+        for roi in roi_list:
+            ret = acl.media.dvpp_destroy_roi_config(roi)
+            assert ret == ACL_SUCCESS, \
+                ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del image_inst
+        del bboxes_inst
+        Log(INFO, &#39;vpc crop process success&#39;)
+
+        if not np.isclose(scale, 1.0, rtol=1e-2, atol=1e-03):
+            res_img = []
+            for bbox in bboxes:
+                res_img.append(self.imrescale(bbox, scale))
+            return res_img
+
+        return bboxes
+
+    def bbox_resize(self, img, bboxes, sizes, inner_resize=True):
+        &#34;&#34;&#34;Clip the bboxes image and resize to specified size.
+
+        2 steps:  clip the bboxes image -&gt; resize croped image.
+
+        Args:
+            img (AscendArray): Image to be cliped.
+            bboxes (ndarray): Shape (k, 4) or (4, ), location of cropped bboxes.
+            sizes (int): Shape (k, 2) or (2, ), scale sizes of bboxes.
+            inner_resize (bool, optional): Use dvpp auto resize function to resize croped boxes
+
+        Returns:
+            list[AscendArray] or AscendArray: The cropped and resized image patches.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+        sizes = np.array([[300, 300], [400, 400]])
+        yuv_croped = Img.bbox_resize(img, bboxes, sizes)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        if not isinstance(bboxes, np.ndarray):
+            raise TypeError(f&#34;Input bboxes expects an np.ndarray, but given {type(bboxes)}.&#34;)
+
+        if not isinstance(sizes, np.ndarray):
+            raise TypeError(f&#34;Input sizes expects an np.ndarray, but given {type(sizes)}.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        assert sizes.shape[-1] == 2, f&#34;Input sizes dim 2 must be 2.&#34;
+        if sizes.ndim == 2 and sizes.shape[0] != bboxes.shape[0]:
+            raise ValueError(f&#34;Input sizes&#39;s shape expects same to bboxes.&#34;)
+
+        # step 1: caculate the cliped bbox shape
+        _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+        scaled_bboxes = bbox_scaling(_bboxes, 1.0).astype(np.int32)
+        clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+        # align original image 
+        src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+        # step 2: input desc assembile, only process one image.
+        image_inst = PicDesc([src_img], img.shape[::-1])
+        roi_n_list = [clipped_bbox.shape[0]]
+
+        # step 3: clip bboxes of image
+        bboxes, roi_list = [], []
+        _sizes = sizes[None, ...].tolist() if sizes.ndim == 1 else sizes.tolist()
+        for i in range(clipped_bbox.shape[0]):
+            x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+
+            # align w and h, and calc memory size of output box image
+            if inner_resize:
+                dst_stride_w = aligned(_sizes[i][0], aligned=&#39;w&#39;)
+                dst_stride_h = aligned(_sizes[i][1], aligned=&#39;h&#39;)
+            else:
+                dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+                dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+            dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+            
+            # create a bbox(a AscendArray object) and bind with dvpp memory
+            dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                                format=img.format, flag=&#39;DVPP&#39;)
+            bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+            # create roi description
+            roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+            roi_list.append(roi_conf)
+
+        # create output image desc and bind it with a output AscendArray object
+        bboxes_inst = PicDesc(bboxes)
+
+        # step 4: crop processing
+        _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                            self._channel_desc,
+                                            image_inst.desc, 
+                                            roi_n_list,
+                                            bboxes_inst.desc,
+                                            roi_list,
+                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+        
+        for roi in roi_list:
+            ret = acl.media.dvpp_destroy_roi_config(roi)
+            assert ret == ACL_SUCCESS, \
+                ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del (image_inst, bboxes_inst)
+        Log(INFO, &#39;vpc crop process success&#39;)
+
+        if not inner_resize:
+            res_img = []
+            for bbox in bboxes:
+                res_img.append(self.imresize(bbox, _sizes[i]))
+            return res_img
+
+        return bboxes
+
+    def __align_roi(self, bbox, img_shape):
+        &#34;&#34;&#34; align bbox left-top and right-bottom point
+        Args:
+            bbox : Input bbox(np.ndrray) with shape (4, ) or (n, 4)
+            img_shape : tuple(h, w), input image shape, and bbox location should in image.
+
+        Returns:
+            aligned bbox, list with shape (4, ) or (n, 4).
+        &#34;&#34;&#34;
+        if not isinstance(img_shape, tuple):
+            raise TypeError(f&#34;Input img_shape expect a tuple, but got {type(img_shape)}.&#34;)
+            
+        bbox = bbox[None, ...] if bbox.ndim == 1 else bbox
+        for i, box in enumerate(bbox):
+            assert box[0] &lt; img_shape[1] and box[1] &lt; img_shape[0] and box[2] &gt; 0 \
+                and box[3] &gt; 0, f&#34;Input {i}-th bbox([startx, starty, endx, endy]) beyond the image.&#34;
+
+        for i in range(bbox.shape[0]):
+            bbox[i][0] = bbox[i][0] &gt;&gt; 1 &lt;&lt; 1
+            bbox[i][1] = bbox[i][1] &gt;&gt; 1 &lt;&lt; 1
+            bbox[i][2] = (bbox[i][2] &gt;&gt; 1 &lt;&lt; 1) - 1
+            bbox[i][3] = (bbox[i][3] &gt;&gt; 1 &lt;&lt; 1) - 1
+
+        return bbox
+
+    def imcrop_paste(self, src_img, dst_img, crop_bbox, paste_bbox):
+        &#34;&#34;&#34;Crop a bbox from src image and paste the cropped bbox to dst image
+
+        Args:
+            src_img (AscendArray): Input src image(AscendArray) to be croped.
+            dst_img (AscendArray): Input dst image(AscendArray) to be pasted.
+            crop_bbox (np.ndarray): Shape (4, ) or (n, 4), location of cropped bboxe, data arrangement,
+                np.array([startx, starty, endx, endy], dtype=int).
+            paste_bbox (np.ndarray): Shape (4, ) or (n, 4), location of pasted bboxe, data arrangement
+                same to crop_bbox.
+
+        Returns:
+            AscendArray: Dest image after cropping and pasting.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        crop_bbox = np.array([40, 30, 140, 230], dtype=&#39;int32&#39;)
+        paste_bbox = np.array([70, 80, 170, 280], dtype=&#39;int32&#39;)
+        Img.imcrop_paste(yuv_src, yuv_dst, crop_bbox, paste_bbox)
+        ```
+        &#34;&#34;&#34;
+
+        if not isinstance(src_img, AscendArray):
+            raise TypeError(f&#34;Input src_img expects an AscendArray, but we got a {type(src_img)}.&#34;)
+
+        if not isinstance(dst_img, AscendArray):
+            raise TypeError(f&#34;Input dst_img expects an AscendArray, but we got a {type(dst_img)}.&#34;)
+
+        if not isinstance(crop_bbox, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+        if not isinstance(paste_bbox, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+        if crop_bbox.shape[-1] != 4 or paste_bbox.shape[-1] != 4:
+            raise ValueError(f&#34;Input crop_bbox or paste_bbox column dim should be 4.&#34;)
+
+        if crop_bbox.shape[0] != paste_bbox.shape[0]:
+            raise ValueError(f&#34;Input crop_bbox and paste_bbox should have same number bbox.&#34;)
+
+        # step 1: check input bbox, make startx and starty to even and endx and endy to odd
+        cbbox = self.__align_roi(crop_bbox, src_img.shape).tolist()
+        pbbox = self.__align_roi(paste_bbox, dst_img.shape).tolist()
+
+        # step 2: align original image
+        crop_img, _ = align_img(src_img, func=&#39;crop&#39;)
+        paste_img, _ = align_img(dst_img, func=&#39;crop&#39;)
+
+        # step 3: create output image desc and bind it with a output AscendArray object
+        src_desc = PicDesc([crop_img], src_img.shape)
+        dst_desc = PicDesc([paste_img] * len(pbbox), dst_img.shape)
+
+        # step 4: startx of paste box aligned to 16 and append crop/paste roi to list
+        crop_conf_list, past_conf_list = [], []
+        for i in range(len(pbbox)):
+            pbbox[i][0] = aligned(pbbox[i][0], aligned=&#39;w&#39;)
+            cstartx, cendx, cstarty, cendy = cbbox[i][0], cbbox[i][2], cbbox[i][1], cbbox[i][3]
+            pstartx, pendx, pstarty, pendy = pbbox[i][0], pbbox[i][2], pbbox[i][1], pbbox[i][3]
+            crop_conf = acl.media.dvpp_create_roi_config(cstartx, cendx, cstarty, cendy)
+            past_conf = acl.media.dvpp_create_roi_config(pstartx, pendx, pstarty, pendy)
+            crop_conf_list.append(crop_conf)
+            past_conf_list.append(past_conf)
+
+        # step 5: do crop and paste
+        _, ret = acl.media.dvpp_vpc_batch_crop_and_paste_async(self._channel_desc,
+                                                            src_desc.desc,
+                                                            [len(pbbox)], 
+                                                            dst_desc.desc,
+                                                            crop_conf_list, 
+                                                            past_conf_list,
+                                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_batch_crop_and_paste_async, return {ret}.&#34;)
+
+        # step 6: synchronize stream and finish crop and paste 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+        for conf in crop_conf_list:
+            ret = acl.media.dvpp_destroy_roi_config(conf)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+        for conf in past_conf_list:
+            ret = acl.media.dvpp_destroy_roi_config(conf)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+        del (crop_img, src_desc, dst_desc)
+        Log(INFO, &#39;crop and paste process success&#39;)
+        return paste_img
+
+    def impad(self, img, shape=None, padding=None, pad_val=0, padding_mode=&#39;constant&#39;):
+        &#34;&#34;&#34;Pad the given image to a certain shape or pad on all sides with
+            specified padding mode and padding value.
+
+        Args:
+            img (AscendArray): Image to be padded.
+            shape (tuple[int]): Expected padding shape (h, w). Default: None.
+            padding (int or tuple[int]): Padding on each border. If a single int is provided this 
+                is used to pad all borders. If tuple of length 2 is provided this is the padding 
+                on left/right and top/bottom respectively. If a tuple of length 4 is provided 
+                this is the padding for the [left, top, right and bottom] borders respectively.
+                Default: None. Note that `shape` and `padding` can not be both set.
+            pad_val (Number): Values to be filled in padding areas when padding_mode is 
+                &#39;constant&#39;. Default: 0.
+            padding_mode (str): Type of padding. Only support: constant. Default: constant.
+
+                - constant: pads with a constant value, this value is specified with pad_val.
+
+        Returns:
+            AscendArray : The padded image.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv_pad = Img.impad(img, padding=(20, 50, 100, 200), pad_val=128)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+        if shape and not isinstance(shape, tuple):
+            raise TypeError(f&#34;Input shape expects an tuple, but we got a {type(shape)}.&#34;)
+
+        if padding and not isinstance(padding, (int, tuple)):
+            raise TypeError(f&#34;Input padding expects an int or tuple, but we got a {type(padding)}.&#34;)
+
+        if padding_mode not in [&#39;constant&#39;]:
+            raise TypeError(f&#34;Input padding_mode expects in [&#39;constant&#39;], but we got {padding_mode}.&#34;)
+
+        assert (shape is not None) ^ (padding is not None), \
+                f&#34;Input `shape` and `padding` can not be both set.&#34;
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if shape is not None:
+            padding = (0, 0, shape[1] - w, shape[0] - h)
+
+        if isinstance(padding, tuple) and len(padding) in [2, 4]:
+            if len(padding) == 2:
+                padding = (padding[0], padding[1], padding[0], padding[1])
+        elif isinstance(padding, numbers.Number):
+            padding = (padding, padding, padding, padding)
+        else:
+            raise ValueError(&#39;Padding must be a int or a 2, or 4 element tuple.&#39;
+                            f&#39;But received {padding}&#39;)
+
+        # align original image shape and create a output to save padding result.
+        src_img, _ = align_img(img)
+        dst_w = padding[0] + w + padding[2]
+        dst_h = padding[1] + h + padding[3]
+        dst_img = create_align_img(dst_w, dst_h, format=img.format)
+
+        # set the padding result&#39;s memory with pad_val
+        Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+
+        # create output image desc and bind it with a output AscendArray object
+        src_desc = PicDesc(src_img, img.shape)
+        dst_desc = PicDesc(dst_img, (dst_h, dst_w))
+
+        # paste area startx, starty, endx, endy, and align startx with 16
+        startx = aligned(padding[0], aligned=&#39;w&#39;)
+        starty = padding[1] &gt;&gt; 1 &lt;&lt; 1
+        endx = ((padding[0] + w) &gt;&gt; 1 &lt;&lt; 1) - 1
+        endy = ((padding[1] + h) &gt;&gt; 1 &lt;&lt; 1) - 1
+
+        # create roi description
+        roi_conf = acl.media.dvpp_create_roi_config(0, (w &gt;&gt; 1 &lt;&lt; 1) - 1, 0, (h &gt;&gt; 1 &lt;&lt; 1) - 1)
+        pst_conf = acl.media.dvpp_create_roi_config(startx, endx, starty, endy)
+
+        ret = acl.media.dvpp_vpc_crop_and_paste_async(self._channel_desc,
+                                                      src_desc.desc,
+                                                      dst_desc.desc,
+                                                      roi_conf,
+                                                      pst_conf,
+                                                      self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_and_paste_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_roi_config(roi_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_roi_config(pst_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del (src_img, src_desc, dst_desc)
+        Log(INFO, &#39;image padding process success&#39;)
+        return dst_img
+
+    def imread(self, img_or_path, flag=&#39;color&#39;, channel_order=&#39;bgr&#39;, backend=&#39;ascend&#39;):
+        &#34;&#34;&#34;Read an image.
+
+        Args:
+            img_or_path (ndarray or str or Path): Either a numpy array or str or pathlib.Path. If 
+                it is a numpy array (loaded image), then it will be returned as is.
+            flag (str): Flags specifying the color type of a loaded image, candidates are `color`, 
+                `grayscale` and `unchanged`. It only work for `cv2` and `pillow`.
+            channel_order (str): Order of channel, candidates are `bgr` and `rgb`, not work for ascend.
+            backend (str): The image decoding backend type. Options are `cv2`, `pillow`, `ascend`. 
+                Default: `ascend`.
+
+        Returns:
+            AscendArray: Loaded image array.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv = Img.imread(&#39;./image.jpg&#39;)
+        ```
+        &#34;&#34;&#34;
+        if backend not in [&#39;cv2&#39;, &#39;pillow&#39;, &#39;ascend&#39;]:
+            raise ValueError(f&#39;backend: {backend} is not supported. Supported &#34;backends are &#39;
+                            &#34;&#39;cv2&#39;, &#39;turbojpeg&#39;, &#39;pillow&#39;.&#34;)
+
+        if backend == &#39;cv2&#39;:
+            try:
+                import cv2
+                imread_flags = {
+                    &#39;color&#39;: cv2.IMREAD_COLOR,
+                    &#39;grayscale&#39;: cv2.IMREAD_GRAYSCALE,
+                    &#39;unchanged&#39;: cv2.IMREAD_UNCHANGED
+                }
+            except ImportError:
+                Log(ERROR, &#34;import cv2 error while using imread with backend &#39;cv2&#39;.&#34;)
+                return
+
+        if isinstance(img_or_path, Path):
+            img_or_path = str(img_or_path)
+
+        if isinstance(img_or_path, np.ndarray):            
+            decode_img = self.imdecode(img_or_path)
+            return decode_img
+        elif is_str(img_or_path):
+            check_file_exist(img_or_path, f&#39;img file does not exist: {img_or_path}&#39;)
+            if backend == &#39;pillow&#39;:
+                img = Image.open(img_or_path)
+                img = _pillow2array(img, flag, channel_order)
+                return AscendArray.clone(img)
+            else:
+                flag = imread_flags[flag] if is_str(flag) else flag
+                img = cv2.imread(img_or_path, flag)
+                if flag == IMREAD_COLOR and channel_order == &#39;rgb&#39;:
+                    cv2.cvtColor(img, cv2.COLOR_BGR2RGB, img)
+                return AscendArray.clone(img)
+        else:
+            raise TypeError(&#39;&#34;img&#34; must be a numpy array or a str or a pathlib.Path object&#39;)
+
+
+    def imwrite(self, img, file_path, params=None, auto_mkdir=True):
+        &#34;&#34;&#34;Write image to file.
+
+        Args:
+            img (AscendArray): Image array to be written.
+            file_path (str): Image file path.
+            params (None, str or list): If params==&#39;pillow&#39;, save image with PIL. if params is list, 
+                this same as opencv&#39;s func: `imwrite` interface, only work for opencv.
+            auto_mkdir (bool): If the parent folder of `file_path` does not exist,
+                whether to create it automatically.
+
+        Returns:
+            bool: Successful or not.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        Img.imwrite(yuv_org, &#39;./saved_img.jpg&#39;)  
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but got {type(img)}.&#34;)
+        
+        if auto_mkdir:
+            dir_name = osp.abspath(osp.dirname(file_path))
+            mkdir_or_exist(dir_name)
+        
+        if params is None:
+            ext = &#39;.png&#39; if file_path.endswith(&#39;.png&#39;) or file_path.endswith(&#39;.PNG&#39;)  else &#39;.jpg&#39;
+            file = self.imencode(ext, img)
+            with open(file, &#39;w+&#39;) as fw:
+                fw.write(file)
+        elif params == &#39;pillow&#39;:
+            pil_image = Image.fromarray(img.to_np)
+            pil_image.save(file_path)
+        else:
+            try:
+                import cv2
+                cv2.imwrite(file_path, img.to_np, params)
+            except ImportError:
+                Log(ERROR, f&#34;import cv2 error while using imwrite save image with params {params}.&#34;)
+
+
+    def __del__(self):
+        if hasattr(self, &#39;_channel_desc&#39;):
+            ret = acl.media.dvpp_destroy_channel(self._channel_desc)
+            assert ret == ACL_SUCCESS, f&#34;dvpp destroy channel failed, return {ret}.&#34;
+
+            ret = acl.media.dvpp_destroy_channel_desc(self._channel_desc)
+            assert ret == ACL_SUCCESS, f&#34;dvpp destroy channel desc failed, return {ret}.&#34;
+
+
+if __name__ == &#34;__main__&#34;:
+    import pdb
+    from resource.context import Context
+    context = Context({0})
+    ctx = context.context_dict[0]
+    img = Image(ctx)
+    pdb.set_trace()
+
+    data = np.fromfile(&#39;girl1.jpg&#39;, dtype=np.uint8)
+    yuv_img = img.imdecode(data)
+
+    img_encode = img.imencode(&#39;.jpg&#39;, yuv_img)
+    data_encode = np.array(img_encode)
+    str_encode = data_encode.tostring()
+
+    with open(&#39;img_encode.jpg&#39;, &#39;wb&#39;) as f:
+        f.write(str_encode)
+        f.flush
+
+    del img, context</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.image.geome.align_img"><code class="name flex">
+<span>def <span class="ident">align_img</span></span>(<span>img, func='vdec')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Align a Ascend image's width and height using this function.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image or croped area of image(bbox).</dd>
+<dt><strong><code>func</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The alinged method to be used. Defaults to 'vdec'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[tuple]</code></dt>
+<dd>The returned data format is <code>(image, (w, h))</code></dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L37-L69" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def align_img(img, func=&#39;vdec&#39;):
+    &#34;&#34;&#34;Align a Ascend image&#39;s width and height using this function.
+
+    Args:
+        img (AscendArray): Image or croped area of image(bbox).
+        func (str, optional): The alinged method to be used. Defaults to &#39;vdec&#39;.
+
+    Returns:
+        [tuple]: The returned data format is `(image, (w, h))`
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but got {type(img)}.&#34;)
+
+    # step 1: get the truth h and w of image.
+    if img.format in yuv420:
+        h, w = (img.shape[0] * 2 // 3, img.shape[1])
+    else:
+        h, w = img.shape[:2]
+
+    # step 2: caculate image aligned shape and buffer size
+    stride_w = aligned(w, func=func, aligned=&#39;w&#39;)
+    stride_h = aligned(h, func=func, aligned=&#39;h&#39;)
+    buf_size = calc_size(stride_w, stride_h, img.format)
+
+    # step 3: if image not aligned, create a new image(a AscendArray object)
+    if (stride_h, stride_w) != (h, w):
+        image = AscendArray((stride_w,), np.dtype(&#39;uint8&#39;), size=buf_size, \
+                        format=img.format, flag=&#39;DVPP&#39;)
+        img.to(image)
+        image.reshape(image.shape[::-1])
+        return image, (w, h)
+
+    return img, (w, h)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.create_align_img"><code class="name flex">
+<span>def <span class="ident">create_align_img</span></span>(<span>w, h, format=1, func='vdec')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Assemble image parameters to the created image desc.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>w</code></strong> :&ensp;<code>int</code></dt>
+<dd>The original image's width.</dd>
+<dt><strong><code>h</code></strong> :&ensp;<code>int</code></dt>
+<dd>The original image's height.</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Image pixel formats. Defaults to <code>PIXEL_FORMAT_YUV_SEMIPLANAR_420</code>.</dd>
+<dt><strong><code>func</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Ascend image process method. Defaults to 'vdec'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>The created image</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L71-L93" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def create_align_img(w, h, format=PIXEL_FORMAT_YUV_SEMIPLANAR_420, func=&#39;vdec&#39;):
+    &#34;&#34;&#34;Assemble image parameters to the created image desc.
+
+    Args:
+        w (int): The original image&#39;s width.
+        h (int): The original image&#39;s height.
+        format (int, optional): Image pixel formats. Defaults to `PIXEL_FORMAT_YUV_SEMIPLANAR_420`.
+        func (str, optional): Ascend image process method. Defaults to &#39;vdec&#39;.
+
+    Returns:
+        AscendArray: The created image
+    &#34;&#34;&#34;
+    # step 1: caculate image aligned w,h and buffer size
+    stride_w = aligned(w, func=func, aligned=&#39;w&#39;)
+    stride_h = aligned(h, func=func, aligned=&#39;h&#39;)
+    buf_size = calc_size(stride_w, stride_h, format)
+
+    # step 2: create a image(a AscendArray object) with dvpp memory
+    image = AscendArray((stride_w,), np.dtype(&#39;uint8&#39;), size=buf_size, \
+                        format=format, flag=&#39;DVPP&#39;)
+    image.reshape(image.shape[::-1])
+
+    return image</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.image.geome.Image"><code class="flex name class">
+<span>class <span class="ident">Image</span></span>
+<span>(</span><span>context=None, stream=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define an Image class to process image.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code>int</code></dt>
+<dd>The context resource working on</dd>
+<dt><strong><code>stream</code></strong> :&ensp;<code>int</code></dt>
+<dd>The stream resource working on</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul>
+<li>imdecode
+: reads an image from the specified numpy ndarray and decode to yuv image</li>
+<li>imresize
+: resizes the image img down to or up to the specified size</li>
+<li>imrescale : Resize image while keeping the aspect ratio.</li>
+<li>imflip
+: Flip an image horizontally or vertically</li>
+<li>imrotate
+: Rotate an image</li>
+<li>imcrop
+: Crop image patches</li>
+</ul>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L235-L1257" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Image():
+    &#34;&#34;&#34;Define an Image class to process image.
+
+    Attributes:
+       context (int): The context resource working on
+       stream (int): The stream resource working on
+
+
+    .. hint:: 
+       - imdecode  : reads an image from the specified numpy ndarray and decode to yuv image
+       - imresize  : resizes the image img down to or up to the specified size
+       - imrescale : Resize image while keeping the aspect ratio.
+       - imflip    : Flip an image horizontally or vertically
+       - imrotate  : Rotate an image
+       - imcrop    : Crop image patches
+
+    &#34;&#34;&#34;
+    def __init__(self, context=None, stream=None):
+        self.class_name = self.__class__.__name__
+        self.context = context
+ 
+        # create a stream according to context
+        self.stream = create_stream(context)
+
+        # create dvpp image processing channel
+        self._channel_desc = acl.media.dvpp_create_channel_desc()
+        ret = acl.media.dvpp_create_channel(self._channel_desc)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;create channel failed, return {ret}.&#34;)
+
+    def imdecode(self, array, format=PIXEL_FORMAT_YUV_SEMIPLANAR_420, return_shape=False):
+        &#34;&#34;&#34; imdecode(array, format) -&gt; retval
+        
+        .. note::
+            The function imdecode reads an image from the specified numpy ndarray and decode to yuv image.
+            See www.hiascend.com for the list of supported format.
+
+        Args:
+            array (ndarray): Input numpy ndarray.
+            format (int, optional): The supported decode image format. Defaults to PIXEL_FORMAT_YUV_SEMIPLANAR_420.
+            return_shape (bool, optional): Return original shape(h, w, c) of image.
+
+        Returns:
+            AscendArray : The decoded image(AscendArray obj)
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        data = np.fromfile(&#39;./image.jpg&#39;, dtype=np.uint8)
+        image = Img.imdecode(data)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(array, np.ndarray):
+            raise TypeError(f&#34;Input array expects an np.ndarray object, but got {type(array)}.&#34;)
+
+        img_ptr = acl.util.numpy_to_ptr(array)
+
+        w, h, c, ret = acl.media.dvpp_jpeg_get_image_info(img_ptr, array.nbytes)
+        if ret == ACL_SUCCESS:
+            decoder = &#39;jpg&#39;
+        else:
+            w, h, c, ret = acl.media.dvpp_png_get_image_info(img_ptr, array.nbytes)
+            assert ret ==ACL_SUCCESS, f&#34;Get input image&#39;s info failed, return {ret}.&#34;
+            decoder = &#39;png&#39;
+
+        constrain_ = 8192 if decoder == &#39;jpg&#39; else 4096
+        if w &lt; 32 or w &gt; constrain_:
+            raise ValueError(f&#34;Input image&#39;s width out of range [32, {constrain_}].&#34;)
+
+        if h &lt; 32 or h &gt; constrain_:
+            raise ValueError(f&#34;Input image&#39;s height out of range [32, {constrain_}].&#34;)
+
+        if decoder == &#39;jpg&#39; and format not in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_422,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_444
+            ]:
+            raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+        if decoder ==&#39;png&#39; and format not in [
+            PIXEL_FORMAT_RGB_888,
+            PIXEL_FORMAT_BGR_888,
+            PIXEL_FORMAT_ARGB_8888,
+            PIXEL_FORMAT_ABGR_8888,
+            PIXEL_FORMAT_RGBA_8888,
+            PIXEL_FORMAT_BGRA_8888
+            ]:
+            raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # clone input image to device
+        data = AscendArray.clone(array, context=self.context, flag=&#34;DVPP&#34;)
+
+        image = create_align_img(w, h, format=format, func=&#39;jpegd&#39; if decoder == &#39;jpg&#39; else &#39;pngd&#39;)
+
+        # create output image desc and bind it with a output AscendArray object
+        pic_inst = PicDesc(image, (w, h))
+
+        # do jpeg decode
+        if decoder == &#39;jpg&#39;:
+            ret = acl.media.dvpp_jpeg_decode_async(self._channel_desc,
+                                                data.ascend_data,
+                                                data.nbytes,
+                                                pic_inst.desc,
+                                                self.stream)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_jpeg_decode_async, return {ret}.&#34;
+        else:
+            ret = acl.media.dvpp_png_decode_async(self._channel_desc,
+                                                data.ascend_data,
+                                                data.nbytes,
+                                                pic_inst.desc,
+                                                self.stream)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_png_decode_async, return {ret}.&#34;
+        
+        # finish jpeg image decode
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to decode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+        # release the unused resource in future
+        del (data, pic_inst)
+        Log(INFO, &#39;imdecode success.&#39;)
+        if return_shape:
+            return image, (h, w, c)
+        else:
+            return image
+
+
+    def imencode(self, ext, img, params=None):
+        &#34;&#34;&#34; Encodes an image into a memory buffer.
+         
+        .. note::
+            The function imencode compresses the image and stores it in the memory buffer 
+            that is resized to fit the result. See www.hiascend.com for the list of 
+            supported format and flags description.
+         
+        Args:
+            ext (str): File extension that defines the output format.
+            img (AscendArray): Image to be written
+            params (str, optional): Format-specific parameters, not use.
+
+        Returns:
+            AscendArray : Output buffer resized to fit the compressed image.
+        
+        Typical usage example:
+        ```python
+        img_encode = img.imencode(&#39;.jpg&#39;, yuv_img)
+        str_encode = np.array(img_encode).tostring()
+        ```
+        &#34;&#34;&#34;
+        if ext not in IMG_EXT_ENC:
+            raise TypeError(f&#34;Input ext expects {IMG_EXT_ENC}, but got {ext}.&#34;)
+
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        if img.format not in [
+            PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+            PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+            PIXEL_FORMAT_YUYV_PACKED_422, 
+            PIXEL_FORMAT_UYVY_PACKED_422, 
+            PIXEL_FORMAT_YVYU_PACKED_422,
+            PIXEL_FORMAT_VYUY_PACKED_422
+            ]:
+            raise ValueError(f&#34;Encode img&#39;s format {img.format} is invalid, this format not support.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        src_img, shape = align_img(img, func=&#39;encode&#39;)
+
+        # create input image desc and bind it with a input AscendArray object
+        src_inst = PicDesc(src_img, shape)
+
+        # create a jpeg image encode configurate
+        config = acl.media.dvpp_create_jpege_config()
+        ret = acl.media.dvpp_set_jpege_config_level(config, 100)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Set jpege config level failed, return {ret}.&#34;)
+
+        # predict out buffer size according to image desc
+        buff_size, ret = acl.media.dvpp_jpeg_predict_enc_size(src_inst.desc, config)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;jpeg predict encode size failed, return {ret}.&#34;)
+
+        # config out buffer of encode
+        out_size = np.array([buff_size], dtype=np.int32)
+        size_ptr = acl.util.numpy_to_ptr(out_size)
+        enc_jpg = AscendArray((buff_size,), np.dtype(&#39;uint8&#39;), format=img.format, flag=&#39;DVPP&#39;)
+        
+        # do jpeg decode
+        ret = acl.media.dvpp_jpeg_encode_async(self._channel_desc,
+                                               src_inst.desc,
+                                               enc_jpg.ascend_data,
+                                               size_ptr,
+                                               config,
+                                               self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_jpeg_encode_async, return {ret}.&#34;)
+        
+        # finish jpeg image decode
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to encode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+        # trans AscendArray data to numpy array
+        jpeg_img = enc_jpg.to_np
+
+        # release the unused resource in future
+        del (src_inst, src_img, enc_jpg)
+        Log(INFO, &#39;imdecode success.&#39;)
+
+        ret = acl.media.dvpp_destroy_jpege_config(config)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;destroy jpege config failed, return {ret}.&#34;)
+        return jpeg_img
+
+
+    def imresize(self, img, dsize, interpolation=&#39;huawei&#39;):
+        &#34;&#34;&#34;imresize(array, img, dsize, interpolation=&#39;huawei&#39;) -&gt; retval
+
+        To shrink an image, it will generally look best with #INTER_AREA interpolation
+
+        Args:
+            img (AscendArray): Input image
+            dsize (tuple): The output image size (tuple(w, h));
+            interpolation (str, optional): The interpolation method, its default method is researched 
+                by ourself.. Defaults to &#39;huawei&#39;.
+
+        Returns:
+            AscendArray: The resized image
+
+        .. note::
+            The function resize resizes the image img down to or up to the specified size. Note that the
+            initial dst type or size are not taken into account. Instead, the size and type are derived from
+            the img, dsize. 
+
+        you may call the function as follows:
+        ```python
+        # explicitly specify dsize (tuple[int]): Target size (w, h).
+        imresize(img, dsize, interpolation)
+        ```
+        If you want to decimate the image by factor of 2 in each direction, you can call the function this way:
+        ```python
+        # specify the element w and h of the destination image size.
+        imresize(img, (w//2, h//2), interpolation)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400 -&gt; PIXEL_FORMAT_BGRA_8888]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if dsize and not isinstance(dsize, tuple):
+            raise TypeError(f&#34;Input dsize expects a tuple object, but got {type(dsize)}.&#34;)
+
+        if dsize and (dsize[0] &gt; 16 * w or dsize[0] &lt; int(1/32 * w)):
+            raise ValueError(f&#34;Input dsize[0] out of resize ratio [1/32, 16]&#34;)
+
+        if dsize and (dsize[1] &gt; 16 * h or dsize[1] &lt; int(1/32 * h)):
+            raise ValueError(f&#34;Input dsize[1] out of resize ratio [1/32, 16]&#34;)
+
+        if interpolation not in interp_codes.keys():
+            raise ValueError(f&#34;Input decode flag {interpolation} is unsupport.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # do image aligned and create aligned image to save resized image
+        src_img, shape = align_img(img, func=&#39;resize&#39;)
+        dst_img = create_align_img(dsize[0], dsize[1], format=img.format, func=&#39;resize&#39;)
+
+        # create output image desc and bind it with a output AscendArray object
+        src_inst = PicDesc(src_img, shape)
+        dst_inst = PicDesc(dst_img, dsize)
+
+        # create resize config
+        resize_conf = acl.media.dvpp_create_resize_config()
+
+        # set resize interpolation
+        ret = acl.media.dvpp_set_resize_config_interpolation(resize_conf, interp_codes[interpolation])
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to set resize_config_interpolation, return {ret}.&#34;)
+
+        # do image resize
+        ret = acl.media.dvpp_vpc_resize_async(self._channel_desc,
+                                              src_inst.desc,
+                                              dst_inst.desc,
+                                              resize_conf,
+                                              self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_resize_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to resize image in synchronize_stream, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_resize_config(resize_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;do dvpp_destroy_resize_config failed, return {ret}.&#34;)
+
+        del (img, src_img, src_inst, dst_inst)
+        Log(INFO, &#39;resize image success&#39;)
+
+        return dst_img
+
+
+    def imrescale(self, img, scale, interpolation=&#39;huawei&#39;, return_shape=False):
+        &#34;&#34;&#34;Resize image while keeping the aspect ratio.
+
+        Args:
+            img (AsecendArray): The input image.
+            scale (float, tuple[int]): The scaling factor or maximum size. If it is a float 
+                number, then the image will be rescaled by this factor, else if it is a tuple 
+                of 2 integers, then the image will be rescaled as large as possible within 
+                the scale.
+            interpolation (str, optional): Same as :func:`imresize`.
+            return_shape (bool, optional): Return scale shape not aligned.
+
+        Returns:
+            AsecendArray : The rescaled image.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv_rescale1 = Img.imrescale(yuv, 0.3)
+        yuv_rescale2 = Img.imrescale(yuv, (320, 540))
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if isinstance(scale, (float, int)):
+            if scale &lt;= 0:
+                raise ValueError(f&#39;Invalid scale {scale}, must be positive.&#39;)  
+            scale_factor = scale
+        elif isinstance(scale, tuple):
+            max_long_edge = max(scale)
+            max_short_edge = min(scale)
+
+            # find the maximum rescale ratio, and the resized shape should be valid.
+            scale_factor = min(max_long_edge/max(h, w), max_short_edge/min(h, w))
+        else:
+            raise TypeError(
+                f&#39;Scale must be a number or tuple of int, but got {type(scale)}&#39;)
+
+        # caculate new rescaled size according to scale_factor 
+        new_size = _scale_size((w, h), scale_factor)
+
+        # do resize
+        rescaled_img = self.imresize(img, new_size, interpolation=interpolation)
+
+        if return_shape:
+            return rescaled_img, new_size
+        else:
+            return rescaled_img
+
+    def imflip(self, img, direction=&#39;horizontal&#39;):
+        &#34;&#34;&#34;Flip an image horizontally or vertically.
+
+        Args:
+            img (AscendArray): Image to be flipped.
+            direction (str): The flip direction, either &#34;horizontal&#34; or &#34;vertical&#34; or &#34;diagonal&#34;.
+
+        Returns:
+            AscendArray: The flipped image.
+        
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        im_flip = Img.imflip(img, direction=&#39;horizontal&#39;)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        assert direction in [&#39;horizontal&#39;, &#39;vertical&#39;, &#39;diagonal&#39;]
+
+        arr = img.to_np
+
+        if direction == &#39;horizontal&#39;:
+            return AscendArray.clone(np.flip(arr, axis=1))
+        elif direction == &#39;vertical&#39;:
+            return AscendArray.clone(np.flip(arr, axis=0))
+        else:
+            return AscendArray.clone(np.flip(arr, axis=(0, 1)))
+
+
+    def imrotate(self, 
+                img,
+                angle,
+                center=None,
+                scale=1.0,
+                border_value=0,
+                interpolation=&#39;bilinear&#39;,
+                auto_bound=False):
+        &#34;&#34;&#34;Rotate an image.
+
+        Args:
+            img (AscendArray): Image to be rotated.
+            angle (float): Rotation angle in degrees, positive values mean clockwise rotation.
+            center (tuple[float], optional): Center point (w, h) of the rotation in the source 
+                image. If not specified, the center of the image will be used.
+            scale (float, optional): Isotropic scale factor.
+            border_value (int, optional): Border value.
+            interpolation (str, optional): Same as function: `resize`.
+            auto_bound (bool, optional): Whether to adjust the image size to cover the whole
+                rotated image.
+
+        Returns:
+            AscendArray: The rotated image.
+        &#34;&#34;&#34;
+        try:
+            import cv2
+            cv2_interp_codes = {
+                &#39;nearest&#39;: cv2.INTER_NEAREST,
+                &#39;bilinear&#39;: cv2.INTER_LINEAR,
+                &#39;bicubic&#39;: cv2.INTER_CUBIC,
+                &#39;area&#39;: cv2.INTER_AREA,
+                &#39;lanczos&#39;: cv2.INTER_LANCZOS4
+            }
+        except ImportError:
+            Log(ERROR, &#39;import cv2 error while using imrotate, you should install opencv first.&#39;)
+            return
+
+        if center is not None and auto_bound:
+            raise ValueError(&#39;`auto_bound` conflicts with `center`&#39;)
+        h, w = img.shape[:2]
+        if center is None:
+            center = ((w - 1) * 0.5, (h - 1) * 0.5)
+        assert isinstance(center, tuple)
+
+        matrix = cv2.getRotationMatrix2D(center, -angle, scale)
+        if auto_bound:
+            cos = np.abs(matrix[0, 0])
+            sin = np.abs(matrix[0, 1])
+            new_w = h * sin + w * cos
+            new_h = h * cos + w * sin
+            matrix[0, 2] += (new_w - w) * 0.5
+            matrix[1, 2] += (new_h - h) * 0.5
+            w = int(np.round(new_w))
+            h = int(np.round(new_h))
+        rotated = cv2.warpAffine(
+            img.to_np,
+            matrix, (w, h),
+            flags=cv2_interp_codes[interpolation],
+            borderValue=border_value)
+        return AscendArray.clone(rotated)
+        
+
+    def imcrop(self, img, bboxes, scale=1.0):
+        &#34;&#34;&#34;Crop image patches, and resize bboxes.
+
+        Args:
+            img (AscendArray): Image to be cropped.
+            bboxes (ndarray): Shape (k, 4) or (4,), location of cropped bboxes.
+            scale (float, optional): Scale ratio of bboxes, the default value 1.0 means no padding.
+
+        Returns:
+            list[AscendArray] or AscendArray: The cropped image patches.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+        yuv_croped = Img.imcrop(img, bboxes)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        if not isinstance(bboxes, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(bboxes)}.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        # step 1: caculate the cliped bbox shape
+        _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+        scaled_bboxes = bbox_scaling(_bboxes, scale).astype(np.int32)
+        clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+        # align original image
+        src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+        # step 2: input desc assembling, only process one image.
+        image_inst = PicDesc([src_img], shape)
+        roi_n_list = [clipped_bbox.shape[0]]
+
+        # step 3: clip bboxes of image
+        bboxes, roi_list = [], []
+        for i in range(clipped_bbox.shape[0]):
+            x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+            
+            # align w and h, and calc memory size of output box image
+            dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+            dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+            dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+            
+            # create a bbox(a AscendArray object) and bind with dvpp memory
+            dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                                format=img.format, flag=&#39;DVPP&#39;)
+            bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+            # create roi description
+            roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+            roi_list.append(roi_conf)
+
+        # create output image desc and bind it with a output AscendArray object
+        bboxes_inst = PicDesc(bboxes)
+
+        # step 4: crop processing
+        _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                            self._channel_desc,
+                                            image_inst.desc, 
+                                            roi_n_list,
+                                            bboxes_inst.desc,
+                                            roi_list,
+                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+        
+        for roi in roi_list:
+            ret = acl.media.dvpp_destroy_roi_config(roi)
+            assert ret == ACL_SUCCESS, \
+                ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del image_inst
+        del bboxes_inst
+        Log(INFO, &#39;vpc crop process success&#39;)
+
+        if not np.isclose(scale, 1.0, rtol=1e-2, atol=1e-03):
+            res_img = []
+            for bbox in bboxes:
+                res_img.append(self.imrescale(bbox, scale))
+            return res_img
+
+        return bboxes
+
+    def bbox_resize(self, img, bboxes, sizes, inner_resize=True):
+        &#34;&#34;&#34;Clip the bboxes image and resize to specified size.
+
+        2 steps:  clip the bboxes image -&gt; resize croped image.
+
+        Args:
+            img (AscendArray): Image to be cliped.
+            bboxes (ndarray): Shape (k, 4) or (4, ), location of cropped bboxes.
+            sizes (int): Shape (k, 2) or (2, ), scale sizes of bboxes.
+            inner_resize (bool, optional): Use dvpp auto resize function to resize croped boxes
+
+        Returns:
+            list[AscendArray] or AscendArray: The cropped and resized image patches.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+        sizes = np.array([[300, 300], [400, 400]])
+        yuv_croped = Img.bbox_resize(img, bboxes, sizes)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got {type(img)}.&#34;)
+
+        # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+        if img.format &lt; 0 or img.format &gt; 17:
+            raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+                [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+        if not isinstance(bboxes, np.ndarray):
+            raise TypeError(f&#34;Input bboxes expects an np.ndarray, but given {type(bboxes)}.&#34;)
+
+        if not isinstance(sizes, np.ndarray):
+            raise TypeError(f&#34;Input sizes expects an np.ndarray, but given {type(sizes)}.&#34;)
+
+        if self._channel_desc is None:
+            raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+        assert sizes.shape[-1] == 2, f&#34;Input sizes dim 2 must be 2.&#34;
+        if sizes.ndim == 2 and sizes.shape[0] != bboxes.shape[0]:
+            raise ValueError(f&#34;Input sizes&#39;s shape expects same to bboxes.&#34;)
+
+        # step 1: caculate the cliped bbox shape
+        _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+        scaled_bboxes = bbox_scaling(_bboxes, 1.0).astype(np.int32)
+        clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+        # align original image 
+        src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+        # step 2: input desc assembile, only process one image.
+        image_inst = PicDesc([src_img], img.shape[::-1])
+        roi_n_list = [clipped_bbox.shape[0]]
+
+        # step 3: clip bboxes of image
+        bboxes, roi_list = [], []
+        _sizes = sizes[None, ...].tolist() if sizes.ndim == 1 else sizes.tolist()
+        for i in range(clipped_bbox.shape[0]):
+            x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+
+            # align w and h, and calc memory size of output box image
+            if inner_resize:
+                dst_stride_w = aligned(_sizes[i][0], aligned=&#39;w&#39;)
+                dst_stride_h = aligned(_sizes[i][1], aligned=&#39;h&#39;)
+            else:
+                dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+                dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+            dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+            
+            # create a bbox(a AscendArray object) and bind with dvpp memory
+            dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                                format=img.format, flag=&#39;DVPP&#39;)
+            bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+            # create roi description
+            roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+            roi_list.append(roi_conf)
+
+        # create output image desc and bind it with a output AscendArray object
+        bboxes_inst = PicDesc(bboxes)
+
+        # step 4: crop processing
+        _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                            self._channel_desc,
+                                            image_inst.desc, 
+                                            roi_n_list,
+                                            bboxes_inst.desc,
+                                            roi_list,
+                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+        
+        for roi in roi_list:
+            ret = acl.media.dvpp_destroy_roi_config(roi)
+            assert ret == ACL_SUCCESS, \
+                ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del (image_inst, bboxes_inst)
+        Log(INFO, &#39;vpc crop process success&#39;)
+
+        if not inner_resize:
+            res_img = []
+            for bbox in bboxes:
+                res_img.append(self.imresize(bbox, _sizes[i]))
+            return res_img
+
+        return bboxes
+
+    def __align_roi(self, bbox, img_shape):
+        &#34;&#34;&#34; align bbox left-top and right-bottom point
+        Args:
+            bbox : Input bbox(np.ndrray) with shape (4, ) or (n, 4)
+            img_shape : tuple(h, w), input image shape, and bbox location should in image.
+
+        Returns:
+            aligned bbox, list with shape (4, ) or (n, 4).
+        &#34;&#34;&#34;
+        if not isinstance(img_shape, tuple):
+            raise TypeError(f&#34;Input img_shape expect a tuple, but got {type(img_shape)}.&#34;)
+            
+        bbox = bbox[None, ...] if bbox.ndim == 1 else bbox
+        for i, box in enumerate(bbox):
+            assert box[0] &lt; img_shape[1] and box[1] &lt; img_shape[0] and box[2] &gt; 0 \
+                and box[3] &gt; 0, f&#34;Input {i}-th bbox([startx, starty, endx, endy]) beyond the image.&#34;
+
+        for i in range(bbox.shape[0]):
+            bbox[i][0] = bbox[i][0] &gt;&gt; 1 &lt;&lt; 1
+            bbox[i][1] = bbox[i][1] &gt;&gt; 1 &lt;&lt; 1
+            bbox[i][2] = (bbox[i][2] &gt;&gt; 1 &lt;&lt; 1) - 1
+            bbox[i][3] = (bbox[i][3] &gt;&gt; 1 &lt;&lt; 1) - 1
+
+        return bbox
+
+    def imcrop_paste(self, src_img, dst_img, crop_bbox, paste_bbox):
+        &#34;&#34;&#34;Crop a bbox from src image and paste the cropped bbox to dst image
+
+        Args:
+            src_img (AscendArray): Input src image(AscendArray) to be croped.
+            dst_img (AscendArray): Input dst image(AscendArray) to be pasted.
+            crop_bbox (np.ndarray): Shape (4, ) or (n, 4), location of cropped bboxe, data arrangement,
+                np.array([startx, starty, endx, endy], dtype=int).
+            paste_bbox (np.ndarray): Shape (4, ) or (n, 4), location of pasted bboxe, data arrangement
+                same to crop_bbox.
+
+        Returns:
+            AscendArray: Dest image after cropping and pasting.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        crop_bbox = np.array([40, 30, 140, 230], dtype=&#39;int32&#39;)
+        paste_bbox = np.array([70, 80, 170, 280], dtype=&#39;int32&#39;)
+        Img.imcrop_paste(yuv_src, yuv_dst, crop_bbox, paste_bbox)
+        ```
+        &#34;&#34;&#34;
+
+        if not isinstance(src_img, AscendArray):
+            raise TypeError(f&#34;Input src_img expects an AscendArray, but we got a {type(src_img)}.&#34;)
+
+        if not isinstance(dst_img, AscendArray):
+            raise TypeError(f&#34;Input dst_img expects an AscendArray, but we got a {type(dst_img)}.&#34;)
+
+        if not isinstance(crop_bbox, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+        if not isinstance(paste_bbox, np.ndarray):
+            raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+        if crop_bbox.shape[-1] != 4 or paste_bbox.shape[-1] != 4:
+            raise ValueError(f&#34;Input crop_bbox or paste_bbox column dim should be 4.&#34;)
+
+        if crop_bbox.shape[0] != paste_bbox.shape[0]:
+            raise ValueError(f&#34;Input crop_bbox and paste_bbox should have same number bbox.&#34;)
+
+        # step 1: check input bbox, make startx and starty to even and endx and endy to odd
+        cbbox = self.__align_roi(crop_bbox, src_img.shape).tolist()
+        pbbox = self.__align_roi(paste_bbox, dst_img.shape).tolist()
+
+        # step 2: align original image
+        crop_img, _ = align_img(src_img, func=&#39;crop&#39;)
+        paste_img, _ = align_img(dst_img, func=&#39;crop&#39;)
+
+        # step 3: create output image desc and bind it with a output AscendArray object
+        src_desc = PicDesc([crop_img], src_img.shape)
+        dst_desc = PicDesc([paste_img] * len(pbbox), dst_img.shape)
+
+        # step 4: startx of paste box aligned to 16 and append crop/paste roi to list
+        crop_conf_list, past_conf_list = [], []
+        for i in range(len(pbbox)):
+            pbbox[i][0] = aligned(pbbox[i][0], aligned=&#39;w&#39;)
+            cstartx, cendx, cstarty, cendy = cbbox[i][0], cbbox[i][2], cbbox[i][1], cbbox[i][3]
+            pstartx, pendx, pstarty, pendy = pbbox[i][0], pbbox[i][2], pbbox[i][1], pbbox[i][3]
+            crop_conf = acl.media.dvpp_create_roi_config(cstartx, cendx, cstarty, cendy)
+            past_conf = acl.media.dvpp_create_roi_config(pstartx, pendx, pstarty, pendy)
+            crop_conf_list.append(crop_conf)
+            past_conf_list.append(past_conf)
+
+        # step 5: do crop and paste
+        _, ret = acl.media.dvpp_vpc_batch_crop_and_paste_async(self._channel_desc,
+                                                            src_desc.desc,
+                                                            [len(pbbox)], 
+                                                            dst_desc.desc,
+                                                            crop_conf_list, 
+                                                            past_conf_list,
+                                                            self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_batch_crop_and_paste_async, return {ret}.&#34;)
+
+        # step 6: synchronize stream and finish crop and paste 
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+        for conf in crop_conf_list:
+            ret = acl.media.dvpp_destroy_roi_config(conf)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+        for conf in past_conf_list:
+            ret = acl.media.dvpp_destroy_roi_config(conf)
+            assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+        del (crop_img, src_desc, dst_desc)
+        Log(INFO, &#39;crop and paste process success&#39;)
+        return paste_img
+
+    def impad(self, img, shape=None, padding=None, pad_val=0, padding_mode=&#39;constant&#39;):
+        &#34;&#34;&#34;Pad the given image to a certain shape or pad on all sides with
+            specified padding mode and padding value.
+
+        Args:
+            img (AscendArray): Image to be padded.
+            shape (tuple[int]): Expected padding shape (h, w). Default: None.
+            padding (int or tuple[int]): Padding on each border. If a single int is provided this 
+                is used to pad all borders. If tuple of length 2 is provided this is the padding 
+                on left/right and top/bottom respectively. If a tuple of length 4 is provided 
+                this is the padding for the [left, top, right and bottom] borders respectively.
+                Default: None. Note that `shape` and `padding` can not be both set.
+            pad_val (Number): Values to be filled in padding areas when padding_mode is 
+                &#39;constant&#39;. Default: 0.
+            padding_mode (str): Type of padding. Only support: constant. Default: constant.
+
+                - constant: pads with a constant value, this value is specified with pad_val.
+
+        Returns:
+            AscendArray : The padded image.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv_pad = Img.impad(img, padding=(20, 50, 100, 200), pad_val=128)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+        if shape and not isinstance(shape, tuple):
+            raise TypeError(f&#34;Input shape expects an tuple, but we got a {type(shape)}.&#34;)
+
+        if padding and not isinstance(padding, (int, tuple)):
+            raise TypeError(f&#34;Input padding expects an int or tuple, but we got a {type(padding)}.&#34;)
+
+        if padding_mode not in [&#39;constant&#39;]:
+            raise TypeError(f&#34;Input padding_mode expects in [&#39;constant&#39;], but we got {padding_mode}.&#34;)
+
+        assert (shape is not None) ^ (padding is not None), \
+                f&#34;Input `shape` and `padding` can not be both set.&#34;
+
+        # get the truth h and w of image.
+        if img.format in yuv420:
+            h, w = (img.shape[0] * 2 // 3, img.shape[1])
+        else:
+            h, w = img.shape[:2]
+
+        if shape is not None:
+            padding = (0, 0, shape[1] - w, shape[0] - h)
+
+        if isinstance(padding, tuple) and len(padding) in [2, 4]:
+            if len(padding) == 2:
+                padding = (padding[0], padding[1], padding[0], padding[1])
+        elif isinstance(padding, numbers.Number):
+            padding = (padding, padding, padding, padding)
+        else:
+            raise ValueError(&#39;Padding must be a int or a 2, or 4 element tuple.&#39;
+                            f&#39;But received {padding}&#39;)
+
+        # align original image shape and create a output to save padding result.
+        src_img, _ = align_img(img)
+        dst_w = padding[0] + w + padding[2]
+        dst_h = padding[1] + h + padding[3]
+        dst_img = create_align_img(dst_w, dst_h, format=img.format)
+
+        # set the padding result&#39;s memory with pad_val
+        Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+
+        # create output image desc and bind it with a output AscendArray object
+        src_desc = PicDesc(src_img, img.shape)
+        dst_desc = PicDesc(dst_img, (dst_h, dst_w))
+
+        # paste area startx, starty, endx, endy, and align startx with 16
+        startx = aligned(padding[0], aligned=&#39;w&#39;)
+        starty = padding[1] &gt;&gt; 1 &lt;&lt; 1
+        endx = ((padding[0] + w) &gt;&gt; 1 &lt;&lt; 1) - 1
+        endy = ((padding[1] + h) &gt;&gt; 1 &lt;&lt; 1) - 1
+
+        # create roi description
+        roi_conf = acl.media.dvpp_create_roi_config(0, (w &gt;&gt; 1 &lt;&lt; 1) - 1, 0, (h &gt;&gt; 1 &lt;&lt; 1) - 1)
+        pst_conf = acl.media.dvpp_create_roi_config(startx, endx, starty, endy)
+
+        ret = acl.media.dvpp_vpc_crop_and_paste_async(self._channel_desc,
+                                                      src_desc.desc,
+                                                      dst_desc.desc,
+                                                      roi_conf,
+                                                      pst_conf,
+                                                      self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_vpc_crop_and_paste_async, return {ret}.&#34;)
+
+        ret = acl.rt.synchronize_stream(self.stream)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_roi_config(roi_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        ret = acl.media.dvpp_destroy_roi_config(pst_conf)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+        del (src_img, src_desc, dst_desc)
+        Log(INFO, &#39;image padding process success&#39;)
+        return dst_img
+
+    def imread(self, img_or_path, flag=&#39;color&#39;, channel_order=&#39;bgr&#39;, backend=&#39;ascend&#39;):
+        &#34;&#34;&#34;Read an image.
+
+        Args:
+            img_or_path (ndarray or str or Path): Either a numpy array or str or pathlib.Path. If 
+                it is a numpy array (loaded image), then it will be returned as is.
+            flag (str): Flags specifying the color type of a loaded image, candidates are `color`, 
+                `grayscale` and `unchanged`. It only work for `cv2` and `pillow`.
+            channel_order (str): Order of channel, candidates are `bgr` and `rgb`, not work for ascend.
+            backend (str): The image decoding backend type. Options are `cv2`, `pillow`, `ascend`. 
+                Default: `ascend`.
+
+        Returns:
+            AscendArray: Loaded image array.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        yuv = Img.imread(&#39;./image.jpg&#39;)
+        ```
+        &#34;&#34;&#34;
+        if backend not in [&#39;cv2&#39;, &#39;pillow&#39;, &#39;ascend&#39;]:
+            raise ValueError(f&#39;backend: {backend} is not supported. Supported &#34;backends are &#39;
+                            &#34;&#39;cv2&#39;, &#39;turbojpeg&#39;, &#39;pillow&#39;.&#34;)
+
+        if backend == &#39;cv2&#39;:
+            try:
+                import cv2
+                imread_flags = {
+                    &#39;color&#39;: cv2.IMREAD_COLOR,
+                    &#39;grayscale&#39;: cv2.IMREAD_GRAYSCALE,
+                    &#39;unchanged&#39;: cv2.IMREAD_UNCHANGED
+                }
+            except ImportError:
+                Log(ERROR, &#34;import cv2 error while using imread with backend &#39;cv2&#39;.&#34;)
+                return
+
+        if isinstance(img_or_path, Path):
+            img_or_path = str(img_or_path)
+
+        if isinstance(img_or_path, np.ndarray):            
+            decode_img = self.imdecode(img_or_path)
+            return decode_img
+        elif is_str(img_or_path):
+            check_file_exist(img_or_path, f&#39;img file does not exist: {img_or_path}&#39;)
+            if backend == &#39;pillow&#39;:
+                img = Image.open(img_or_path)
+                img = _pillow2array(img, flag, channel_order)
+                return AscendArray.clone(img)
+            else:
+                flag = imread_flags[flag] if is_str(flag) else flag
+                img = cv2.imread(img_or_path, flag)
+                if flag == IMREAD_COLOR and channel_order == &#39;rgb&#39;:
+                    cv2.cvtColor(img, cv2.COLOR_BGR2RGB, img)
+                return AscendArray.clone(img)
+        else:
+            raise TypeError(&#39;&#34;img&#34; must be a numpy array or a str or a pathlib.Path object&#39;)
+
+
+    def imwrite(self, img, file_path, params=None, auto_mkdir=True):
+        &#34;&#34;&#34;Write image to file.
+
+        Args:
+            img (AscendArray): Image array to be written.
+            file_path (str): Image file path.
+            params (None, str or list): If params==&#39;pillow&#39;, save image with PIL. if params is list, 
+                this same as opencv&#39;s func: `imwrite` interface, only work for opencv.
+            auto_mkdir (bool): If the parent folder of `file_path` does not exist,
+                whether to create it automatically.
+
+        Returns:
+            bool: Successful or not.
+
+        Typical usage example:
+        ```python
+        Img = ascend.Image(ctx)
+        Img.imwrite(yuv_org, &#39;./saved_img.jpg&#39;)  
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(img, AscendArray):
+            raise TypeError(f&#34;Input img expects an AscendArray, but got {type(img)}.&#34;)
+        
+        if auto_mkdir:
+            dir_name = osp.abspath(osp.dirname(file_path))
+            mkdir_or_exist(dir_name)
+        
+        if params is None:
+            ext = &#39;.png&#39; if file_path.endswith(&#39;.png&#39;) or file_path.endswith(&#39;.PNG&#39;)  else &#39;.jpg&#39;
+            file = self.imencode(ext, img)
+            with open(file, &#39;w+&#39;) as fw:
+                fw.write(file)
+        elif params == &#39;pillow&#39;:
+            pil_image = Image.fromarray(img.to_np)
+            pil_image.save(file_path)
+        else:
+            try:
+                import cv2
+                cv2.imwrite(file_path, img.to_np, params)
+            except ImportError:
+                Log(ERROR, f&#34;import cv2 error while using imwrite save image with params {params}.&#34;)
+
+
+    def __del__(self):
+        if hasattr(self, &#39;_channel_desc&#39;):
+            ret = acl.media.dvpp_destroy_channel(self._channel_desc)
+            assert ret == ACL_SUCCESS, f&#34;dvpp destroy channel failed, return {ret}.&#34;
+
+            ret = acl.media.dvpp_destroy_channel_desc(self._channel_desc)
+            assert ret == ACL_SUCCESS, f&#34;dvpp destroy channel desc failed, return {ret}.&#34;</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.image.geome.Image.bbox_resize"><code class="name flex">
+<span>def <span class="ident">bbox_resize</span></span>(<span>self, img, bboxes, sizes, inner_resize=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clip the bboxes image and resize to specified size.</p>
+<p>2 steps:
+clip the bboxes image -&gt; resize croped image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be cliped.</dd>
+<dt><strong><code>bboxes</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Shape (k, 4) or (4, ), location of cropped bboxes.</dd>
+<dt><strong><code>sizes</code></strong> :&ensp;<code>int</code></dt>
+<dd>Shape (k, 2) or (2, ), scale sizes of bboxes.</dd>
+<dt><strong><code>inner_resize</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Use dvpp auto resize function to resize croped boxes</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[AscendArray]</code> or <code>AscendArray</code></dt>
+<dd>The cropped and resized image patches.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+sizes = np.array([[300, 300], [400, 400]])
+yuv_croped = Img.bbox_resize(img, bboxes, sizes)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L811-L922" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def bbox_resize(self, img, bboxes, sizes, inner_resize=True):
+    &#34;&#34;&#34;Clip the bboxes image and resize to specified size.
+
+    2 steps:  clip the bboxes image -&gt; resize croped image.
+
+    Args:
+        img (AscendArray): Image to be cliped.
+        bboxes (ndarray): Shape (k, 4) or (4, ), location of cropped bboxes.
+        sizes (int): Shape (k, 2) or (2, ), scale sizes of bboxes.
+        inner_resize (bool, optional): Use dvpp auto resize function to resize croped boxes
+
+    Returns:
+        list[AscendArray] or AscendArray: The cropped and resized image patches.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+    sizes = np.array([[300, 300], [400, 400]])
+    yuv_croped = Img.bbox_resize(img, bboxes, sizes)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but we got {type(img)}.&#34;)
+
+    # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+    if img.format &lt; 0 or img.format &gt; 17:
+        raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+            [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+    if not isinstance(bboxes, np.ndarray):
+        raise TypeError(f&#34;Input bboxes expects an np.ndarray, but given {type(bboxes)}.&#34;)
+
+    if not isinstance(sizes, np.ndarray):
+        raise TypeError(f&#34;Input sizes expects an np.ndarray, but given {type(sizes)}.&#34;)
+
+    if self._channel_desc is None:
+        raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+    assert sizes.shape[-1] == 2, f&#34;Input sizes dim 2 must be 2.&#34;
+    if sizes.ndim == 2 and sizes.shape[0] != bboxes.shape[0]:
+        raise ValueError(f&#34;Input sizes&#39;s shape expects same to bboxes.&#34;)
+
+    # step 1: caculate the cliped bbox shape
+    _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+    scaled_bboxes = bbox_scaling(_bboxes, 1.0).astype(np.int32)
+    clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+    # align original image 
+    src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+    # step 2: input desc assembile, only process one image.
+    image_inst = PicDesc([src_img], img.shape[::-1])
+    roi_n_list = [clipped_bbox.shape[0]]
+
+    # step 3: clip bboxes of image
+    bboxes, roi_list = [], []
+    _sizes = sizes[None, ...].tolist() if sizes.ndim == 1 else sizes.tolist()
+    for i in range(clipped_bbox.shape[0]):
+        x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+
+        # align w and h, and calc memory size of output box image
+        if inner_resize:
+            dst_stride_w = aligned(_sizes[i][0], aligned=&#39;w&#39;)
+            dst_stride_h = aligned(_sizes[i][1], aligned=&#39;h&#39;)
+        else:
+            dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+            dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+        dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+        
+        # create a bbox(a AscendArray object) and bind with dvpp memory
+        dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                            format=img.format, flag=&#39;DVPP&#39;)
+        bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+        # create roi description
+        roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+        roi_list.append(roi_conf)
+
+    # create output image desc and bind it with a output AscendArray object
+    bboxes_inst = PicDesc(bboxes)
+
+    # step 4: crop processing
+    _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                        self._channel_desc,
+                                        image_inst.desc, 
+                                        roi_n_list,
+                                        bboxes_inst.desc,
+                                        roi_list,
+                                        self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+    
+    for roi in roi_list:
+        ret = acl.media.dvpp_destroy_roi_config(roi)
+        assert ret == ACL_SUCCESS, \
+            ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+    del (image_inst, bboxes_inst)
+    Log(INFO, &#39;vpc crop process success&#39;)
+
+    if not inner_resize:
+        res_img = []
+        for bbox in bboxes:
+            res_img.append(self.imresize(bbox, _sizes[i]))
+        return res_img
+
+    return bboxes</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imcrop"><code class="name flex">
+<span>def <span class="ident">imcrop</span></span>(<span>self, img, bboxes, scale=1.0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crop image patches, and resize bboxes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be cropped.</dd>
+<dt><strong><code>bboxes</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Shape (k, 4) or (4,), location of cropped bboxes.</dd>
+<dt><strong><code>scale</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Scale ratio of bboxes, the default value 1.0 means no padding.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[AscendArray]</code> or <code>AscendArray</code></dt>
+<dd>The cropped image patches.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+yuv_croped = Img.imcrop(img, bboxes)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L713-L809" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imcrop(self, img, bboxes, scale=1.0):
+    &#34;&#34;&#34;Crop image patches, and resize bboxes.
+
+    Args:
+        img (AscendArray): Image to be cropped.
+        bboxes (ndarray): Shape (k, 4) or (4,), location of cropped bboxes.
+        scale (float, optional): Scale ratio of bboxes, the default value 1.0 means no padding.
+
+    Returns:
+        list[AscendArray] or AscendArray: The cropped image patches.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    bboxes = np.array([[20, 40, 159, 259],[400, 200, 479, 419]], dtype=int)
+    yuv_croped = Img.imcrop(img, bboxes)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+    # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+    if img.format &lt; 0 or img.format &gt; 17:
+        raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+            [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+    if not isinstance(bboxes, np.ndarray):
+        raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(bboxes)}.&#34;)
+
+    if self._channel_desc is None:
+        raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+    # step 1: caculate the cliped bbox shape
+    _bboxes = bboxes[None, ...] if bboxes.ndim == 1 else bboxes
+    scaled_bboxes = bbox_scaling(_bboxes, scale).astype(np.int32)
+    clipped_bbox = bbox_clip(scaled_bboxes, img.shape)
+
+    # align original image
+    src_img, shape = align_img(img, func=&#39;crop&#39;)
+
+    # step 2: input desc assembling, only process one image.
+    image_inst = PicDesc([src_img], shape)
+    roi_n_list = [clipped_bbox.shape[0]]
+
+    # step 3: clip bboxes of image
+    bboxes, roi_list = [], []
+    for i in range(clipped_bbox.shape[0]):
+        x1, y1, x2, y2 = clipped_bbox[i, :].tolist()
+        
+        # align w and h, and calc memory size of output box image
+        dst_stride_w = aligned(x2 - x1, aligned=&#39;w&#39;)
+        dst_stride_h = aligned(y2 - y1, aligned=&#39;h&#39;)
+        dst_buf_size = calc_size(dst_stride_w, dst_stride_h, img.format)
+        
+        # create a bbox(a AscendArray object) and bind with dvpp memory
+        dst_image = AscendArray((dst_stride_w,), np.dtype(&#39;uint8&#39;), size=dst_buf_size, \
+                            format=img.format, flag=&#39;DVPP&#39;)
+        bboxes.append(dst_image.reshape(dst_image.shape[::-1]))
+
+        # create roi description
+        roi_conf = acl.media.dvpp_create_roi_config(x1, x2, y1, y2)
+        roi_list.append(roi_conf)
+
+    # create output image desc and bind it with a output AscendArray object
+    bboxes_inst = PicDesc(bboxes)
+
+    # step 4: crop processing
+    _, ret = acl.media.dvpp_vpc_batch_crop_async(
+                                        self._channel_desc,
+                                        image_inst.desc, 
+                                        roi_n_list,
+                                        bboxes_inst.desc,
+                                        roi_list,
+                                        self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_vpc_crop_async, return {ret}.&#34;)
+
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to crop image in synchronize_stream, return {ret}.&#34;)
+    
+    for roi in roi_list:
+        ret = acl.media.dvpp_destroy_roi_config(roi)
+        assert ret == ACL_SUCCESS, \
+            ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+    del image_inst
+    del bboxes_inst
+    Log(INFO, &#39;vpc crop process success&#39;)
+
+    if not np.isclose(scale, 1.0, rtol=1e-2, atol=1e-03):
+        res_img = []
+        for bbox in bboxes:
+            res_img.append(self.imrescale(bbox, scale))
+        return res_img
+
+    return bboxes</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imcrop_paste"><code class="name flex">
+<span>def <span class="ident">imcrop_paste</span></span>(<span>self, src_img, dst_img, crop_bbox, paste_bbox)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crop a bbox from src image and paste the cropped bbox to dst image</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>src_img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Input src image(AscendArray) to be croped.</dd>
+<dt><strong><code>dst_img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Input dst image(AscendArray) to be pasted.</dd>
+<dt><strong><code>crop_bbox</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Shape (4, ) or (n, 4), location of cropped bboxe, data arrangement,
+np.array([startx, starty, endx, endy], dtype=int).</dd>
+<dt><strong><code>paste_bbox</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Shape (4, ) or (n, 4), location of pasted bboxe, data arrangement
+same to crop_bbox.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>Dest image after cropping and pasting.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+crop_bbox = np.array([40, 30, 140, 230], dtype='int32')
+paste_bbox = np.array([70, 80, 170, 280], dtype='int32')
+Img.imcrop_paste(yuv_src, yuv_dst, crop_bbox, paste_bbox)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L949-L1039" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imcrop_paste(self, src_img, dst_img, crop_bbox, paste_bbox):
+    &#34;&#34;&#34;Crop a bbox from src image and paste the cropped bbox to dst image
+
+    Args:
+        src_img (AscendArray): Input src image(AscendArray) to be croped.
+        dst_img (AscendArray): Input dst image(AscendArray) to be pasted.
+        crop_bbox (np.ndarray): Shape (4, ) or (n, 4), location of cropped bboxe, data arrangement,
+            np.array([startx, starty, endx, endy], dtype=int).
+        paste_bbox (np.ndarray): Shape (4, ) or (n, 4), location of pasted bboxe, data arrangement
+            same to crop_bbox.
+
+    Returns:
+        AscendArray: Dest image after cropping and pasting.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    crop_bbox = np.array([40, 30, 140, 230], dtype=&#39;int32&#39;)
+    paste_bbox = np.array([70, 80, 170, 280], dtype=&#39;int32&#39;)
+    Img.imcrop_paste(yuv_src, yuv_dst, crop_bbox, paste_bbox)
+    ```
+    &#34;&#34;&#34;
+
+    if not isinstance(src_img, AscendArray):
+        raise TypeError(f&#34;Input src_img expects an AscendArray, but we got a {type(src_img)}.&#34;)
+
+    if not isinstance(dst_img, AscendArray):
+        raise TypeError(f&#34;Input dst_img expects an AscendArray, but we got a {type(dst_img)}.&#34;)
+
+    if not isinstance(crop_bbox, np.ndarray):
+        raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+    if not isinstance(paste_bbox, np.ndarray):
+        raise TypeError(f&#34;Input bbox expects an np.ndarray, but we got a {type(crop_bbox)}.&#34;)
+
+    if crop_bbox.shape[-1] != 4 or paste_bbox.shape[-1] != 4:
+        raise ValueError(f&#34;Input crop_bbox or paste_bbox column dim should be 4.&#34;)
+
+    if crop_bbox.shape[0] != paste_bbox.shape[0]:
+        raise ValueError(f&#34;Input crop_bbox and paste_bbox should have same number bbox.&#34;)
+
+    # step 1: check input bbox, make startx and starty to even and endx and endy to odd
+    cbbox = self.__align_roi(crop_bbox, src_img.shape).tolist()
+    pbbox = self.__align_roi(paste_bbox, dst_img.shape).tolist()
+
+    # step 2: align original image
+    crop_img, _ = align_img(src_img, func=&#39;crop&#39;)
+    paste_img, _ = align_img(dst_img, func=&#39;crop&#39;)
+
+    # step 3: create output image desc and bind it with a output AscendArray object
+    src_desc = PicDesc([crop_img], src_img.shape)
+    dst_desc = PicDesc([paste_img] * len(pbbox), dst_img.shape)
+
+    # step 4: startx of paste box aligned to 16 and append crop/paste roi to list
+    crop_conf_list, past_conf_list = [], []
+    for i in range(len(pbbox)):
+        pbbox[i][0] = aligned(pbbox[i][0], aligned=&#39;w&#39;)
+        cstartx, cendx, cstarty, cendy = cbbox[i][0], cbbox[i][2], cbbox[i][1], cbbox[i][3]
+        pstartx, pendx, pstarty, pendy = pbbox[i][0], pbbox[i][2], pbbox[i][1], pbbox[i][3]
+        crop_conf = acl.media.dvpp_create_roi_config(cstartx, cendx, cstarty, cendy)
+        past_conf = acl.media.dvpp_create_roi_config(pstartx, pendx, pstarty, pendy)
+        crop_conf_list.append(crop_conf)
+        past_conf_list.append(past_conf)
+
+    # step 5: do crop and paste
+    _, ret = acl.media.dvpp_vpc_batch_crop_and_paste_async(self._channel_desc,
+                                                        src_desc.desc,
+                                                        [len(pbbox)], 
+                                                        dst_desc.desc,
+                                                        crop_conf_list, 
+                                                        past_conf_list,
+                                                        self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_vpc_batch_crop_and_paste_async, return {ret}.&#34;)
+
+    # step 6: synchronize stream and finish crop and paste 
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+    for conf in crop_conf_list:
+        ret = acl.media.dvpp_destroy_roi_config(conf)
+        assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+    for conf in past_conf_list:
+        ret = acl.media.dvpp_destroy_roi_config(conf)
+        assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;
+
+    del (crop_img, src_desc, dst_desc)
+    Log(INFO, &#39;crop and paste process success&#39;)
+    return paste_img</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imdecode"><code class="name flex">
+<span>def <span class="ident">imdecode</span></span>(<span>self, array, format=1, return_shape=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>imdecode(array, format) -&gt; retval</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function imdecode reads an image from the specified numpy ndarray and decode to yuv image.
+See www.hiascend.com for the list of supported format.</p>
+</div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Input numpy ndarray.</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The supported decode image format. Defaults to PIXEL_FORMAT_YUV_SEMIPLANAR_420.</dd>
+<dt><strong><code>return_shape</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Return original shape(h, w, c) of image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray </code></dt>
+<dd>The decoded image(AscendArray obj)</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+data = np.fromfile('./image.jpg', dtype=np.uint8)
+image = Img.imdecode(data)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L265-L363" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imdecode(self, array, format=PIXEL_FORMAT_YUV_SEMIPLANAR_420, return_shape=False):
+    &#34;&#34;&#34; imdecode(array, format) -&gt; retval
+    
+    .. note::
+        The function imdecode reads an image from the specified numpy ndarray and decode to yuv image.
+        See www.hiascend.com for the list of supported format.
+
+    Args:
+        array (ndarray): Input numpy ndarray.
+        format (int, optional): The supported decode image format. Defaults to PIXEL_FORMAT_YUV_SEMIPLANAR_420.
+        return_shape (bool, optional): Return original shape(h, w, c) of image.
+
+    Returns:
+        AscendArray : The decoded image(AscendArray obj)
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    data = np.fromfile(&#39;./image.jpg&#39;, dtype=np.uint8)
+    image = Img.imdecode(data)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(array, np.ndarray):
+        raise TypeError(f&#34;Input array expects an np.ndarray object, but got {type(array)}.&#34;)
+
+    img_ptr = acl.util.numpy_to_ptr(array)
+
+    w, h, c, ret = acl.media.dvpp_jpeg_get_image_info(img_ptr, array.nbytes)
+    if ret == ACL_SUCCESS:
+        decoder = &#39;jpg&#39;
+    else:
+        w, h, c, ret = acl.media.dvpp_png_get_image_info(img_ptr, array.nbytes)
+        assert ret ==ACL_SUCCESS, f&#34;Get input image&#39;s info failed, return {ret}.&#34;
+        decoder = &#39;png&#39;
+
+    constrain_ = 8192 if decoder == &#39;jpg&#39; else 4096
+    if w &lt; 32 or w &gt; constrain_:
+        raise ValueError(f&#34;Input image&#39;s width out of range [32, {constrain_}].&#34;)
+
+    if h &lt; 32 or h &gt; constrain_:
+        raise ValueError(f&#34;Input image&#39;s height out of range [32, {constrain_}].&#34;)
+
+    if decoder == &#39;jpg&#39; and format not in [
+        PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+        PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+        PIXEL_FORMAT_YVU_SEMIPLANAR_422,
+        PIXEL_FORMAT_YVU_SEMIPLANAR_444
+        ]:
+        raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+    if decoder ==&#39;png&#39; and format not in [
+        PIXEL_FORMAT_RGB_888,
+        PIXEL_FORMAT_BGR_888,
+        PIXEL_FORMAT_ARGB_8888,
+        PIXEL_FORMAT_ABGR_8888,
+        PIXEL_FORMAT_RGBA_8888,
+        PIXEL_FORMAT_BGRA_8888
+        ]:
+        raise ValueError(f&#34;Input decode {format} is invalid, this format is unsupport.&#34;)
+
+    if self._channel_desc is None:
+        raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+    # clone input image to device
+    data = AscendArray.clone(array, context=self.context, flag=&#34;DVPP&#34;)
+
+    image = create_align_img(w, h, format=format, func=&#39;jpegd&#39; if decoder == &#39;jpg&#39; else &#39;pngd&#39;)
+
+    # create output image desc and bind it with a output AscendArray object
+    pic_inst = PicDesc(image, (w, h))
+
+    # do jpeg decode
+    if decoder == &#39;jpg&#39;:
+        ret = acl.media.dvpp_jpeg_decode_async(self._channel_desc,
+                                            data.ascend_data,
+                                            data.nbytes,
+                                            pic_inst.desc,
+                                            self.stream)
+        assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_jpeg_decode_async, return {ret}.&#34;
+    else:
+        ret = acl.media.dvpp_png_decode_async(self._channel_desc,
+                                            data.ascend_data,
+                                            data.nbytes,
+                                            pic_inst.desc,
+                                            self.stream)
+        assert ret == ACL_SUCCESS, f&#34;Failed to do dvpp_png_decode_async, return {ret}.&#34;
+    
+    # finish jpeg image decode
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to decode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+    # release the unused resource in future
+    del (data, pic_inst)
+    Log(INFO, &#39;imdecode success.&#39;)
+    if return_shape:
+        return image, (h, w, c)
+    else:
+        return image</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imencode"><code class="name flex">
+<span>def <span class="ident">imencode</span></span>(<span>self, ext, img, params=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Encodes an image into a memory buffer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function imencode compresses the image and stores it in the memory buffer
+that is resized to fit the result. See www.hiascend.com for the list of
+supported format and flags description.</p>
+</div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ext</code></strong> :&ensp;<code>str</code></dt>
+<dd>File extension that defines the output format.</dd>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be written</dd>
+<dt><strong><code>params</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Format-specific parameters, not use.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray </code></dt>
+<dd>Output buffer resized to fit the compressed image.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">img_encode = img.imencode('.jpg', yuv_img)
+str_encode = np.array(img_encode).tostring()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L366-L453" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imencode(self, ext, img, params=None):
+    &#34;&#34;&#34; Encodes an image into a memory buffer.
+     
+    .. note::
+        The function imencode compresses the image and stores it in the memory buffer 
+        that is resized to fit the result. See www.hiascend.com for the list of 
+        supported format and flags description.
+     
+    Args:
+        ext (str): File extension that defines the output format.
+        img (AscendArray): Image to be written
+        params (str, optional): Format-specific parameters, not use.
+
+    Returns:
+        AscendArray : Output buffer resized to fit the compressed image.
+    
+    Typical usage example:
+    ```python
+    img_encode = img.imencode(&#39;.jpg&#39;, yuv_img)
+    str_encode = np.array(img_encode).tostring()
+    ```
+    &#34;&#34;&#34;
+    if ext not in IMG_EXT_ENC:
+        raise TypeError(f&#34;Input ext expects {IMG_EXT_ENC}, but got {ext}.&#34;)
+
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+    if img.format not in [
+        PIXEL_FORMAT_YUV_SEMIPLANAR_420,
+        PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+        PIXEL_FORMAT_YUYV_PACKED_422, 
+        PIXEL_FORMAT_UYVY_PACKED_422, 
+        PIXEL_FORMAT_YVYU_PACKED_422,
+        PIXEL_FORMAT_VYUY_PACKED_422
+        ]:
+        raise ValueError(f&#34;Encode img&#39;s format {img.format} is invalid, this format not support.&#34;)
+
+    if self._channel_desc is None:
+        raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+    src_img, shape = align_img(img, func=&#39;encode&#39;)
+
+    # create input image desc and bind it with a input AscendArray object
+    src_inst = PicDesc(src_img, shape)
+
+    # create a jpeg image encode configurate
+    config = acl.media.dvpp_create_jpege_config()
+    ret = acl.media.dvpp_set_jpege_config_level(config, 100)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Set jpege config level failed, return {ret}.&#34;)
+
+    # predict out buffer size according to image desc
+    buff_size, ret = acl.media.dvpp_jpeg_predict_enc_size(src_inst.desc, config)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;jpeg predict encode size failed, return {ret}.&#34;)
+
+    # config out buffer of encode
+    out_size = np.array([buff_size], dtype=np.int32)
+    size_ptr = acl.util.numpy_to_ptr(out_size)
+    enc_jpg = AscendArray((buff_size,), np.dtype(&#39;uint8&#39;), format=img.format, flag=&#39;DVPP&#39;)
+    
+    # do jpeg decode
+    ret = acl.media.dvpp_jpeg_encode_async(self._channel_desc,
+                                           src_inst.desc,
+                                           enc_jpg.ascend_data,
+                                           size_ptr,
+                                           config,
+                                           self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_jpeg_encode_async, return {ret}.&#34;)
+    
+    # finish jpeg image decode
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to encode jpeg image in synchronize_stream, return {ret}.&#34;)
+
+    # trans AscendArray data to numpy array
+    jpeg_img = enc_jpg.to_np
+
+    # release the unused resource in future
+    del (src_inst, src_img, enc_jpg)
+    Log(INFO, &#39;imdecode success.&#39;)
+
+    ret = acl.media.dvpp_destroy_jpege_config(config)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;destroy jpege config failed, return {ret}.&#34;)
+    return jpeg_img</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imflip"><code class="name flex">
+<span>def <span class="ident">imflip</span></span>(<span>self, img, direction='horizontal')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Flip an image horizontally or vertically.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be flipped.</dd>
+<dt><strong><code>direction</code></strong> :&ensp;<code>str</code></dt>
+<dd>The flip direction, either "horizontal" or "vertical" or "diagonal".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>The flipped image.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+im_flip = Img.imflip(img, direction='horizontal')
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L615-L648" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imflip(self, img, direction=&#39;horizontal&#39;):
+    &#34;&#34;&#34;Flip an image horizontally or vertically.
+
+    Args:
+        img (AscendArray): Image to be flipped.
+        direction (str): The flip direction, either &#34;horizontal&#34; or &#34;vertical&#34; or &#34;diagonal&#34;.
+
+    Returns:
+        AscendArray: The flipped image.
+    
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    im_flip = Img.imflip(img, direction=&#39;horizontal&#39;)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+    # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+    if img.format &lt; 0 or img.format &gt; 17:
+        raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+            [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+    assert direction in [&#39;horizontal&#39;, &#39;vertical&#39;, &#39;diagonal&#39;]
+
+    arr = img.to_np
+
+    if direction == &#39;horizontal&#39;:
+        return AscendArray.clone(np.flip(arr, axis=1))
+    elif direction == &#39;vertical&#39;:
+        return AscendArray.clone(np.flip(arr, axis=0))
+    else:
+        return AscendArray.clone(np.flip(arr, axis=(0, 1)))</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.impad"><code class="name flex">
+<span>def <span class="ident">impad</span></span>(<span>self, img, shape=None, padding=None, pad_val=0, padding_mode='constant')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pad the given image to a certain shape or pad on all sides with
+specified padding mode and padding value.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be padded.</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple[int]</code></dt>
+<dd>Expected padding shape (h, w). Default: None.</dd>
+<dt><strong><code>padding</code></strong> :&ensp;<code>int</code> or <code>tuple[int]</code></dt>
+<dd>Padding on each border. If a single int is provided this
+is used to pad all borders. If tuple of length 2 is provided this is the padding
+on left/right and top/bottom respectively. If a tuple of length 4 is provided
+this is the padding for the [left, top, right and bottom] borders respectively.
+Default: None. Note that <code>shape</code> and <code>padding</code> can not be both set.</dd>
+<dt><strong><code>pad_val</code></strong> :&ensp;<code>Number</code></dt>
+<dd>Values to be filled in padding areas when padding_mode is
+'constant'. Default: 0.</dd>
+<dt><strong><code>padding_mode</code></strong> :&ensp;<code>str</code></dt>
+<dd>
+<p>Type of padding. Only support: constant. Default: constant.</p>
+<ul>
+<li>constant: pads with a constant value, this value is specified with pad_val.</li>
+</ul>
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray </code></dt>
+<dd>The padded image.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+yuv_pad = Img.impad(img, padding=(20, 50, 100, 200), pad_val=128)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L1041-L1147" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def impad(self, img, shape=None, padding=None, pad_val=0, padding_mode=&#39;constant&#39;):
+    &#34;&#34;&#34;Pad the given image to a certain shape or pad on all sides with
+        specified padding mode and padding value.
+
+    Args:
+        img (AscendArray): Image to be padded.
+        shape (tuple[int]): Expected padding shape (h, w). Default: None.
+        padding (int or tuple[int]): Padding on each border. If a single int is provided this 
+            is used to pad all borders. If tuple of length 2 is provided this is the padding 
+            on left/right and top/bottom respectively. If a tuple of length 4 is provided 
+            this is the padding for the [left, top, right and bottom] borders respectively.
+            Default: None. Note that `shape` and `padding` can not be both set.
+        pad_val (Number): Values to be filled in padding areas when padding_mode is 
+            &#39;constant&#39;. Default: 0.
+        padding_mode (str): Type of padding. Only support: constant. Default: constant.
+
+            - constant: pads with a constant value, this value is specified with pad_val.
+
+    Returns:
+        AscendArray : The padded image.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    yuv_pad = Img.impad(img, padding=(20, 50, 100, 200), pad_val=128)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but we got a {type(img)}.&#34;)
+
+    if shape and not isinstance(shape, tuple):
+        raise TypeError(f&#34;Input shape expects an tuple, but we got a {type(shape)}.&#34;)
+
+    if padding and not isinstance(padding, (int, tuple)):
+        raise TypeError(f&#34;Input padding expects an int or tuple, but we got a {type(padding)}.&#34;)
+
+    if padding_mode not in [&#39;constant&#39;]:
+        raise TypeError(f&#34;Input padding_mode expects in [&#39;constant&#39;], but we got {padding_mode}.&#34;)
+
+    assert (shape is not None) ^ (padding is not None), \
+            f&#34;Input `shape` and `padding` can not be both set.&#34;
+
+    # get the truth h and w of image.
+    if img.format in yuv420:
+        h, w = (img.shape[0] * 2 // 3, img.shape[1])
+    else:
+        h, w = img.shape[:2]
+
+    if shape is not None:
+        padding = (0, 0, shape[1] - w, shape[0] - h)
+
+    if isinstance(padding, tuple) and len(padding) in [2, 4]:
+        if len(padding) == 2:
+            padding = (padding[0], padding[1], padding[0], padding[1])
+    elif isinstance(padding, numbers.Number):
+        padding = (padding, padding, padding, padding)
+    else:
+        raise ValueError(&#39;Padding must be a int or a 2, or 4 element tuple.&#39;
+                        f&#39;But received {padding}&#39;)
+
+    # align original image shape and create a output to save padding result.
+    src_img, _ = align_img(img)
+    dst_w = padding[0] + w + padding[2]
+    dst_h = padding[1] + h + padding[3]
+    dst_img = create_align_img(dst_w, dst_h, format=img.format)
+
+    # set the padding result&#39;s memory with pad_val
+    Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+
+    # create output image desc and bind it with a output AscendArray object
+    src_desc = PicDesc(src_img, img.shape)
+    dst_desc = PicDesc(dst_img, (dst_h, dst_w))
+
+    # paste area startx, starty, endx, endy, and align startx with 16
+    startx = aligned(padding[0], aligned=&#39;w&#39;)
+    starty = padding[1] &gt;&gt; 1 &lt;&lt; 1
+    endx = ((padding[0] + w) &gt;&gt; 1 &lt;&lt; 1) - 1
+    endy = ((padding[1] + h) &gt;&gt; 1 &lt;&lt; 1) - 1
+
+    # create roi description
+    roi_conf = acl.media.dvpp_create_roi_config(0, (w &gt;&gt; 1 &lt;&lt; 1) - 1, 0, (h &gt;&gt; 1 &lt;&lt; 1) - 1)
+    pst_conf = acl.media.dvpp_create_roi_config(startx, endx, starty, endy)
+
+    ret = acl.media.dvpp_vpc_crop_and_paste_async(self._channel_desc,
+                                                  src_desc.desc,
+                                                  dst_desc.desc,
+                                                  roi_conf,
+                                                  pst_conf,
+                                                  self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_vpc_crop_and_paste_async, return {ret}.&#34;)
+
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to crop and paste image in synchronize_stream, return {ret}.&#34;)
+
+    ret = acl.media.dvpp_destroy_roi_config(roi_conf)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+    ret = acl.media.dvpp_destroy_roi_config(pst_conf)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_destroy_resize_config, return {ret}.&#34;)
+
+    del (src_img, src_desc, dst_desc)
+    Log(INFO, &#39;image padding process success&#39;)
+    return dst_img</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imread"><code class="name flex">
+<span>def <span class="ident">imread</span></span>(<span>self, img_or_path, flag='color', channel_order='bgr', backend='ascend')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Read an image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img_or_path</code></strong> :&ensp;<code>ndarray</code> or <code>str</code> or <code>Path</code></dt>
+<dd>Either a numpy array or str or pathlib.Path. If
+it is a numpy array (loaded image), then it will be returned as is.</dd>
+<dt><strong><code>flag</code></strong> :&ensp;<code>str</code></dt>
+<dd>Flags specifying the color type of a loaded image, candidates are <code>color</code>,
+<code>grayscale</code> and <code>unchanged</code>. It only work for <code>cv2</code> and <code>pillow</code>.</dd>
+<dt><strong><code>channel_order</code></strong> :&ensp;<code>str</code></dt>
+<dd>Order of channel, candidates are <code>bgr</code> and <code>rgb</code>, not work for ascend.</dd>
+<dt><strong><code>backend</code></strong> :&ensp;<code>str</code></dt>
+<dd>The image decoding backend type. Options are <code>cv2</code>, <code>pillow</code>, <code><a title="ascend" href="../index.html">ascend</a></code>.
+Default: <code><a title="ascend" href="../index.html">ascend</a></code>.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>Loaded image array.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+yuv = Img.imread('./image.jpg')
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L1149-L1205" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imread(self, img_or_path, flag=&#39;color&#39;, channel_order=&#39;bgr&#39;, backend=&#39;ascend&#39;):
+    &#34;&#34;&#34;Read an image.
+
+    Args:
+        img_or_path (ndarray or str or Path): Either a numpy array or str or pathlib.Path. If 
+            it is a numpy array (loaded image), then it will be returned as is.
+        flag (str): Flags specifying the color type of a loaded image, candidates are `color`, 
+            `grayscale` and `unchanged`. It only work for `cv2` and `pillow`.
+        channel_order (str): Order of channel, candidates are `bgr` and `rgb`, not work for ascend.
+        backend (str): The image decoding backend type. Options are `cv2`, `pillow`, `ascend`. 
+            Default: `ascend`.
+
+    Returns:
+        AscendArray: Loaded image array.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    yuv = Img.imread(&#39;./image.jpg&#39;)
+    ```
+    &#34;&#34;&#34;
+    if backend not in [&#39;cv2&#39;, &#39;pillow&#39;, &#39;ascend&#39;]:
+        raise ValueError(f&#39;backend: {backend} is not supported. Supported &#34;backends are &#39;
+                        &#34;&#39;cv2&#39;, &#39;turbojpeg&#39;, &#39;pillow&#39;.&#34;)
+
+    if backend == &#39;cv2&#39;:
+        try:
+            import cv2
+            imread_flags = {
+                &#39;color&#39;: cv2.IMREAD_COLOR,
+                &#39;grayscale&#39;: cv2.IMREAD_GRAYSCALE,
+                &#39;unchanged&#39;: cv2.IMREAD_UNCHANGED
+            }
+        except ImportError:
+            Log(ERROR, &#34;import cv2 error while using imread with backend &#39;cv2&#39;.&#34;)
+            return
+
+    if isinstance(img_or_path, Path):
+        img_or_path = str(img_or_path)
+
+    if isinstance(img_or_path, np.ndarray):            
+        decode_img = self.imdecode(img_or_path)
+        return decode_img
+    elif is_str(img_or_path):
+        check_file_exist(img_or_path, f&#39;img file does not exist: {img_or_path}&#39;)
+        if backend == &#39;pillow&#39;:
+            img = Image.open(img_or_path)
+            img = _pillow2array(img, flag, channel_order)
+            return AscendArray.clone(img)
+        else:
+            flag = imread_flags[flag] if is_str(flag) else flag
+            img = cv2.imread(img_or_path, flag)
+            if flag == IMREAD_COLOR and channel_order == &#39;rgb&#39;:
+                cv2.cvtColor(img, cv2.COLOR_BGR2RGB, img)
+            return AscendArray.clone(img)
+    else:
+        raise TypeError(&#39;&#34;img&#34; must be a numpy array or a str or a pathlib.Path object&#39;)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imrescale"><code class="name flex">
+<span>def <span class="ident">imrescale</span></span>(<span>self, img, scale, interpolation='huawei', return_shape=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resize image while keeping the aspect ratio.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AsecendArray</code></dt>
+<dd>The input image.</dd>
+<dt><strong><code>scale</code></strong> :&ensp;<code>float, tuple[int]</code></dt>
+<dd>The scaling factor or maximum size. If it is a float
+number, then the image will be rescaled by this factor, else if it is a tuple
+of 2 integers, then the image will be rescaled as large as possible within
+the scale.</dd>
+<dt><strong><code>interpolation</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Same as :func:<code>imresize</code>.</dd>
+<dt><strong><code>return_shape</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Return scale shape not aligned.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AsecendArray </code></dt>
+<dd>The rescaled image.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+yuv_rescale1 = Img.imrescale(yuv, 0.3)
+yuv_rescale2 = Img.imrescale(yuv, (320, 540))
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L554-L613" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imrescale(self, img, scale, interpolation=&#39;huawei&#39;, return_shape=False):
+    &#34;&#34;&#34;Resize image while keeping the aspect ratio.
+
+    Args:
+        img (AsecendArray): The input image.
+        scale (float, tuple[int]): The scaling factor or maximum size. If it is a float 
+            number, then the image will be rescaled by this factor, else if it is a tuple 
+            of 2 integers, then the image will be rescaled as large as possible within 
+            the scale.
+        interpolation (str, optional): Same as :func:`imresize`.
+        return_shape (bool, optional): Return scale shape not aligned.
+
+    Returns:
+        AsecendArray : The rescaled image.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    yuv_rescale1 = Img.imrescale(yuv, 0.3)
+    yuv_rescale2 = Img.imrescale(yuv, (320, 540))
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+    # valid format is in range [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)]
+    if img.format &lt; 0 or img.format &gt; 17:
+        raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+            [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+    # get the truth h and w of image.
+    if img.format in yuv420:
+        h, w = (img.shape[0] * 2 // 3, img.shape[1])
+    else:
+        h, w = img.shape[:2]
+
+    if isinstance(scale, (float, int)):
+        if scale &lt;= 0:
+            raise ValueError(f&#39;Invalid scale {scale}, must be positive.&#39;)  
+        scale_factor = scale
+    elif isinstance(scale, tuple):
+        max_long_edge = max(scale)
+        max_short_edge = min(scale)
+
+        # find the maximum rescale ratio, and the resized shape should be valid.
+        scale_factor = min(max_long_edge/max(h, w), max_short_edge/min(h, w))
+    else:
+        raise TypeError(
+            f&#39;Scale must be a number or tuple of int, but got {type(scale)}&#39;)
+
+    # caculate new rescaled size according to scale_factor 
+    new_size = _scale_size((w, h), scale_factor)
+
+    # do resize
+    rescaled_img = self.imresize(img, new_size, interpolation=interpolation)
+
+    if return_shape:
+        return rescaled_img, new_size
+    else:
+        return rescaled_img</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imresize"><code class="name flex">
+<span>def <span class="ident">imresize</span></span>(<span>self, img, dsize, interpolation='huawei')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>imresize(array, img, dsize, interpolation='huawei') -&gt; retval</p>
+<p>To shrink an image, it will generally look best with #INTER_AREA interpolation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Input image</dd>
+<dt><strong><code>dsize</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>The output image size (tuple(w, h));</dd>
+<dt><strong><code>interpolation</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The interpolation method, its default method is researched
+by ourself.. Defaults to 'huawei'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>The resized image</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function resize resizes the image img down to or up to the specified size. Note that the
+initial dst type or size are not taken into account. Instead, the size and type are derived from
+the img, dsize.</p>
+</div>
+<p>you may call the function as follows:</p>
+<pre><code class="language-python"># explicitly specify dsize (tuple[int]): Target size (w, h).
+imresize(img, dsize, interpolation)
+</code></pre>
+<p>If you want to decimate the image by factor of 2 in each direction, you can call the function this way:</p>
+<pre><code class="language-python"># specify the element w and h of the destination image size.
+imresize(img, (w//2, h//2), interpolation)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L456-L551" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imresize(self, img, dsize, interpolation=&#39;huawei&#39;):
+    &#34;&#34;&#34;imresize(array, img, dsize, interpolation=&#39;huawei&#39;) -&gt; retval
+
+    To shrink an image, it will generally look best with #INTER_AREA interpolation
+
+    Args:
+        img (AscendArray): Input image
+        dsize (tuple): The output image size (tuple(w, h));
+        interpolation (str, optional): The interpolation method, its default method is researched 
+            by ourself.. Defaults to &#39;huawei&#39;.
+
+    Returns:
+        AscendArray: The resized image
+
+    .. note::
+        The function resize resizes the image img down to or up to the specified size. Note that the
+        initial dst type or size are not taken into account. Instead, the size and type are derived from
+        the img, dsize. 
+
+    you may call the function as follows:
+    ```python
+    # explicitly specify dsize (tuple[int]): Target size (w, h).
+    imresize(img, dsize, interpolation)
+    ```
+    If you want to decimate the image by factor of 2 in each direction, you can call the function this way:
+    ```python
+    # specify the element w and h of the destination image size.
+    imresize(img, (w//2, h//2), interpolation)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray object, but got {type(img)}.&#34;)
+
+    # valid format is in range [PIXEL_FORMAT_YUV_400 -&gt; PIXEL_FORMAT_BGRA_8888]
+    if img.format &lt; 0 or img.format &gt; 17:
+        raise ValueError(f&#34;Input image format {img.format} is invalid, only support \
+            [PIXEL_FORMAT_YUV_400(0) -&gt; PIXEL_FORMAT_BGRA_8888(17)].&#34;)
+
+    # get the truth h and w of image.
+    if img.format in yuv420:
+        h, w = (img.shape[0] * 2 // 3, img.shape[1])
+    else:
+        h, w = img.shape[:2]
+
+    if dsize and not isinstance(dsize, tuple):
+        raise TypeError(f&#34;Input dsize expects a tuple object, but got {type(dsize)}.&#34;)
+
+    if dsize and (dsize[0] &gt; 16 * w or dsize[0] &lt; int(1/32 * w)):
+        raise ValueError(f&#34;Input dsize[0] out of resize ratio [1/32, 16]&#34;)
+
+    if dsize and (dsize[1] &gt; 16 * h or dsize[1] &lt; int(1/32 * h)):
+        raise ValueError(f&#34;Input dsize[1] out of resize ratio [1/32, 16]&#34;)
+
+    if interpolation not in interp_codes.keys():
+        raise ValueError(f&#34;Input decode flag {interpolation} is unsupport.&#34;)
+
+    if self._channel_desc is None:
+        raise ValueError(f&#34;channel desc is not initialized before imdecode.&#34;)
+
+    # do image aligned and create aligned image to save resized image
+    src_img, shape = align_img(img, func=&#39;resize&#39;)
+    dst_img = create_align_img(dsize[0], dsize[1], format=img.format, func=&#39;resize&#39;)
+
+    # create output image desc and bind it with a output AscendArray object
+    src_inst = PicDesc(src_img, shape)
+    dst_inst = PicDesc(dst_img, dsize)
+
+    # create resize config
+    resize_conf = acl.media.dvpp_create_resize_config()
+
+    # set resize interpolation
+    ret = acl.media.dvpp_set_resize_config_interpolation(resize_conf, interp_codes[interpolation])
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to set resize_config_interpolation, return {ret}.&#34;)
+
+    # do image resize
+    ret = acl.media.dvpp_vpc_resize_async(self._channel_desc,
+                                          src_inst.desc,
+                                          dst_inst.desc,
+                                          resize_conf,
+                                          self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to do dvpp_vpc_resize_async, return {ret}.&#34;)
+
+    ret = acl.rt.synchronize_stream(self.stream)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to resize image in synchronize_stream, return {ret}.&#34;)
+
+    ret = acl.media.dvpp_destroy_resize_config(resize_conf)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;do dvpp_destroy_resize_config failed, return {ret}.&#34;)
+
+    del (img, src_img, src_inst, dst_inst)
+    Log(INFO, &#39;resize image success&#39;)
+
+    return dst_img</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imrotate"><code class="name flex">
+<span>def <span class="ident">imrotate</span></span>(<span>self, img, angle, center=None, scale=1.0, border_value=0, interpolation='bilinear', auto_bound=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rotate an image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image to be rotated.</dd>
+<dt><strong><code>angle</code></strong> :&ensp;<code>float</code></dt>
+<dd>Rotation angle in degrees, positive values mean clockwise rotation.</dd>
+<dt><strong><code>center</code></strong> :&ensp;<code>tuple[float]</code>, optional</dt>
+<dd>Center point (w, h) of the rotation in the source
+image. If not specified, the center of the image will be used.</dd>
+<dt><strong><code>scale</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Isotropic scale factor.</dd>
+<dt><strong><code>border_value</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Border value.</dd>
+<dt><strong><code>interpolation</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Same as function: <code>resize</code>.</dd>
+<dt><strong><code>auto_bound</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to adjust the image size to cover the whole
+rotated image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AscendArray</code></dt>
+<dd>The rotated image.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L651-L710" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imrotate(self, 
+            img,
+            angle,
+            center=None,
+            scale=1.0,
+            border_value=0,
+            interpolation=&#39;bilinear&#39;,
+            auto_bound=False):
+    &#34;&#34;&#34;Rotate an image.
+
+    Args:
+        img (AscendArray): Image to be rotated.
+        angle (float): Rotation angle in degrees, positive values mean clockwise rotation.
+        center (tuple[float], optional): Center point (w, h) of the rotation in the source 
+            image. If not specified, the center of the image will be used.
+        scale (float, optional): Isotropic scale factor.
+        border_value (int, optional): Border value.
+        interpolation (str, optional): Same as function: `resize`.
+        auto_bound (bool, optional): Whether to adjust the image size to cover the whole
+            rotated image.
+
+    Returns:
+        AscendArray: The rotated image.
+    &#34;&#34;&#34;
+    try:
+        import cv2
+        cv2_interp_codes = {
+            &#39;nearest&#39;: cv2.INTER_NEAREST,
+            &#39;bilinear&#39;: cv2.INTER_LINEAR,
+            &#39;bicubic&#39;: cv2.INTER_CUBIC,
+            &#39;area&#39;: cv2.INTER_AREA,
+            &#39;lanczos&#39;: cv2.INTER_LANCZOS4
+        }
+    except ImportError:
+        Log(ERROR, &#39;import cv2 error while using imrotate, you should install opencv first.&#39;)
+        return
+
+    if center is not None and auto_bound:
+        raise ValueError(&#39;`auto_bound` conflicts with `center`&#39;)
+    h, w = img.shape[:2]
+    if center is None:
+        center = ((w - 1) * 0.5, (h - 1) * 0.5)
+    assert isinstance(center, tuple)
+
+    matrix = cv2.getRotationMatrix2D(center, -angle, scale)
+    if auto_bound:
+        cos = np.abs(matrix[0, 0])
+        sin = np.abs(matrix[0, 1])
+        new_w = h * sin + w * cos
+        new_h = h * cos + w * sin
+        matrix[0, 2] += (new_w - w) * 0.5
+        matrix[1, 2] += (new_h - h) * 0.5
+        w = int(np.round(new_w))
+        h = int(np.round(new_h))
+    rotated = cv2.warpAffine(
+        img.to_np,
+        matrix, (w, h),
+        flags=cv2_interp_codes[interpolation],
+        borderValue=border_value)
+    return AscendArray.clone(rotated)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.geome.Image.imwrite"><code class="name flex">
+<span>def <span class="ident">imwrite</span></span>(<span>self, img, file_path, params=None, auto_mkdir=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Write image to file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Image array to be written.</dd>
+<dt><strong><code>file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Image file path.</dd>
+<dt><strong><code>params</code></strong> :&ensp;<code>None, str</code> or <code>list</code></dt>
+<dd>If params=='pillow', save image with PIL. if params is list,
+this same as opencv's func: <code>imwrite</code> interface, only work for opencv.</dd>
+<dt><strong><code>auto_mkdir</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If the parent folder of <code>file_path</code> does not exist,
+whether to create it automatically.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Successful or not.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">Img = ascend.Image(ctx)
+Img.imwrite(yuv_org, './saved_img.jpg')  
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L1208-L1248" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def imwrite(self, img, file_path, params=None, auto_mkdir=True):
+    &#34;&#34;&#34;Write image to file.
+
+    Args:
+        img (AscendArray): Image array to be written.
+        file_path (str): Image file path.
+        params (None, str or list): If params==&#39;pillow&#39;, save image with PIL. if params is list, 
+            this same as opencv&#39;s func: `imwrite` interface, only work for opencv.
+        auto_mkdir (bool): If the parent folder of `file_path` does not exist,
+            whether to create it automatically.
+
+    Returns:
+        bool: Successful or not.
+
+    Typical usage example:
+    ```python
+    Img = ascend.Image(ctx)
+    Img.imwrite(yuv_org, &#39;./saved_img.jpg&#39;)  
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(img, AscendArray):
+        raise TypeError(f&#34;Input img expects an AscendArray, but got {type(img)}.&#34;)
+    
+    if auto_mkdir:
+        dir_name = osp.abspath(osp.dirname(file_path))
+        mkdir_or_exist(dir_name)
+    
+    if params is None:
+        ext = &#39;.png&#39; if file_path.endswith(&#39;.png&#39;) or file_path.endswith(&#39;.PNG&#39;)  else &#39;.jpg&#39;
+        file = self.imencode(ext, img)
+        with open(file, &#39;w+&#39;) as fw:
+            fw.write(file)
+    elif params == &#39;pillow&#39;:
+        pil_image = Image.fromarray(img.to_np)
+        pil_image.save(file_path)
+    else:
+        try:
+            import cv2
+            cv2.imwrite(file_path, img.to_np, params)
+        except ImportError:
+            Log(ERROR, f&#34;import cv2 error while using imwrite save image with params {params}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.image.geome.PicDesc"><code class="flex name class">
+<span>class <span class="ident">PicDesc</span></span>
+<span>(</span><span>obj, shape=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a PicDesc object, to construct an picture info.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>desc</code></strong> :&ensp;<code>obj</code></dt>
+<dd>The created dvpp pic desc</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L147-L232" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class PicDesc():
+    &#34;&#34;&#34;Define a PicDesc object, to construct an picture info.
+
+    Attributes:
+        desc (obj): The created dvpp pic desc
+
+    &#34;&#34;&#34;
+    def __init__(self, obj, shape=None):
+        if not isinstance(obj, (AscendArray, list)):
+            raise TypeError(f&#34;Input obj expects an AscendArray object or \
+                a list of AscendArray object, but got {type(obj)}.&#34;)
+
+        if shape and not isinstance(shape, tuple):
+            raise TypeError(f&#34;Input shape expects an tuple, but got {type(shape)}.&#34;)
+
+        if isinstance(obj, AscendArray):
+            self._desc = acl.media.dvpp_create_pic_desc()
+            self.__assemble_desc(self._desc, obj, shape=shape)
+        else:
+            batch = len(obj)
+            assert batch &gt; 0, f&#34;Input image list is null.&#34;
+
+            self._batch_desc = acl.media.dvpp_create_batch_pic_desc(batch)
+            for i, image in enumerate(obj):
+                desc = acl.media.dvpp_get_pic_desc(self._batch_desc, i)
+                self.__assemble_desc(desc, image, shape=shape)
+
+    def __assemble_desc(self, desc, image, shape=None):
+        &#34;&#34;&#34;assemble image parameters to the created image desc.
+
+        Args:
+            desc  : the created pic desc
+            image : (AsendArray) image or croped area of image(bbox).
+            shape : the original size of image or (w, h) not to be aligned.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if not isinstance(image, AscendArray):
+            raise TypeError(f&#34;Input image expects an AscendArray object, but got {type(image)}.&#34;)
+
+        h, w = (image.shape[0] * 2 // 3, image.shape[1]) if image.format in yuv420 else image.shape[:2]
+
+        if shape is None:
+            shape = (w, h)
+
+        ret = acl.media.dvpp_set_pic_desc_data(desc, image.ascend_data)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc data, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_size(desc, image.nbytes)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc size, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_format(desc, image.format)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc format, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_width(desc, shape[0])
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc width, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_height(desc, shape[1])
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc height, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_width_stride(desc, w)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc width_stride, return {ret}.&#34;
+
+        ret = acl.media.dvpp_set_pic_desc_height_stride(desc, h)
+        assert ret == ACL_SUCCESS, f&#34;Failed to set dvpp pic desc height_stride, return {ret}.&#34;
+
+    @property
+    def desc(self):
+        if hasattr(self, &#39;_desc&#39;):
+            return self._desc
+        
+        if hasattr(self, &#39;_batch_desc&#39;):
+            return self._batch_desc
+        
+
+    def __del__(self):
+        if hasattr(self, &#39;_desc&#39;):
+            ret = acl.media.dvpp_destroy_pic_desc(self._desc)
+            assert ret == ACL_SUCCESS, f&#34;destroy pic desc error in \
+                dvpp_destroy_pic_desc, return {ret}.&#34;
+
+        if hasattr(self, &#39;_batch_desc&#39;):
+            ret = acl.media.dvpp_destroy_batch_pic_desc(self._batch_desc)
+            assert ret == ACL_SUCCESS, f&#34;destroy pic desc error in \
+                dvpp_destroy_batch_pic_desc, return {ret}.&#34;</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ascend.image.geome.PicDesc.desc"><code class="name">var <span class="ident">desc</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/geome.py#L214-L220" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def desc(self):
+    if hasattr(self, &#39;_desc&#39;):
+        return self._desc
+    
+    if hasattr(self, &#39;_batch_desc&#39;):
+        return self._batch_desc</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.image.geome">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.image" href="index.html">ascend.image</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ascend.image.geome.align_img" href="#ascend.image.geome.align_img">align_img</a></code></li>
+<li><code><a title="ascend.image.geome.create_align_img" href="#ascend.image.geome.create_align_img">create_align_img</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.image.geome.Image" href="#ascend.image.geome.Image">Image</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ascend.image.geome.Image.bbox_resize" href="#ascend.image.geome.Image.bbox_resize">bbox_resize</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imcrop" href="#ascend.image.geome.Image.imcrop">imcrop</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imcrop_paste" href="#ascend.image.geome.Image.imcrop_paste">imcrop_paste</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imdecode" href="#ascend.image.geome.Image.imdecode">imdecode</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imencode" href="#ascend.image.geome.Image.imencode">imencode</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imflip" href="#ascend.image.geome.Image.imflip">imflip</a></code></li>
+<li><code><a title="ascend.image.geome.Image.impad" href="#ascend.image.geome.Image.impad">impad</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imread" href="#ascend.image.geome.Image.imread">imread</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imrescale" href="#ascend.image.geome.Image.imrescale">imrescale</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imresize" href="#ascend.image.geome.Image.imresize">imresize</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imrotate" href="#ascend.image.geome.Image.imrotate">imrotate</a></code></li>
+<li><code><a title="ascend.image.geome.Image.imwrite" href="#ascend.image.geome.Image.imwrite">imwrite</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.image.geome.PicDesc" href="#ascend.image.geome.PicDesc">PicDesc</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.image.geome.PicDesc.desc" href="#ascend.image.geome.PicDesc.desc">desc</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

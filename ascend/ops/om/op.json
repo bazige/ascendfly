@@ -1,0 +1,57 @@
+[
+{
+  "op": "GEMM",
+  "input_desc": [
+    {
+      "format": "ND",
+      "shape": [-1, -1, -1, -1],
+      "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+      "type": "float16"
+    },
+    {
+      "format": "ND",
+      "shape": [-1, -1, -1, -1],
+      "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+      "type": "float16"
+    },
+    {
+      "format": "ND",
+      "shape": [-1, -1, -1, -1],
+      "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+      "type": "float16"
+    },
+    {
+      "format": "ND",
+      "shape": [],
+      "type": "float16"
+    },
+    {
+      "format": "ND",
+      "shape": [],
+      "type": "float16"
+    }
+  ],
+  "output_desc": [
+    {
+      "format": "ND",
+      "shape": [-1, -1, -1, -1],
+      "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+      "type": "float16"
+    }
+  ],
+  "attr": [
+  {
+    "name": "transpose_a",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "transpose_b",
+    "type": "bool",
+    "value": false
+    }
+  ]
+}
+
+]
+

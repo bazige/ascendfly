@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.image.misc API documentation</title>
+<meta name="description" content="Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/image/misc.html">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.image.misc</code></h1>
+</header>
+<section id="section-intro">
+<p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/misc.py#L0-L253" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&#34;&#34;&#34;
+import acl
+import numpy as np
+from ..common.const import *
+from ..data.ascendarray import AscendArray
+from ..ops.op import Permute
+
+
+def show_img(imgs, window_names=None, wait_time_ms=0):
+    &#34;&#34;&#34;Displays an image or a list of images in specified windows or self-initiated windows.
+        You can also control display wait time by parameter &#39;wait_time_ms&#39;.
+        Notice, specified format must be greater than or equal to imgs number. When you using this 
+        function, you&#39;d better install opencv first.
+
+    Args:
+        imgs (AscendArray, ndarray or list): Input images.
+        window_names (str, optional): If None, function will create different windows as &#39;1&#39;, &#39;2&#39;.
+        wait_time_ms (int, optional): Display wait time.
+
+    Typical usage example:
+    ```python
+    ascend.show_img(image, wait_time_ms=15)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_img, and you should install opencv first.&#34;)
+        return
+
+    if not isinstance(imgs, list):
+        imgs = [imgs]
+
+    if window_names is None:
+        window_names = list(range(len(imgs)))
+    else:
+        if not isinstance(window_names, list):
+            window_names = [window_names]
+        assert len(imgs) == len(window_names), &#39;window names does not match images!&#39;
+
+    show_imgs = []
+    for i, img in enumerate(imgs):
+        show_imgs.append(img.to_np if isinstance(img, AscendArray) else img)
+ 
+    for img, win_name in zip(show_imgs, window_names):
+        if img is None:
+            continue
+        win_name = str(win_name)
+        cv2.namedWindow(win_name, 0)
+        cv2.imshow(win_name, img)
+
+    cv2.waitKey(wait_time_ms)
+
+
+_COLORS = np.array(
+    [
+        0.000, 0.447, 0.741,
+        0.850, 0.325, 0.098,
+        0.929, 0.694, 0.125,
+        0.494, 0.184, 0.556,
+        0.466, 0.674, 0.188,
+        0.301, 0.745, 0.933,
+        0.635, 0.078, 0.184,
+        0.300, 0.300, 0.300,
+        1.000, 0.667, 0.500,
+        1.000, 1.000, 0.500,
+        0.000, 0.333, 1.000,
+        0.000, 0.667, 1.000,
+        0.000, 1.000, 1.000,
+        0.333, 0.000, 1.000,
+        0.333, 0.333, 1.000,
+        0.333, 0.667, 1.000,
+        0.333, 1.000, 1.000,
+        0.667, 0.000, 1.000,
+        0.667, 0.333, 1.000
+    ]
+).astype(np.float32).reshape(-1, 3)
+
+
+def random_color(rgb=False, maximum=255):
+    &#34;&#34;&#34;Generate random color
+
+    Args:
+        rgb (bool): Whether to return RGB colors or BGR colors.
+        maximum (int): Either 255 or 1
+
+    Returns:
+        ndarray: A vector of 3 numbers
+
+    Typical usage example:
+    ```python
+    color = ascend.random_color()
+    ```
+    &#34;&#34;&#34;
+    idx = np.random.randint(0, len(_COLORS))
+    ret = _COLORS[idx] * maximum
+    if not rgb:
+        ret = ret[::-1]
+    return ret
+
+
+def show_bbox(image, bboxs_list, color=None, thickness=1, font_scale=0.3, wait_time_ms=0, names=None,
+              is_show=True, is_without_mask=False):
+    &#34;&#34;&#34;Visualize bbox in object detection by drawing rectangle. Notice, when you using this function, 
+    you&#39;d better install opencv first.
+
+    Args:
+        image (AscendArray): Input image to be drawed with lines and labels.
+        bboxs_list (list): A list with [pts_xyxy, prob, id], the preditction
+        color (tuple, optional): The bbox&#39;s color. Defaults to None.
+        thickness (int, optional): The thickness of line. Defaults to 1.
+        font_scale (float, optional): The font scale of bbox. Defaults to 0.3.
+        wait_time_ms (int, optional): Image&#39;s views time interval. Defaults to 0.
+        names ([type], optional): Figure&#39;s window name. Defaults to None.
+        is_show (bool, optional): Show the image or not. Defaults to True.
+        is_without_mask (bool, optional): Defaults to False.
+
+    Returns:
+        ndarray: A image with bbox and text
+
+    Typical usage example:
+    ```python
+    ascend.show_bbox(image, bboxes, wait_time_ms=10)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_bbox, and you should install opencv first.&#34;)
+        return
+
+    if not isinstance(image, AscendArray):
+        raise TypeError(f&#34;Input image expects an AscendArray, but got {type(image)}.&#34;)
+
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    image_copy = image.to_np
+    if image.format == PIXEL_FORMAT_YUV_SEMIPLANAR_420:
+        image_copy = cv2.cvtColor(image_copy, cv2.COLOR_YUV2RGB_NV21)
+    elif image.format == PIXEL_FORMAT_YVU_SEMIPLANAR_420:
+        image_copy = cv2.cvtColor(image_copy, cv2.COLOR_YUV2RGB_NV12)
+
+    for bbox in bboxs_list:
+        if len(bbox) == 5:
+            txt = &#39;{:.3f}&#39;.format(bbox[4])
+        elif len(bbox) == 6:
+            txt = &#39;p={:.3f},id={:.3f}&#39;.format(bbox[4], bbox[5])
+        bbox_f = np.array(bbox[:4], np.int32)
+        if color is None:
+            colors = random_color(rgb=True).astype(np.float64)
+        else:
+            colors = color
+
+        if not is_without_mask:
+            image_copy = cv2.rectangle(image_copy, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors,
+                                       thickness)
+        else:
+            mask = np.zeros_like(image_copy, np.uint8)
+            mask1 = cv2.rectangle(mask, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors, -1)
+            mask = np.zeros_like(image_copy, np.uint8)
+            mask2 = cv2.rectangle(mask, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors, thickness)
+            mask2 = cv2.addWeighted(mask1, 0.5, mask2, 8, 0.0)
+            image_copy = cv2.addWeighted(image_copy, 1.0, mask2, 0.6, 0.0)
+        if len(bbox) == 5 or len(bbox) == 6:
+            cv2.putText(image_copy, txt, (bbox_f[0], bbox_f[1] - 2),
+                        font, font_scale, (255, 255, 255), thickness=thickness, lineType=cv2.LINE_AA)
+    if is_show:
+        show_img(image_copy, names, wait_time_ms)
+    return image_copy
+
+
+def show_tensor(tensor, resize_hw=None, is_show=True, wait_time_ms=0):
+    &#34;&#34;&#34;Show tensor as heatmap.
+
+    Args:
+        tensor (AscendArray): Input tensor
+        resize_hw (tuple, optional): Wether to resize the input tensor to fit the window. Defaults to None.
+        is_show (bool, optional): Show the tensor or save it. Defaults to True.
+        wait_time_ms (int, optional): Display time. Defaults to 0.
+
+    Returns:
+        list[AscendArray]: Converted tensor heatmap.
+
+    .. warning::
+        When you using this function, you&#39;d better install opencv first.
+
+    Typical usage example:
+    ```python
+    ascend.show_tensor(tensor, resize_hw=(640, 480), wait_time_ms=10)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_tensor, and you should install opencv first.&#34;)
+        return
+
+    def normalize_numpy(array):
+        max_value = np.max(array)
+        min_value = np.min(array)
+        array = (array - min_value) / (max_value - min_value)
+        return array
+
+    if not isinstance(tensor, AscendArray):
+        raise TypeError(f&#34;Input tensor expects an AscendArray, but got {type(tensor)}.&#34;)
+        
+    if tensor.ndim != 4:
+        raise ValueError(&#39;Dim of input tensor should be 4, please check your tensor dimension!&#39;)
+
+    if tensor.format == &#39;NCHW&#39;:
+        tensor = tensor
+    else:
+        &#39;&#39;&#39;
+        to transpose NCHW, using ascend310 first. if it fails, use numpy.
+        &#39;&#39;&#39;
+        try:
+            tensor = Permute(tensor, axes=(0, 2, 3, 1))
+        except:
+            tensor = tensor.to_np.transpose((0, 2, 3, 1))
+
+    # resize the tensor with interpolize
+    if resize_hw is not None:
+        pass
+
+    tensor = tensor.permute(1, 2, 0)
+
+    channel = tensor.shape[2]
+    tensor = tensor.to_np
+  
+    # do normalize
+    sum_tensor = np.sum(tensor, axis=2)
+    sum_tensor = normalize_numpy(sum_tensor) * 255
+    sum_tensor = sum_tensor.astype(np.uint8)
+
+    # show tensor as colormap
+    sum_tensor = cv2.applyColorMap(np.uint8(sum_tensor), cv2.COLORMAP_JET)
+    # mean_tensor = cv2.applyColorMap(np.uint8(mean_tensor), cv2.COLORMAP_JET)
+
+    if is_show:
+        show_img([sum_tensor], [&#39;sum&#39;], wait_time_ms=wait_time_ms)
+    return [sum_tensor]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.image.misc.random_color"><code class="name flex">
+<span>def <span class="ident">random_color</span></span>(<span>rgb=False, maximum=255)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate random color</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>rgb</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to return RGB colors or BGR colors.</dd>
+<dt><strong><code>maximum</code></strong> :&ensp;<code>int</code></dt>
+<dd>Either 255 or 1</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ndarray</code></dt>
+<dd>A vector of 3 numbers</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">color = ascend.random_color()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/misc.py#L93-L112" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def random_color(rgb=False, maximum=255):
+    &#34;&#34;&#34;Generate random color
+
+    Args:
+        rgb (bool): Whether to return RGB colors or BGR colors.
+        maximum (int): Either 255 or 1
+
+    Returns:
+        ndarray: A vector of 3 numbers
+
+    Typical usage example:
+    ```python
+    color = ascend.random_color()
+    ```
+    &#34;&#34;&#34;
+    idx = np.random.randint(0, len(_COLORS))
+    ret = _COLORS[idx] * maximum
+    if not rgb:
+        ret = ret[::-1]
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.misc.show_bbox"><code class="name flex">
+<span>def <span class="ident">show_bbox</span></span>(<span>image, bboxs_list, color=None, thickness=1, font_scale=0.3, wait_time_ms=0, names=None, is_show=True, is_without_mask=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Visualize bbox in object detection by drawing rectangle. Notice, when you using this function,
+you'd better install opencv first.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Input image to be drawed with lines and labels.</dd>
+<dt><strong><code>bboxs_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list with [pts_xyxy, prob, id], the preditction</dd>
+<dt><strong><code>color</code></strong> :&ensp;<code>tuple</code>, optional</dt>
+<dd>The bbox's color. Defaults to None.</dd>
+<dt><strong><code>thickness</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The thickness of line. Defaults to 1.</dd>
+<dt><strong><code>font_scale</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The font scale of bbox. Defaults to 0.3.</dd>
+<dt><strong><code>wait_time_ms</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Image's views time interval. Defaults to 0.</dd>
+<dt><strong><code>names</code></strong> :&ensp;<code>[type]</code>, optional</dt>
+<dd>Figure's window name. Defaults to None.</dd>
+<dt><strong><code>is_show</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Show the image or not. Defaults to True.</dd>
+<dt><strong><code>is_without_mask</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Defaults to False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ndarray</code></dt>
+<dd>A image with bbox and text</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">ascend.show_bbox(image, bboxes, wait_time_ms=10)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/misc.py#L115-L181" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def show_bbox(image, bboxs_list, color=None, thickness=1, font_scale=0.3, wait_time_ms=0, names=None,
+              is_show=True, is_without_mask=False):
+    &#34;&#34;&#34;Visualize bbox in object detection by drawing rectangle. Notice, when you using this function, 
+    you&#39;d better install opencv first.
+
+    Args:
+        image (AscendArray): Input image to be drawed with lines and labels.
+        bboxs_list (list): A list with [pts_xyxy, prob, id], the preditction
+        color (tuple, optional): The bbox&#39;s color. Defaults to None.
+        thickness (int, optional): The thickness of line. Defaults to 1.
+        font_scale (float, optional): The font scale of bbox. Defaults to 0.3.
+        wait_time_ms (int, optional): Image&#39;s views time interval. Defaults to 0.
+        names ([type], optional): Figure&#39;s window name. Defaults to None.
+        is_show (bool, optional): Show the image or not. Defaults to True.
+        is_without_mask (bool, optional): Defaults to False.
+
+    Returns:
+        ndarray: A image with bbox and text
+
+    Typical usage example:
+    ```python
+    ascend.show_bbox(image, bboxes, wait_time_ms=10)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_bbox, and you should install opencv first.&#34;)
+        return
+
+    if not isinstance(image, AscendArray):
+        raise TypeError(f&#34;Input image expects an AscendArray, but got {type(image)}.&#34;)
+
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    image_copy = image.to_np
+    if image.format == PIXEL_FORMAT_YUV_SEMIPLANAR_420:
+        image_copy = cv2.cvtColor(image_copy, cv2.COLOR_YUV2RGB_NV21)
+    elif image.format == PIXEL_FORMAT_YVU_SEMIPLANAR_420:
+        image_copy = cv2.cvtColor(image_copy, cv2.COLOR_YUV2RGB_NV12)
+
+    for bbox in bboxs_list:
+        if len(bbox) == 5:
+            txt = &#39;{:.3f}&#39;.format(bbox[4])
+        elif len(bbox) == 6:
+            txt = &#39;p={:.3f},id={:.3f}&#39;.format(bbox[4], bbox[5])
+        bbox_f = np.array(bbox[:4], np.int32)
+        if color is None:
+            colors = random_color(rgb=True).astype(np.float64)
+        else:
+            colors = color
+
+        if not is_without_mask:
+            image_copy = cv2.rectangle(image_copy, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors,
+                                       thickness)
+        else:
+            mask = np.zeros_like(image_copy, np.uint8)
+            mask1 = cv2.rectangle(mask, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors, -1)
+            mask = np.zeros_like(image_copy, np.uint8)
+            mask2 = cv2.rectangle(mask, (bbox_f[0], bbox_f[1]), (bbox_f[2], bbox_f[3]), colors, thickness)
+            mask2 = cv2.addWeighted(mask1, 0.5, mask2, 8, 0.0)
+            image_copy = cv2.addWeighted(image_copy, 1.0, mask2, 0.6, 0.0)
+        if len(bbox) == 5 or len(bbox) == 6:
+            cv2.putText(image_copy, txt, (bbox_f[0], bbox_f[1] - 2),
+                        font, font_scale, (255, 255, 255), thickness=thickness, lineType=cv2.LINE_AA)
+    if is_show:
+        show_img(image_copy, names, wait_time_ms)
+    return image_copy</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.misc.show_img"><code class="name flex">
+<span>def <span class="ident">show_img</span></span>(<span>imgs, window_names=None, wait_time_ms=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Displays an image or a list of images in specified windows or self-initiated windows.
+You can also control display wait time by parameter 'wait_time_ms'.
+Notice, specified format must be greater than or equal to imgs number. When you using this
+function, you'd better install opencv first.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>imgs</code></strong> :&ensp;<code>AscendArray, ndarray</code> or <code>list</code></dt>
+<dd>Input images.</dd>
+<dt><strong><code>window_names</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If None, function will create different windows as '1', '2'.</dd>
+<dt><strong><code>wait_time_ms</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Display wait time.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">ascend.show_img(image, wait_time_ms=15)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/misc.py#L22-L65" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def show_img(imgs, window_names=None, wait_time_ms=0):
+    &#34;&#34;&#34;Displays an image or a list of images in specified windows or self-initiated windows.
+        You can also control display wait time by parameter &#39;wait_time_ms&#39;.
+        Notice, specified format must be greater than or equal to imgs number. When you using this 
+        function, you&#39;d better install opencv first.
+
+    Args:
+        imgs (AscendArray, ndarray or list): Input images.
+        window_names (str, optional): If None, function will create different windows as &#39;1&#39;, &#39;2&#39;.
+        wait_time_ms (int, optional): Display wait time.
+
+    Typical usage example:
+    ```python
+    ascend.show_img(image, wait_time_ms=15)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_img, and you should install opencv first.&#34;)
+        return
+
+    if not isinstance(imgs, list):
+        imgs = [imgs]
+
+    if window_names is None:
+        window_names = list(range(len(imgs)))
+    else:
+        if not isinstance(window_names, list):
+            window_names = [window_names]
+        assert len(imgs) == len(window_names), &#39;window names does not match images!&#39;
+
+    show_imgs = []
+    for i, img in enumerate(imgs):
+        show_imgs.append(img.to_np if isinstance(img, AscendArray) else img)
+ 
+    for img, win_name in zip(show_imgs, window_names):
+        if img is None:
+            continue
+        win_name = str(win_name)
+        cv2.namedWindow(win_name, 0)
+        cv2.imshow(win_name, img)
+
+    cv2.waitKey(wait_time_ms)</code></pre>
+</details>
+</dd>
+<dt id="ascend.image.misc.show_tensor"><code class="name flex">
+<span>def <span class="ident">show_tensor</span></span>(<span>tensor, resize_hw=None, is_show=True, wait_time_ms=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show tensor as heatmap.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tensor</code></strong> :&ensp;<code>AscendArray</code></dt>
+<dd>Input tensor</dd>
+<dt><strong><code>resize_hw</code></strong> :&ensp;<code>tuple</code>, optional</dt>
+<dd>Wether to resize the input tensor to fit the window. Defaults to None.</dd>
+<dt><strong><code>is_show</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Show the tensor or save it. Defaults to True.</dd>
+<dt><strong><code>wait_time_ms</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Display time. Defaults to 0.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[AscendArray]</code></dt>
+<dd>Converted tensor heatmap.</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you using this function, you'd better install opencv first.</p>
+</div>
+<p>Typical usage example:</p>
+<pre><code class="language-python">ascend.show_tensor(tensor, resize_hw=(640, 480), wait_time_ms=10)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/image/misc.py#L184-L253" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def show_tensor(tensor, resize_hw=None, is_show=True, wait_time_ms=0):
+    &#34;&#34;&#34;Show tensor as heatmap.
+
+    Args:
+        tensor (AscendArray): Input tensor
+        resize_hw (tuple, optional): Wether to resize the input tensor to fit the window. Defaults to None.
+        is_show (bool, optional): Show the tensor or save it. Defaults to True.
+        wait_time_ms (int, optional): Display time. Defaults to 0.
+
+    Returns:
+        list[AscendArray]: Converted tensor heatmap.
+
+    .. warning::
+        When you using this function, you&#39;d better install opencv first.
+
+    Typical usage example:
+    ```python
+    ascend.show_tensor(tensor, resize_hw=(640, 480), wait_time_ms=10)
+    ```
+    &#34;&#34;&#34;
+    try:
+        import cv2
+    except ImportError:
+        Log(ERROR, f&#34;import cv2 error while using show_tensor, and you should install opencv first.&#34;)
+        return
+
+    def normalize_numpy(array):
+        max_value = np.max(array)
+        min_value = np.min(array)
+        array = (array - min_value) / (max_value - min_value)
+        return array
+
+    if not isinstance(tensor, AscendArray):
+        raise TypeError(f&#34;Input tensor expects an AscendArray, but got {type(tensor)}.&#34;)
+        
+    if tensor.ndim != 4:
+        raise ValueError(&#39;Dim of input tensor should be 4, please check your tensor dimension!&#39;)
+
+    if tensor.format == &#39;NCHW&#39;:
+        tensor = tensor
+    else:
+        &#39;&#39;&#39;
+        to transpose NCHW, using ascend310 first. if it fails, use numpy.
+        &#39;&#39;&#39;
+        try:
+            tensor = Permute(tensor, axes=(0, 2, 3, 1))
+        except:
+            tensor = tensor.to_np.transpose((0, 2, 3, 1))
+
+    # resize the tensor with interpolize
+    if resize_hw is not None:
+        pass
+
+    tensor = tensor.permute(1, 2, 0)
+
+    channel = tensor.shape[2]
+    tensor = tensor.to_np
+  
+    # do normalize
+    sum_tensor = np.sum(tensor, axis=2)
+    sum_tensor = normalize_numpy(sum_tensor) * 255
+    sum_tensor = sum_tensor.astype(np.uint8)
+
+    # show tensor as colormap
+    sum_tensor = cv2.applyColorMap(np.uint8(sum_tensor), cv2.COLORMAP_JET)
+    # mean_tensor = cv2.applyColorMap(np.uint8(mean_tensor), cv2.COLORMAP_JET)
+
+    if is_show:
+        show_img([sum_tensor], [&#39;sum&#39;], wait_time_ms=wait_time_ms)
+    return [sum_tensor]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.image.misc">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend.image" href="index.html">ascend.image</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ascend.image.misc.random_color" href="#ascend.image.misc.random_color">random_color</a></code></li>
+<li><code><a title="ascend.image.misc.show_bbox" href="#ascend.image.misc.show_bbox">show_bbox</a></code></li>
+<li><code><a title="ascend.image.misc.show_img" href="#ascend.image.misc.show_img">show_img</a></code></li>
+<li><code><a title="ascend.image.misc.show_tensor" href="#ascend.image.misc.show_tensor">show_tensor</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

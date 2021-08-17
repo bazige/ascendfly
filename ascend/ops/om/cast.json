@@ -1,0 +1,195 @@
+[
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 1
+       }
+    ]
+  },
+
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 0
+       }
+    ]
+  },
+
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "uint8"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 1
+       }
+    ]
+  },
+
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "uint8"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 4
+       }
+    ]
+  },
+
+
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "int32"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 3
+       }
+    ]
+  },
+
+  {
+    "op": "Cast",
+    "input_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "int32"
+      }
+    ],
+    "output_desc": [
+      {
+        "format": "ND",
+        "shape": [-1, -1, -1, -1],
+        "shape_range": [[1, 200], [1, 1000], [1, 1000], [1, 1000]],
+        "type": "float16"
+      }
+    ],
+    "attr" : [
+       {
+         "name": "truncate",
+         "type": "bool",
+         "value": false
+       },
+       {
+         "name": "dst_type",
+         "type": "int",
+         "value": 1
+       }
+    ]
+  }
+]
+   

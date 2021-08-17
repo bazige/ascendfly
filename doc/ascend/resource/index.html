@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ascend.resource API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<link rel="preconnect" href="https://www.google.com">
+<script async src="https://cse.google.com/cse.js?cx=017837193012385208679:pey8ky8gdqw"></script>
+<style>
+.gsc-control-cse {padding:0 !important;margin-top:1em}
+body.gsc-overflow-hidden #sidebar {overflow: visible;}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+<link rel="canonical" href="https://pdoc3.github.io/pdoc/doc/ascend/resource/">
+<link rel="icon" href="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png">
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ascend.resource</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/__init__.py#L0-L8" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">from .context import Context
+from .context import (bind_context, create_stream, acl_vesion, run_mode,
+                    device_num)
+from .mem import Memory
+
+__all__ = [
+    &#39;Context&#39;, &#39;Memory&#39;, &#39;bind_context&#39;, &#39;create_stream&#39;,
+    &#39;acl_vesion&#39;, &#39;run_mode&#39;, &#39;device_num&#39;, 
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="ascend.resource.context" href="context.html">ascend.resource.context</a></code></dt>
+<dd>
+<div class="desc"><p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in …</p></div>
+</dd>
+<dt><code class="name"><a title="ascend.resource.mem" href="mem.html">ascend.resource.mem</a></code></dt>
+<dd>
+<div class="desc"><p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in …</p></div>
+</dd>
+<dt><code class="name"><a title="ascend.resource.multiprocess" href="multiprocess.html">ascend.resource.multiprocess</a></code></dt>
+<dd>
+<div class="desc"><p>Copyright 2020 Huawei Technologies Co., Ltd
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in …</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ascend.resource.acl_vesion"><code class="name flex">
+<span>def <span class="ident">acl_vesion</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get acl version of system intalled. </p>
+<h2 id="returns">Returns</h2>
+<p>version (str): vesion = major_ver + minor_ver + path_ver, while major_ver is
+major version, minor_ver is the minor verson and path_ver is patch version
+Typical usage example:</p>
+<pre><code class="language-python">version = ascend.acl_vesion()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L21-L38" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def acl_vesion(self):
+    &#34;&#34;&#34; get acl version of system intalled. 
+
+    Returns:
+        version (str): vesion = major_ver + minor_ver + path_ver, while major_ver is 
+            major version, minor_ver is the minor verson and path_ver is patch version
+
+    Typical usage example:
+    ```python
+    version = ascend.acl_vesion()
+    ```   
+    &#34;&#34;&#34;
+    major_ver, minor_ver, patch_ver, ret = acl.get_version()
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;pyACL is not installed or invalid.&#34;)
+
+    version = str(major_ver) + &#39;.&#39; + str(minor_ver) + &#39;.&#39; + str(patch_ver)
+    return version</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.bind_context"><code class="name flex">
+<span>def <span class="ident">bind_context</span></span>(<span>context)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Binding an existing context. If context is not exist, raise an error else set this context.</p>
+<h2 id="args">Args</h2>
+<p>context.</p>
+<h2 id="returns">Returns</h2>
+<p>None.
+Typical usage example:</p>
+<pre><code class="language-python">ascend.bind_context(context)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L114-L136" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def bind_context(context):
+    &#34;&#34;&#34; Binding an existing context. If context is not exist, raise an error else set this context.
+    Args:
+        context.
+
+    Returns:
+        None.
+    
+    Typical usage example:
+    ```python
+    ascend.bind_context(context)
+    ```
+    &#34;&#34;&#34;
+    if context is None:
+        context, ret = acl.rt.get_context()
+        assert ret == ACL_SUCCESS, f&#34;get context failed in bind_context, return {ret}.&#34;
+    
+    ret = acl.rt.set_context(context)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;acl set context failed in bind_context,, return {ret}.&#34;)
+
+    Log(INFO, f&#34;Set context {context} success.&#34;)
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.create_stream"><code class="name flex">
+<span>def <span class="ident">create_stream</span></span>(<span>context=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>create a stream. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>case 1. context is None. Get the context and create a new stream.
+case 2. context is not None. Create a new stream on existing context.</p>
+</div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code>int</code></dt>
+<dd>If context is None, it will get context and then create a stream.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[int]</code></dt>
+<dd>The created stream or original</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L85-L111" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def create_stream(context=None):
+    &#34;&#34;&#34; create a stream. 
+
+    .. note::
+       case 1. context is None. Get the context and create a new stream.
+       case 2. context is not None. Create a new stream on existing context.
+
+    Args:
+        context (int): If context is None, it will get context and then create a stream.
+
+    Returns:
+        [int]: The created stream or original
+    &#34;&#34;&#34;
+    if context is None:
+        context, ret = acl.rt.get_context()
+        assert ret == ACL_SUCCESS, f&#34;get context failed in bind_stream, return {ret}.&#34;
+
+    ret = acl.rt.set_context(context)
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;acl set context failed, return {ret}.&#34;)
+
+    stream, ret = acl.rt.create_stream()
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;create stream failed in create_stream, return {ret}.&#34;)
+    
+    Log(INFO, f&#34;Create stream at context {context} success.&#34;)
+    return stream</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.device_num"><code class="name flex">
+<span>def <span class="ident">device_num</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get device number of the system</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[int]</code></dt>
+<dd>The available number of device.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">dev_num = ascend.device_num()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L64-L82" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def device_num():
+    &#34;&#34;&#34;Get device number of the system
+
+    Args:
+        None
+
+    Returns:
+        [int]: The available number of device.
+
+    Typical usage example:
+    ```python
+    dev_num = ascend.device_num()
+    ```
+    &#34;&#34;&#34;
+    count, ret = acl.rt.get_device_count()
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;pyACL is not installed or Atlas device is not working well.&#34;)
+
+    return count</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.run_mode"><code class="name flex">
+<span>def <span class="ident">run_mode</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get run mode of Ascend310. </p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>running mode </code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<ul>
+<li><code>0</code> for evaluate board or Atlas200 on ctrl-cpu; </li>
+<li><code>1</code> for standard Inference card(Atlas300-3000/Atlas300-3010/Atlas800-3000/Atlas500/
+Atlas500pro) on host-cpu
+Typical usage example:</li>
+</ul>
+<pre><code class="language-python">mode = ascend.run_mode()
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L40-L61" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def run_mode():
+    &#34;&#34;&#34; get run mode of Ascend310. 
+
+    Args:
+        None
+
+    Returns:
+        running mode : 
+        - `0` for evaluate board or Atlas200 on ctrl-cpu; 
+        - `1` for standard Inference card(Atlas300-3000/Atlas300-3010/Atlas800-3000/Atlas500/
+            Atlas500pro) on host-cpu
+        
+    Typical usage example:
+    ```python
+    mode = ascend.run_mode()
+    ``` 
+    &#34;&#34;&#34;
+    run_mode, ret = acl.rt.get_run_mode()
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;pyACL is not installed or isinvalid.&#34;)
+
+    return run_mode</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ascend.resource.Context"><code class="flex name class">
+<span>class <span class="ident">Context</span></span>
+<span>(</span><span>device, acl_json=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a Context class to manage context of device.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>devices</code></strong> :&ensp;<code>set</code></dt>
+<dd>save the device configured.</dd>
+<dt><strong><code>context_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>a dict save the map of device id and context.</dd>
+<dt><strong><code>device_num</code></strong> :&ensp;<code>int</code></dt>
+<dd>The available number of device.</dd>
+<dt><strong><code>runmode</code></strong> :&ensp;<code>int</code></dt>
+<dd>Running mode of device, same to function <code><a title="ascend.resource.run_mode" href="#ascend.resource.run_mode">run_mode()</a></code>.</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>devices = {0,1,2,3} <br>
+context_dict = {0:[contex0], <br>
+1:[contex1], <br>
+2:[contex2], <br>
+3:[contex3]} <br></p>
+<p>and stream map like: <br>
+stream_dict = {contex0:[stream00, stream01], <br>
+contex1:[stream10, stream11], <br>
+contex2:[stream20, stream21], <br>
+contex3:[stream30, stream31]} <br></p>
+</div>
+<p>Typical usage example:</p>
+<pre><code class="language-python"># example 1
+device_set = {0, 1}
+resource = Context(device_set)
+context1 =  resouce.context_dict[0]
+context2 =  resouce.context_dict[1]
+
+# example 2
+acl_json = &quot;./acl.json&quot;
+resource = Context({0, 1}, acl_json)
+
+# example 3
+for ctx in Context({0, 1}):
+    print(ctx)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L139-L390" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Context():
+    &#34;&#34;&#34;Define a Context class to manage context of device.
+
+    Attributes:
+        devices (set): save the device configured.
+        context_dict (dict): a dict save the map of device id and context.
+        device_num (int): The available number of device.
+        runmode (int): Running mode of device, same to function `run_mode`.
+
+    .. hint::
+        devices = {0,1,2,3} &lt;br&gt;
+        context_dict = {0:[contex0], &lt;br&gt;
+                        1:[contex1], &lt;br&gt;
+                        2:[contex2], &lt;br&gt;
+                        3:[contex3]} &lt;br&gt;
+
+        and stream map like: &lt;br&gt;
+        stream_dict = {contex0:[stream00, stream01], &lt;br&gt;
+                    contex1:[stream10, stream11], &lt;br&gt;
+                    contex2:[stream20, stream21], &lt;br&gt;
+                    contex3:[stream30, stream31]} &lt;br&gt;
+
+    Typical usage example:
+    ```python
+    # example 1
+    device_set = {0, 1}
+    resource = Context(device_set)
+    context1 =  resouce.context_dict[0]
+    context2 =  resouce.context_dict[1]
+
+    # example 2
+    acl_json = &#34;./acl.json&#34;
+    resource = Context({0, 1}, acl_json)
+
+    # example 3
+    for ctx in Context({0, 1}):
+        print(ctx)
+    ```
+    &#34;&#34;&#34;
+    def __init__(self, device, acl_json=None):
+        self.class_name = self.__class__.__name__
+
+        if type(self)._first:
+            # check input parameters
+            self.__check_para(device)
+
+            self.devices = set(device)
+            self.context_dict = {}
+            self.device_num = 0
+
+            # initial device context resource
+            self.__init_resource(acl_json)
+            self.__create_context()
+
+
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(cls, &#39;_inst&#39;):   
+            cls._inst = super(Context, cls).__new__(cls)
+            cls._first = True
+        else:
+            cls._first = False
+            Log(WARNING, &#39;Context is already instantiated&#39;)
+        return cls._inst
+
+    def __iter__(self):
+        self.iter = iter(self.context_dict.values())
+        return self.iter
+
+    def __next__(self):
+        return next(self.iter)
+
+
+    def __check_para(self, devices):
+        &#34;&#34;&#34; check input device is in [0, device_num - 1].
+        Args:
+            devices : input device
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if not isinstance(devices, (list, set, tuple)):
+            raise TypeError(f&#34;Input device expects a list/tuple/set, but got {type(devices)}.&#34;)
+
+        if len(devices) == 0:
+            raise ValueError(f&#34;Input device is null.&#34;)
+
+        self.device_num, ret = acl.rt.get_device_count()
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Fail to get device in func __check_para, maybe device is \
+                        not exist, return {ret}.&#34;)
+   
+        if self.device_num &lt; len(devices):
+            raise ValueError(f&#34;Input param &#39;device&#39; error in func __check_para, \
+                        because the elements of device-set exceed {self.device_num}.&#34;) 
+
+        # below we not sure this method is better
+        assert sorted(devices)[0] &gt;= 0 and sorted(devices)[-1] &lt; self.device_num, \
+            f&#34;Device id {device_id} is out of range [0, {self.device_num}).&#34;
+   
+
+    def __init_resource(self, acl_json=None):
+        &#34;&#34;&#34;initial device resource according to acl_json file.
+        Args:
+            acl_json : the file path of acl_json.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        if acl_json is None:
+            ret = acl.init()  
+        elif os.path.exists(acl_json):
+            ret = acl.init(acl_json)
+        else:
+            raise ValueError(f&#34;Fail to open a not existing acl_json file:{acl_json}.&#34;)
+
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Fail to init acl in func __init_resource, return {ret}.&#34;)
+
+    def __create_context(self):
+        &#34;&#34;&#34; create a context according to input device, and save them to context_dict.
+        Args:
+            None.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        for device_id in self.devices:
+            ret = acl.rt.set_device(device_id)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Set device {device_id} failed in func \
+                            __create_context, return {ret}.&#34;)
+
+            context, ret = acl.rt.create_context(device_id)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Create context failed on device {device_id}, return {ret}.&#34;)
+
+            # save the created context to dict
+            self.context_dict[device_id] = context
+
+    @classmethod
+    def runmode(self, device_id):
+        &#34;&#34;&#34;Get the runmode of device
+
+        Args:
+            device_id (int): Input device id
+
+        Returns:
+            running mode: The runmode of device
+        &#34;&#34;&#34;        
+        if not isinstance(device_id, int):
+            raise TypeError(&#39;device_id expects an int value, &#39;
+                                f&#39;but received {type(device_id)}&#39;)
+
+        assert (device_id &gt;= 0) and (device_id &lt; self.device_num), \
+                    f&#34;Device id is out of the range [0, {self.device_num}).&#34;
+
+        ret = acl.rt.set_context(self.context_dict[device_id])
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Set device {device_id} failed in func runmode, return {ret}.&#34;)
+
+        run_mode, ret = acl.rt.get_run_mode()
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Get run mode of device {device_id} failed in \
+                        func runmode, return {ret}.&#34;)
+
+        return run_mode
+
+    def current_context(self, devnum=None):
+        &#34;&#34;&#34;Get the context working on
+
+        Args:
+            devnum (int, optional): Input device id. Defaults to None.
+
+        Returns:
+            [int]: The context working on
+        &#34;&#34;&#34;        
+        if devnum in self.context_dict.keys():
+            return self.context_dict[devnum]
+
+
+    def bind_device(self, device_id):
+        &#34;&#34;&#34;Bind device resource according to device_id.
+            
+        .. warning::
+            If the context of device_id is not exist, create a context and bind it.
+
+        Args:
+            device_id (int): device id.
+        &#34;&#34;&#34;
+        if not isinstance(device_id, int):
+            raise TypeError(f&#34;Input device_id expects an int value, but got {type(device_id)}.&#34;)
+
+        assert (device_id &gt;= 0) and (device_id &lt; self.device_num), \
+                    f&#34;Device id is out of the range [0, {self.device_num}).&#34;
+
+        try:
+            ret = acl.rt.set_context(self.context_dict[device_id])
+            assert ret == ACL_SUCCESS, \
+                f&#34;Set context {self.context_dict[device_id]} failed, return {ret}.&#34; 
+        except:
+            ret = acl.rt.set_device(device_id)
+            assert ret == ACL_SUCCESS, \
+                f&#34;Failed to set device {device_id} in func bind_device, return {ret}.&#34;
+
+            context, ret = acl.rt.create_context(device_id)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Create context failed on device {device_id}, return {ret}.&#34;)
+            self.context_dict[device_id] = context
+
+    def device_available(self):
+        &#34;&#34;&#34;Judge the device is available or not
+
+        Returns:
+            bool: True for device is available, and False for device number is zero.
+        &#34;&#34;&#34;        
+        return (self.device_num &gt; 0)
+
+    def stream_add(self):
+        &#34;&#34;&#34;Not release yet
+        &#34;&#34;&#34;        
+        pass
+
+    def context_add(self):
+        &#34;&#34;&#34;Not release yet
+        &#34;&#34;&#34; 
+        pass
+
+    def __release_resource(self):
+        &#34;&#34;&#34;release device resource and deinitial.
+        Args:
+            None.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+        for device_id, ctx in self.context_dict.items():
+            ret = acl.rt.destroy_context(ctx)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Destroy context {ctx} failed in func \
+                        __release_resource, return {ret}.&#34;)
+       
+            ret = acl.rt.reset_device(device_id)
+            if ret != ACL_SUCCESS:
+                raise ValueError(f&#34;Reset device {device_id} failed in func \
+                        __release_resource, return {ret}.&#34;)
+        
+        ret = acl.finalize()
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Finalize acl resource failed, return {ret}.&#34;)
+
+    def __del__(self):
+        self.__release_resource()</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="ascend.resource.Context.runmode"><code class="name flex">
+<span>def <span class="ident">runmode</span></span>(<span>device_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the runmode of device</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>device_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>Input device id</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>running mode</code></dt>
+<dd>The runmode of device</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L278-L304" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@classmethod
+def runmode(self, device_id):
+    &#34;&#34;&#34;Get the runmode of device
+
+    Args:
+        device_id (int): Input device id
+
+    Returns:
+        running mode: The runmode of device
+    &#34;&#34;&#34;        
+    if not isinstance(device_id, int):
+        raise TypeError(&#39;device_id expects an int value, &#39;
+                            f&#39;but received {type(device_id)}&#39;)
+
+    assert (device_id &gt;= 0) and (device_id &lt; self.device_num), \
+                f&#34;Device id is out of the range [0, {self.device_num}).&#34;
+
+    ret = acl.rt.set_context(self.context_dict[device_id])
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Set device {device_id} failed in func runmode, return {ret}.&#34;)
+
+    run_mode, ret = acl.rt.get_run_mode()
+    if ret != ACL_SUCCESS:
+        raise ValueError(f&#34;Get run mode of device {device_id} failed in \
+                    func runmode, return {ret}.&#34;)
+
+    return run_mode</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.resource.Context.bind_device"><code class="name flex">
+<span>def <span class="ident">bind_device</span></span>(<span>self, device_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Bind device resource according to device_id.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the context of device_id is not exist, create a context and bind it.</p>
+</div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>device_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>device id.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L319-L346" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def bind_device(self, device_id):
+    &#34;&#34;&#34;Bind device resource according to device_id.
+        
+    .. warning::
+        If the context of device_id is not exist, create a context and bind it.
+
+    Args:
+        device_id (int): device id.
+    &#34;&#34;&#34;
+    if not isinstance(device_id, int):
+        raise TypeError(f&#34;Input device_id expects an int value, but got {type(device_id)}.&#34;)
+
+    assert (device_id &gt;= 0) and (device_id &lt; self.device_num), \
+                f&#34;Device id is out of the range [0, {self.device_num}).&#34;
+
+    try:
+        ret = acl.rt.set_context(self.context_dict[device_id])
+        assert ret == ACL_SUCCESS, \
+            f&#34;Set context {self.context_dict[device_id]} failed, return {ret}.&#34; 
+    except:
+        ret = acl.rt.set_device(device_id)
+        assert ret == ACL_SUCCESS, \
+            f&#34;Failed to set device {device_id} in func bind_device, return {ret}.&#34;
+
+        context, ret = acl.rt.create_context(device_id)
+        if ret != ACL_SUCCESS:
+            raise ValueError(f&#34;Create context failed on device {device_id}, return {ret}.&#34;)
+        self.context_dict[device_id] = context</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.Context.context_add"><code class="name flex">
+<span>def <span class="ident">context_add</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Not release yet</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L361-L364" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def context_add(self):
+    &#34;&#34;&#34;Not release yet
+    &#34;&#34;&#34; 
+    pass</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.Context.current_context"><code class="name flex">
+<span>def <span class="ident">current_context</span></span>(<span>self, devnum=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the context working on</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>devnum</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Input device id. Defaults to None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[int]</code></dt>
+<dd>The context working on</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L306-L316" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def current_context(self, devnum=None):
+    &#34;&#34;&#34;Get the context working on
+
+    Args:
+        devnum (int, optional): Input device id. Defaults to None.
+
+    Returns:
+        [int]: The context working on
+    &#34;&#34;&#34;        
+    if devnum in self.context_dict.keys():
+        return self.context_dict[devnum]</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.Context.device_available"><code class="name flex">
+<span>def <span class="ident">device_available</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Judge the device is available or not</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True for device is available, and False for device number is zero.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L348-L354" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def device_available(self):
+    &#34;&#34;&#34;Judge the device is available or not
+
+    Returns:
+        bool: True for device is available, and False for device number is zero.
+    &#34;&#34;&#34;        
+    return (self.device_num &gt; 0)</code></pre>
+</details>
+</dd>
+<dt id="ascend.resource.Context.stream_add"><code class="name flex">
+<span>def <span class="ident">stream_add</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Not release yet</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/context.py#L356-L359" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def stream_add(self):
+    &#34;&#34;&#34;Not release yet
+    &#34;&#34;&#34;        
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="ascend.resource.Memory"><code class="flex name class">
+<span>class <span class="ident">Memory</span></span>
+<span>(</span><span>context, size, flag='DEVICE')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Define a Memory class to manage memory of device host and dvpp.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>ptr</code></strong> :&ensp;<code>a pointer</code></dt>
+<dd>the memmory ptr</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int value</code></dt>
+<dd>the memory size</dd>
+<dt><strong><code>flag</code></strong> :&ensp;<code>string</code></dt>
+<dd>one of ['DVPP', 'DEVICE', 'HOST']</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">mem = ascend.Memory(context, 32768, flag='DVPP')
+print(mem.ptr)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/mem.py#L118-L204" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class Memory():
+    &#34;&#34;&#34;Define a Memory class to manage memory of device host and dvpp.
+
+    Attributes:
+        ptr (a pointer): the memmory ptr
+        size (int value): the memory size
+        flag (string): one of [&#39;DVPP&#39;, &#39;DEVICE&#39;, &#39;HOST&#39;]
+
+    Typical usage example:
+    ```python
+    mem = ascend.Memory(context, 32768, flag=&#39;DVPP&#39;)
+    print(mem.ptr)
+    ```
+    &#34;&#34;&#34;
+    def __init__(self, context, size, flag=&#34;DEVICE&#34;):
+        if not isinstance(size, int):
+            raise TypeError(&#39;Memory instance input praram size expects an int value. &#39;
+                                f&#39;But received {type(size)}&#39;)
+        if size &lt;= 0:
+            raise ValueError(&#39;Memory instance input praram size should larger than 0. &#39;
+                                f&#39;But received {size}&#39;)
+
+        if flag not in [&#39;DVPP&#39;, &#39;DEVICE&#39;, &#39;HOST&#39;]:
+            raise TypeError(&#34;Memory instance input flag expects one of [&#39;DVPP&#39;, &#39;DEVICE&#39;, &#39;HOST&#39;].&#34;)
+
+        # set context
+        bind_context(context)
+
+        self.size = size
+        self.flag = flag
+        self.ptr = malloc(size, flag)
+
+    @classmethod
+    def reset(self, ptr, size, value):
+        &#34;&#34;&#34;Initial memory with a const value.
+
+        Args:
+            ptr (int): Input memory pointer.
+            size (int): Input memory size to be reset.
+            value (int): The memory value to reset.
+
+        Typical usage example:
+        ```python
+        pad_val = 0
+        ascend.Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(ptr, int):
+            raise TypeError(&#34;Input praram &#39;ptr&#39; of func reset expects an int value. &#34;
+                                f&#39;But received {type(ptr)}&#39;)
+        if not isinstance(size, int):
+            raise TypeError(&#34;Input praram &#39;size&#39; of func reset expects an int value. &#34;
+                                f&#39;But received {type(size)}&#39;)
+        if not isinstance(value, int):
+            raise TypeError(&#34;Input praram &#39;value&#39; of func reset expects an int value. &#34;
+                                f&#39;But received {type(value)}&#39;)
+
+        ret = acl.rt.memset(ptr, size, value, size)
+        if ret != const.ACL_SUCCESS:
+            raise ValueError(f&#34;Failed to memset at pointer {ptr}, return value:{ret}.&#34;)
+        
+    def mem_info(self, attr):
+        &#34;&#34;&#34;Get the memory info accoring to attribute att.
+        Args:
+            attr (int): Input attribute info to get.
+
+        Returns:
+            tuple(free, total): The free memory and total memory of device
+        
+        Typical usage example:
+        ```python
+        mem = ascend.Memory(context, 32768)
+        mem_info = mem.mem_info(0)
+        ```
+        &#34;&#34;&#34;
+        if not isinstance(attr, int):
+            raise TypeError(f&#34;Input param expects an int, but got {type(attr)}.&#34;)
+
+        free, total, ret = acl.rt.get_mem_info(attr)
+        if ret != const.ACL_SUCCESS:
+            raise ValueError(f&#34;Get mem info failed, return {ret}.&#34;)
+
+        return free, total
+
+    def __del__(self):
+        if hasattr(self, &#39;ptr&#39;) and self.ptr:
+            free(self.ptr, self.flag)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="ascend.resource.Memory.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>ptr, size, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initial memory with a const value.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ptr</code></strong> :&ensp;<code>int</code></dt>
+<dd>Input memory pointer.</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int</code></dt>
+<dd>Input memory size to be reset.</dd>
+<dt><strong><code>value</code></strong> :&ensp;<code>int</code></dt>
+<dd>The memory value to reset.</dd>
+</dl>
+<p>Typical usage example:</p>
+<pre><code class="language-python">pad_val = 0
+ascend.Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/mem.py#L150-L177" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@classmethod
+def reset(self, ptr, size, value):
+    &#34;&#34;&#34;Initial memory with a const value.
+
+    Args:
+        ptr (int): Input memory pointer.
+        size (int): Input memory size to be reset.
+        value (int): The memory value to reset.
+
+    Typical usage example:
+    ```python
+    pad_val = 0
+    ascend.Memory.reset(dst_img.ascend_data, dst_img.nbytes, pad_val)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(ptr, int):
+        raise TypeError(&#34;Input praram &#39;ptr&#39; of func reset expects an int value. &#34;
+                            f&#39;But received {type(ptr)}&#39;)
+    if not isinstance(size, int):
+        raise TypeError(&#34;Input praram &#39;size&#39; of func reset expects an int value. &#34;
+                            f&#39;But received {type(size)}&#39;)
+    if not isinstance(value, int):
+        raise TypeError(&#34;Input praram &#39;value&#39; of func reset expects an int value. &#34;
+                            f&#39;But received {type(value)}&#39;)
+
+    ret = acl.rt.memset(ptr, size, value, size)
+    if ret != const.ACL_SUCCESS:
+        raise ValueError(f&#34;Failed to memset at pointer {ptr}, return value:{ret}.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ascend.resource.Memory.mem_info"><code class="name flex">
+<span>def <span class="ident">mem_info</span></span>(<span>self, attr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the memory info accoring to attribute att.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attr</code></strong> :&ensp;<code>int</code></dt>
+<dd>Input attribute info to get.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>tuple(free, total): The free memory and total memory of device
+Typical usage example:</p>
+<pre><code class="language-python">mem = ascend.Memory(context, 32768)
+mem_info = mem.mem_info(0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/pdoc3/pdoc/blob/c0c4662b8bfdd479b00c923799cfbd69bbea0eb8/ascend/resource/mem.py#L179-L200" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def mem_info(self, attr):
+    &#34;&#34;&#34;Get the memory info accoring to attribute att.
+    Args:
+        attr (int): Input attribute info to get.
+
+    Returns:
+        tuple(free, total): The free memory and total memory of device
+    
+    Typical usage example:
+    ```python
+    mem = ascend.Memory(context, 32768)
+    mem_info = mem.mem_info(0)
+    ```
+    &#34;&#34;&#34;
+    if not isinstance(attr, int):
+        raise TypeError(f&#34;Input param expects an int, but got {type(attr)}.&#34;)
+
+    free, total, ret = acl.rt.get_mem_info(attr)
+    if ret != const.ACL_SUCCESS:
+        raise ValueError(f&#34;Get mem info failed, return {ret}.&#34;)
+
+    return free, total</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="ascendfly Home" href="https://gitee.com/ascend-fae/ascendfly">
+<img src="https://gitee.com/ascend-fae/ascendfly/blob/master/doc/logo/logo.png" alt=""> ascendfly
+</a>
+</header>
+<div class="gcse-search" style="height: 70px"
+data-as_oq="site:pdoc3.github.io inurl:github.com/pdoc3"
+data-gaCategoryParameter="ascend.resource">
+</div>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ascend" href="../index.html">ascend</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="ascend.resource.context" href="context.html">ascend.resource.context</a></code></li>
+<li><code><a title="ascend.resource.mem" href="mem.html">ascend.resource.mem</a></code></li>
+<li><code><a title="ascend.resource.multiprocess" href="multiprocess.html">ascend.resource.multiprocess</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ascend.resource.acl_vesion" href="#ascend.resource.acl_vesion">acl_vesion</a></code></li>
+<li><code><a title="ascend.resource.bind_context" href="#ascend.resource.bind_context">bind_context</a></code></li>
+<li><code><a title="ascend.resource.create_stream" href="#ascend.resource.create_stream">create_stream</a></code></li>
+<li><code><a title="ascend.resource.device_num" href="#ascend.resource.device_num">device_num</a></code></li>
+<li><code><a title="ascend.resource.run_mode" href="#ascend.resource.run_mode">run_mode</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ascend.resource.Context" href="#ascend.resource.Context">Context</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ascend.resource.Context.bind_device" href="#ascend.resource.Context.bind_device">bind_device</a></code></li>
+<li><code><a title="ascend.resource.Context.context_add" href="#ascend.resource.Context.context_add">context_add</a></code></li>
+<li><code><a title="ascend.resource.Context.current_context" href="#ascend.resource.Context.current_context">current_context</a></code></li>
+<li><code><a title="ascend.resource.Context.device_available" href="#ascend.resource.Context.device_available">device_available</a></code></li>
+<li><code><a title="ascend.resource.Context.runmode" href="#ascend.resource.Context.runmode">runmode</a></code></li>
+<li><code><a title="ascend.resource.Context.stream_add" href="#ascend.resource.Context.stream_add">stream_add</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ascend.resource.Memory" href="#ascend.resource.Memory">Memory</a></code></h4>
+<ul class="">
+<li><code><a title="ascend.resource.Memory.mem_info" href="#ascend.resource.Memory.mem_info">mem_info</a></code></li>
+<li><code><a title="ascend.resource.Memory.reset" href="#ascend.resource.Memory.reset">reset</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p><span style="color:#ddd">&#21328;</span></p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
